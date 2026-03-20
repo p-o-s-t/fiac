@@ -1,5 +1,5 @@
 # FIAC - Future Intelligence Analyst Course
-Welcome to the Future Intelligence Analyst Course (FIAC), an interactive, static training platform designed for aspiring Cyber Threat Intelligence (CTI) practitioners.  This project is also hosted on a [GitHub Page](https://p-o-s-t.github.io/cti-training-page/index.html).
+Welcome to the Future Intelligence Analyst Course (FIAC), an interactive, static training platform designed for aspiring Cyber Threat Intelligence (CTI) practitioners.  This project is also hosted on a [GitHub Page](https://p-o-s-t.github.io/fiac/).
 
 ## Overview
 FIAC provides a gamified learning experience covering the fundamental knowledge and practical skills required for the All-Source Analyst (DCWF 111) work role. The platform is designed to be simplistic, human-readable, and easily accessible.
