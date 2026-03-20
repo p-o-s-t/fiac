@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIAC - Future Intelligence Analyst Course</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/progress.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC - Future Intelligence Analyst Course</h1>
+                <nav>
+                    <a href="resources.html" class="nav-link">Resources</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="dashboard-sections">
+                <section>
+                    <h2 class="section-title">Knowledge</h2>
+                    <div class="dashboard-grid">
+                        <!-- Knowledge cards here... -->
+                        <div class="card" data-id="fundamentals" onclick="location.href='lessons/fundamentals.html'">
+                            <div>
+                                <h3>1. Intelligence Fundamentals</h3>
+                                <p>Core concepts, definitions, and the importance of CTI.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="lifecycle" onclick="location.href='lessons/lifecycle.html'">
+                            <div>
+                                <h3>2. Intelligence Lifecycle</h3>
+                                <p>Planning, direction, collection, analysis, and dissemination.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="cyberspace" onclick="location.href='lessons/cyberspace.html'">
+                            <div>
+                                <h3>3. Intelligence in Cyberspace</h3>
+                                <p>Understanding the digital battlefield and its unique properties.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="frameworks" onclick="location.href='lessons/frameworks.html'">
+                            <div>
+                                <h3>4. Frameworks</h3>
+                                <p>Diamond Model, Kill Chain, and MITRE ATT&CK.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="requirements" onclick="location.href='lessons/requirements.html'">
+                            <div>
+                                <h3>5. Intelligence Requirements</h3>
+                                <p>Defining PIRs and setting the direction for collection.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="profiling" onclick="location.href='lessons/profiling.html'">
+                            <div>
+                                <h3>6. Threat Actors & Profiling</h3>
+                                <p>Identifying motivations, capabilities, and intent.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="attack-surface" onclick="location.href='lessons/attack-surface.html'">
+                            <div>
+                                <h3>7. Attack Surface</h3>
+                                <p>Mapping external visibility and vulnerabilities.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="malware" onclick="location.href='lessons/malware.html'">
+                            <div>
+                                <h3>8. Basic Malware Analysis</h3>
+                                <p>Static vs Dynamic analysis for CTI practitioners.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="landscape" onclick="location.href='lessons/landscape.html'">
+                            <div>
+                                <h3>9. Threat Landscape</h3>
+                                <p>Current trends, emerging threats, and geopolitical factors.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="data-marking" onclick="location.href='lessons/data-marking.html'">
+                            <div>
+                                <h3>10. Data Marking</h3>
+                                <p>TLP, PAP, and ensuring information security.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="reporting" onclick="location.href='lessons/reporting.html'">
+                            <div>
+                                <h3>11. Effective Communication</h3>
+                                <p>Communicating findings to stakeholders effectively.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="rfi" onclick="location.href='lessons/rfi.html'">
+                            <div>
+                                <h3>12. Requests for Information</h3>
+                                <p>Generating and answering intelligence requirements.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="coa" onclick="location.href='lessons/coa.html'">
+                            <div>
+                                <h3>13. Course of Action Development</h3>
+                                <p>Predicting adversary behavior and recommending responses.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="tracking" onclick="location.href='lessons/tracking.html'">
+                            <div>
+                                <h3>14. Tracking & Attribution</h3>
+                                <p>Clustering activity and identifying threat actors.</p>
+                            </div>
+                            <span class="badge advanced">Advanced</span>
+                        </div>
+                        <div class="card" data-id="emulation" onclick="location.href='lessons/emulation.html'">
+                            <div>
+                                <h3>15. Adversary Emulation</h3>
+                                <p>Testing defenses by mimicking real-world threat behaviors.</p>
+                            </div>
+                            <span class="badge advanced">Advanced</span>
+                        </div>
+                        <div class="card" data-id="data-management" onclick="location.href='lessons/data-management.html'">
+                            <div>
+                                <h3>16. Data Management</h3>
+                                <p>Managing platforms, sources, and collection frameworks.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-title">Challenges</h2>
+                    <div class="dashboard-grid">
+                        <div class="card" data-id="ssl-tls" onclick="location.href='challenges/ssl-tls.html'">
+                            <div>
+                                <h3>SSL/TLS Infrastructure</h3>
+                                <p>Identify infrastructure using certificate pivot points.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="strings" onclick="location.href='challenges/strings.html'">
+                            <div>
+                                <h3>Strings Analysis</h3>
+                                <p>Extract unique artifacts from binary content.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="tlp" onclick="location.href='challenges/tlp.html'">
+                            <div>
+                                <h3>TLP Classification</h3>
+                                <p>Apply Traffic Light Protocol (TLP 2.0) to sharing scenarios.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="mitre" onclick="location.href='challenges/mitre.html'">
+                            <div>
+                                <h3>MITRE ATT&CK Mapping</h3>
+                                <p>Identify tactics and techniques from threat reports.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="diamond" onclick="location.href='challenges/diamond.html'">
+                            <div>
+                                <h3>Diamond Model Reconstruction</h3>
+                                <p>Reconstruct an event using the Diamond Model vertices.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="pir" onclick="location.href='challenges/pir.html'">
+                            <div>
+                                <h3>PIR Development</h3>
+                                <p>Write an effective PIR for a healthcare organization.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 FIAC - Future Intelligence Analyst Course | v0.1</p>
+        </footer>
+    </div>
+</body>
+</html>

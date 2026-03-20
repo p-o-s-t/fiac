@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10. Data Marking - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Data Marking</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Protecting Information</h2>
+                <p>CTI often contains sensitive information about an organization's defenses or ongoing investigations. Data marking ensures that this information is shared safely and securely.</p>
+                <p>The most common standard for CTI is the <strong>Traffic Light Protocol (TLP)</strong>.</p>
+                <span class="ksa-tag">DCWF Alignment: KSA 3154</span>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Traffic Light Protocol (TLP)</h2>
+                <ul>
+                    <li><strong>TLP:RED:</strong> For the recipients' eyes only. No further sharing.</li>
+                    <li><strong>TLP:AMBER:</strong> Shared within the recipients' organization and its clients who need to know.</li>
+                    <li><strong>TLP:GREEN:</strong> Shared within the recipients' community or sector.</li>
+                    <li><strong>TLP:CLEAR:</strong> For public consumption. No restrictions on sharing.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Permissible Actions Protocol (PAP)</h2>
+                <p>While TLP focuses on <em>who</em> can see information, <strong>PAP</strong> focuses on <em>what</em> a recipient can do with it.</p>
+                <p>PAP helps ensure that intelligence is used effectively without accidentally alerting an adversary (e.g., "PAP:RED" might mean "do not block these IPs yet").</p>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Data Marking')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 10. Data Marking - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+    "certificates": [
+        {
+            "fingerprint_sha1": "6c194c35aa5be04c429e06d95815c82e7b87ecca",
+            "subject": "CN=ssffaa2.xyz",
+            "common_name": "ssffaa2.xyz",
+            "serial": "4f:77:a4:7a:5a:e6:9b:87:0d:e9:d9:73:80:f4:cd:a9",
+            "issuer": "R3",
+            "issued_date": "2026-03-18",
+            "type": "Malicious",
+            "actor": "Suspicious Infrastructure"
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16. Data Management - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Data Management</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Threat Intelligence Platforms (TIP)</h2>
+                <p>A <strong>TIP</strong> is a central repository used to aggregate, correlate, and analyze threat data from multiple sources. It automates the collection and dissemination of indicators (IOCs).</p>
+                <ul>
+                    <li><strong>Open Source:</strong> MISP (Malware Information Sharing Platform), OpenCTI.</li>
+                    <li><strong>Commercial:</strong> ThreatConnect, ThreatQuotient, Anomali.</li>
+                </ul>
+                <span class="ksa-tag">DCWF Alignment: KSA 3343 | Task 2063</span>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Data Sources: Internal & External</h2>
+                <p>Effective CTI relies on a diverse range of data sources to build a complete picture of the threat landscape.</p>
+                <ul>
+                    <li><strong>Internal Sources:</strong> SIEM logs, EDR telemetry, incident response reports, and internal vulnerability scans.</li>
+                    <li><strong>External Sources:</strong> OSINT (blogs, Twitter), ISAC feeds, commercial data providers, and government alerts.</li>
+                </ul>
+                <p>Analysts must document these sources to ensure reliability and track intelligence gaps.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Collection Frameworks</h2>
+                <p>A <strong>Collection Framework</strong> helps analysts map their data sources back to their intelligence requirements (PIRs).</p>
+                <ul>
+                    <li><strong>Source Mapping:</strong> Identifying which specific tool or feed provides the data needed to answer a PIR.</li>
+                    <li><strong>Gap Analysis:</strong> Identifying requirements that cannot currently be met with existing data sources.</li>
+                    <li><strong>Lifecycle Management:</strong> Regularly reviewing and updating collection plans to ensure they remain relevant.</li>
+                </ul>
+                <span class="ksa-tag">DCWF Alignment: Task 2881</span>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Data Management')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 16. Data Management - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

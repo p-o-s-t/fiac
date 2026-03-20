@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITRE ATT&CK Mapping - FIAC Challenge</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .challenge-box {
+            background: var(--dark-grey);
+            padding: 25px;
+            border: 1px solid var(--lavender-medium);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 800px;
+            text-align: left;
+        }
+        .report-snippet {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: var(--black);
+            border-left: 4px solid var(--lavender-medium);
+            font-style: italic;
+            min-height: 80px;
+        }
+        .mapping-area {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .select-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .select-group label {
+            color: var(--lavender);
+            font-weight: bold;
+        }
+        .select-group select {
+            padding: 10px;
+            background: var(--black);
+            color: var(--lavender);
+            border: 1px solid var(--medium-grey);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        .feedback.correct { background: rgba(76, 175, 80, 0.2); border: 1px solid #4caf50; color: #a5d6a7; }
+        .feedback.incorrect { background: rgba(244, 67, 54, 0.2); border: 1px solid #f44336; color: #ef9a9a; }
+        
+        .progress-indicator {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--light-grey);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: MITRE ATT&CK Mapping</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="challenge-box">
+                <div class="progress-indicator" id="progressIndicator">Scenario 1 of 3</div>
+                <h2>Analyze the Report Snippet</h2>
+                <span class="ksa-tag">DCWF Alignment: KSA 3129, 3582</span>
+                
+                <div id="reportSnippet" class="report-snippet"></div>
+                
+                <div class="mapping-area">
+                    <div class="select-group">
+                        <label for="tacticSelect">Identify the Tactic:</label>
+                        <select id="tacticSelect">
+                            <option value="">-- Choose a Tactic --</option>
+                            <option value="TA0001">TA0001: Initial Access</option>
+                            <option value="TA0003">TA0003: Persistence</option>
+                            <option value="TA0005">TA0005: Defense Evasion</option>
+                            <option value="TA0010">TA0010: Exfiltration</option>
+                            <option value="TA0040">TA0040: Impact</option>
+                        </select>
+                    </div>
+
+                    <div class="select-group">
+                        <label for="techniqueSelect">Identify the Technique:</label>
+                        <select id="techniqueSelect">
+                            <option value="">-- Choose a Technique --</option>
+                            <option value="T1566.001">T1566.001: Phishing: Spearphishing Attachment</option>
+                            <option value="T1547.001">T1547.001: Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder</option>
+                            <option value="T1041">T1041: Exfiltration Over C2 Channel</option>
+                            <option value="T1059.001">T1059.001: Command and Scripting Interpreter: PowerShell</option>
+                            <option value="T1486">T1486: Data Encrypted for Impact</option>
+                        </select>
+                    </div>
+
+                    <button class="btn" id="checkBtn" onclick="checkMapping()">Verify Mapping</button>
+                </div>
+
+                <div id="feedbackBox" class="feedback"></div>
+                
+                <div id="nextArea" style="margin-top: 20px; display: none; text-align: right;">
+                    <button class="btn" onclick="nextScenario()">Next Scenario &rarr;</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 MITRE ATT&CK Mapping - FIAC Challenge | <a href="../index.html" style="color: var(--lavender-medium); text-decoration: none;">&larr; Back to Dashboard</a></p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script>
+        const scenarios = [
+            {
+                text: "\"The threat actor gained initial access by sending a spear-phishing email to several HR employees. The email contained a malicious document which, once opened, executed a hidden script.\"",
+                tactic: "TA0001",
+                technique: "T1566.001",
+                explanation: "The actor used a spear-phishing attachment (T1566.001) to gain their first foothold (TA0001)."
+            },
+            {
+                text: "\"To ensure they remained on the system after a reboot, the malware added a new entry to the Windows Registry 'Run' key, pointing to the dropped executable.\"",
+                tactic: "TA0003",
+                technique: "T1547.001",
+                explanation: "Modifying Registry Run keys (T1547.001) is a common way to achieve Persistence (TA0003)."
+            },
+            {
+                text: "\"Once the sensitive documents were gathered into a single archive, the malware transmitted the data back to the attacker's infrastructure through the established command-and-control connection.\"",
+                tactic: "TA0010",
+                technique: "T1041",
+                explanation: "Sending data back through the C2 channel is classified as Exfiltration Over C2 Channel (T1041) under the Exfiltration tactic (TA0010)."
+            }
+        ];
+
+        let currentScenarioIndex = 0;
+
+        function displayScenario() {
+            const scenario = scenarios[currentScenarioIndex];
+            document.getElementById('reportSnippet').innerText = scenario.text;
+            document.getElementById('progressIndicator').innerText = `Scenario ${currentScenarioIndex + 1} of ${scenarios.length}`;
+            document.getElementById('feedbackBox').style.display = 'none';
+            document.getElementById('nextArea').style.display = 'none';
+            document.getElementById('tacticSelect').value = "";
+            document.getElementById('techniqueSelect').value = "";
+            document.getElementById('tacticSelect').disabled = false;
+            document.getElementById('techniqueSelect').disabled = false;
+            document.getElementById('checkBtn').disabled = false;
+        }
+
+        function checkMapping() {
+            const tactic = document.getElementById('tacticSelect').value;
+            const technique = document.getElementById('techniqueSelect').value;
+            const feedbackBox = document.getElementById('feedbackBox');
+            const scenario = scenarios[currentScenarioIndex];
+
+            if (!tactic || !technique) return;
+
+            feedbackBox.style.display = 'block';
+
+            if (tactic === scenario.tactic && technique === scenario.technique) {
+                feedbackBox.className = "feedback correct";
+                feedbackBox.innerHTML = `<strong>Correct!</strong> ${scenario.explanation}`;
+                
+                document.getElementById('tacticSelect').disabled = true;
+                document.getElementById('techniqueSelect').disabled = true;
+                document.getElementById('checkBtn').disabled = true;
+                document.getElementById('nextArea').style.display = 'block';
+                
+                if (currentScenarioIndex === scenarios.length - 1) {
+                    document.querySelector('#nextArea button').innerText = "Finish Challenge";
+                }
+            } else {
+                feedbackBox.className = "feedback incorrect";
+                feedbackBox.innerHTML = `<strong>Incorrect.</strong> Review the snippet and try again. Hint: Focus on the specific action and its ultimate goal.`;
+            }
+        }
+
+        function nextScenario() {
+            currentScenarioIndex++;
+            if (currentScenarioIndex < scenarios.length) {
+                displayScenario();
+            } else {
+                if (typeof markCompleted === 'function') {
+                    markCompleted('mitre');
+                }
+                location.href = '../index.html';
+            }
+        }
+
+        // Initialize first scenario
+        displayScenario();
+    </script>
+</body>
+</html>

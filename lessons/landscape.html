@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9. Threat Landscape - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Threat Landscape</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>The Big Picture</h2>
+                <p>The <strong>Threat Landscape</strong> is the overall ecosystem of threats facing an organization, industry, or region. It includes the combined presence of all actors, tools, and vulnerabilities.</p>
+                <p>Understanding the landscape helps prioritize defensive strategies based on broader trends.</p>
+                <span class="ksa-tag">DCWF Alignment: KSA 3262, 1159</span>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Current Trends</h2>
+                <p>The threat landscape is constantly evolving. Common modern trends include:</p>
+                <ul>
+                    <li><strong>Ransomware-as-a-Service (RaaS):</strong> Cybercriminals "rent" ransomware tools and infrastructure.</li>
+                    <li><strong>Supply Chain Attacks:</strong> Targeting a vendor to gain access to their customers.</li>
+                    <li><strong>Zero-Day Exploitation:</strong> Exploiting vulnerabilities before a patch is available.</li>
+                    <li><strong>Cloud Misconfigurations:</strong> Accidental exposure of sensitive data in the cloud.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Geopolitical Factors</h2>
+                <p>Cyber operations are often tied to real-world geopolitical events. Conflicts, trade wars, and national elections can all drive shifts in the threat landscape.</p>
+                <p>A CTI analyst must stay informed about world events to understand the motivations behind certain cyber activities.</p>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Landscape')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 9. Threat Landscape - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

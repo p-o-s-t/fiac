@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Frameworks - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Intelligence Frameworks</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Structuring Intelligence</h2>
+                <p>Frameworks provide a structured way to analyze and communicate complex cyber threats. They help analysts organize data and speak a common language.</p>
+                <p>Commonly used frameworks include the <strong>Cyber Kill Chain</strong>, the <strong>Diamond Model</strong>, and <strong>MITRE ATT&CK</strong>.</p>
+                <span class="ksa-tag">DCWF Alignment: KSA 3582, 3446</span>
+            </div>
+
+            <div class="slide hidden">
+                <h2>The Diamond Model</h2>
+                <p>This model analyzes a single event by identifying four interconnected elements:</p>
+                <ul>
+                    <li><strong>Adversary:</strong> Who is behind the attack?</li>
+                    <li><strong>Infrastructure:</strong> What systems are they using?</li>
+                    <li><strong>Capability:</strong> What tools and techniques are they employing?</li>
+                    <li><strong>Victim:</strong> Who are they targeting?</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>MITRE ATT&CK</h2>
+                <p><strong>ATT&CK</strong> stands for Adversarial Tactics, Techniques, and Common Knowledge.</p>
+                <p>It is a globally-accessible knowledge base of adversary behaviors based on real-world observations. It helps defenders understand <em>how</em> attacks happen.</p>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Frameworks')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 4. Frameworks - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

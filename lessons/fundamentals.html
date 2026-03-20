@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Intelligence Fundamentals - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Intelligence Fundamentals</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <!-- Slide 1: Introduction -->
+            <div class="slide active">
+                <h2>What is Cyber Threat Intelligence?</h2>
+                <p>Cyber Threat Intelligence (CTI) is the collection, processing, and analysis of data about cyber threats to understand an adversary's motivations, targets, and attack behaviors.</p>
+                <p>It's not just data (like a list of IP addresses); it's <strong>evidence-based knowledge</strong> that helps organizations make informed security decisions.</p>
+                <span class="ksa-tag">DCWF Alignment: KSA 1158, 1159</span>
+            </div>
+
+            <!-- Slide 2: Why CTI? -->
+            <div class="slide hidden">
+                <h2>Why do we need CTI?</h2>
+                <ul>
+                    <li><strong>Proactive Defense:</strong> Shift from reactive to predictive security.</li>
+                    <li><strong>Reduced Risk:</strong> Identify threats before they impact the business.</li>
+                    <li><strong>Better Decisions:</strong> Provide high-level context for leadership.</li>
+                    <li><strong>Resource Optimization:</strong> Focus defense on the most relevant threats.</li>
+                </ul>
+            </div>
+
+            <!-- Slide 3: Types of Intelligence -->
+            <div class="slide hidden">
+                <h2>Types of Intelligence</h2>
+                <ul>
+                    <li><strong>Strategic:</strong> High-level trends and geopolitical context for decision-makers.</li>
+                    <li><strong>Operational:</strong> Details about specific attacks and adversary capabilities.</li>
+                    <li><strong>Tactical:</strong> Tactics, Techniques, and Procedures (TTPs) used by actors.</li>
+                    <li><strong>Technical:</strong> Specific indicators (IOCs) like IPs, MD5 hashes, and domains.</li>
+                </ul>
+            </div>
+
+            <!-- Slide 4: Knowledge Check -->
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <p>Test your understanding of CTI fundamentals.</p>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Fundamentals')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 1. Intelligence Fundamentals - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

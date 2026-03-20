@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7. Attack Surface - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Attack Surface</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>The Defender's Challenge</h2>
+                <p>The <strong>Attack Surface</strong> is the total sum of all points where an unauthorized user can try to enter data to or extract data from an environment.</p>
+                <p>Maintaining awareness of your attack surface is critical for prioritizing defense.</p>
+                <span class="ksa-tag">DCWF Alignment: KSA 3137, 3630</span>
+            </div>
+
+            <div class="slide hidden">
+                <h2>External Attack Surface</h2>
+                <p>This includes everything an outsider can see and potentially attack from the internet:</p>
+                <ul>
+                    <li>Public-facing servers and websites.</li>
+                    <li>Domain names and subdomains.</li>
+                    <li>Open ports and services.</li>
+                    <li>Publicly exposed APIs.</li>
+                    <li>Social media and employee information (OSINT).</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Attack Surface Management (ASM)</h2>
+                <p><strong>ASM</strong> is the continuous process of discovering, analyzing, and monitoring an organization's external-facing assets.</p>
+                <p>By understanding what is visible, organizations can proactively address vulnerabilities before an attacker can exploit them.</p>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Attack Surface')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 7. Attack Surface - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

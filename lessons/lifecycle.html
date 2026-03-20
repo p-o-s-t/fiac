@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Intelligence Lifecycle - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Intelligence Lifecycle</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>The Intelligence Process</h2>
+                <p>Intelligence is not a one-time event; it's a <strong>cyclic process</strong>. It begins with a need and ends with a finished product that informs the next round of questions.</p>
+                <p>Commonly referred to as the <strong>Intelligence Lifecycle</strong>, it ensures intelligence is relevant, timely, and actionable.</p>
+                <span class="ksa-tag">DCWF Alignment: KSA 3582 | Task: 2115</span>
+            </div>
+
+            <div class="slide hidden">
+                <h2>1. Planning and Direction</h2>
+                <p>Define <strong>Priority Intelligence Requirements (PIRs)</strong>. What do decision-makers need to know?</p>
+                <p>Setting clear goals prevents "intelligence for intelligence's sake" and focuses resources on the most critical threats.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>2. Collection and Processing</h2>
+                <p><strong>Collection:</strong> Gathering raw data from multiple sources (OSINT, SIGINT, HUMINT, etc.).</p>
+                <p><strong>Processing:</strong> Converting raw data into a usable format—translating documents, decrypting files, or normalizing logs.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>3. Analysis and Dissemination</h2>
+                <p><strong>Analysis:</strong> Turning processed data into <em>intelligence</em> by adding context, identifying patterns, and drawing conclusions.</p>
+                <p><strong>Dissemination:</strong> Delivering the right information to the right person at the right time in the right format (e.g., a report or a dashboard).</p>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Lifecycle')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 2. Intelligence Lifecycle - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

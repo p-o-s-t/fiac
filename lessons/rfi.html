@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12. Requests for Information - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Requests for Information</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>What is an RFI?</h2>
+                <p>A <strong>Request for Information (RFI)</strong> is a formal process used to gather specific details that are currently missing from the intelligence picture.</p>
+                <p>RFIs bridge the gap between what we <em>know</em> and what we <em>need to know</em> to make a decision.</p>
+                <span class="ksa-tag">DCWF Alignment: Task 2028, 2429</span>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Generating RFIs</h2>
+                <p>When an analyst identifies an intelligence gap, they generate an RFI. A good RFI should be:</p>
+                <ul>
+                    <li><strong>Specific:</strong> Clearly define the information needed.</li>
+                    <li><strong>Actionable:</strong> Explain why the information is required.</li>
+                    <li><strong>Time-Bound:</strong> Include a realistic deadline for the response.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Answering RFIs</h2>
+                <p>Receiving and answering RFIs is a core duty of an intelligence analyst. Key principles include:</p>
+                <ul>
+                    <li><strong>Timeliness:</strong> Provide the answer when it's needed, not after the decision is made.</li>
+                    <li><strong>Clarity:</strong> Use BLUF (Bottom Line Up Front) to give the answer immediately.</li>
+                    <li><strong>Sourcing:</strong> Always cite the sources used to build the answer.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('RFI')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 12. Requests for Information - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

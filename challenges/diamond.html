@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Model Reconstruction - FIAC Challenge</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .challenge-box {
+            background: var(--dark-grey);
+            padding: 25px;
+            border: 1px solid var(--lavender-medium);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 800px;
+            text-align: left;
+        }
+        .diamond-layout {
+            display: grid;
+            grid-template-areas: 
+                ". adversary ."
+                "infrastructure . capability"
+                ". victim .";
+            gap: 20px;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(230, 230, 250, 0.05);
+            border-radius: 8px;
+            border: 1px dashed var(--medium-grey);
+        }
+        .vertex {
+            padding: 15px;
+            background: var(--black);
+            border: 1px solid var(--lavender-medium);
+            border-radius: 4px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .vertex label {
+            font-weight: bold;
+            color: var(--lavender);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        .vertex select {
+            padding: 8px;
+            background: var(--dark-grey);
+            color: var(--lavender);
+            border: 1px solid var(--medium-grey);
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        .adversary { grid-area: adversary; }
+        .capability { grid-area: capability; }
+        .infrastructure { grid-area: infrastructure; }
+        .victim { grid-area: victim; }
+
+        .artifacts-list {
+            background: var(--black);
+            padding: 15px;
+            border: 1px solid var(--medium-grey);
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .artifacts-list h3 { font-size: 1rem; margin-bottom: 10px; color: var(--lavender-medium); }
+        .artifacts-list p { font-size: 0.9rem; margin-bottom: 5px; color: var(--light-grey); }
+
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        .feedback.correct { background: rgba(76, 175, 80, 0.2); border: 1px solid #4caf50; color: #a5d6a7; }
+        .feedback.incorrect { background: rgba(244, 67, 54, 0.2); border: 1px solid #f44336; color: #ef9a9a; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Diamond Model Reconstruction</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="challenge-box">
+                <h2>Reconstruct the Event</h2>
+                <span class="ksa-tag">DCWF Alignment: KSA 3582</span>
+                <div class="artifacts-list">
+                    <h3>Incident Details:</h3>
+                    <p>Analysis reveals that <strong>APT29 (Cozy Bear)</strong> targeted the <strong>Department of Defense (DoD)</strong> by hosting a malicious ZIP file on <strong>GitHub.com</strong>. The ZIP file contained a <strong>custom .NET backdoor</strong> designed to exfiltrate documents via HTTP/S.</p>
+                </div>
+
+                <div class="diamond-layout">
+                    <div class="vertex adversary">
+                        <label>Adversary</label>
+                        <select id="advSelect">
+                            <option value="">-- Select --</option>
+                            <option value="apt29">APT29 (Cozy Bear)</option>
+                            <option value="dod">Department of Defense</option>
+                            <option value="github">GitHub.com</option>
+                            <option value="net_backdoor">Custom .NET Backdoor</option>
+                        </select>
+                    </div>
+
+                    <div class="vertex capability">
+                        <label>Capability</label>
+                        <select id="capSelect">
+                            <option value="">-- Select --</option>
+                            <option value="apt29">APT29 (Cozy Bear)</option>
+                            <option value="dod">Department of Defense</option>
+                            <option value="github">GitHub.com</option>
+                            <option value="net_backdoor">Custom .NET Backdoor</option>
+                        </select>
+                    </div>
+
+                    <div class="vertex infrastructure">
+                        <label>Infrastructure</label>
+                        <select id="infraSelect">
+                            <option value="">-- Select --</option>
+                            <option value="apt29">APT29 (Cozy Bear)</option>
+                            <option value="dod">Department of Defense</option>
+                            <option value="github">GitHub.com</option>
+                            <option value="net_backdoor">Custom .NET Backdoor</option>
+                        </select>
+                    </div>
+
+                    <div class="vertex victim">
+                        <label>Victim</label>
+                        <select id="victimSelect">
+                            <option value="">-- Select --</option>
+                            <option value="apt29">APT29 (Cozy Bear)</option>
+                            <option value="dod">Department of Defense</option>
+                            <option value="github">GitHub.com</option>
+                            <option value="net_backdoor">Custom .NET Backdoor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn" style="margin-top: 25px;" onclick="checkDiamond()">Verify Diamond Model</button>
+
+                <div id="feedbackBox" class="feedback"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Diamond Model Reconstruction - FIAC Challenge | <a href="../index.html" style="color: var(--lavender-medium); text-decoration: none;">&larr; Back to Dashboard</a></p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script>
+        function checkDiamond() {
+            const adv = document.getElementById('advSelect').value;
+            const cap = document.getElementById('capSelect').value;
+            const infra = document.getElementById('infraSelect').value;
+            const vic = document.getElementById('victimSelect').value;
+            const feedbackBox = document.getElementById('feedbackBox');
+
+            feedbackBox.style.display = 'block';
+
+            if (adv === 'apt29' && cap === 'net_backdoor' && infra === 'github' && vic === 'dod') {
+                feedbackBox.className = "feedback correct";
+                feedbackBox.innerHTML = `<strong>Correct!</strong> You have successfully reconstructed the Diamond Model for this incident.`;
+                if (typeof markCompleted === 'function') {
+                    markCompleted('diamond');
+                }
+            } else {
+                feedbackBox.className = "feedback incorrect";
+                feedbackBox.innerHTML = `<strong>Incorrect.</strong> One or more vertices are placed incorrectly. Remember: Adversary is <em>who</em>, Capability is <em>how/tools</em>, Infrastructure is <em>where/hosting</em>, and Victim is the target.`;
+            }
+        }
+    </script>
+</body>
+</html>

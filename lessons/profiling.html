@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. Threat Actors & Profiling - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Threat Actors & Profiling</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Who is Targeting Us?</h2>
+                <p>A threat actor is an individual or group that performs malicious activities in cyberspace. Understanding <strong>who</strong> is behind an attack is key to predicting their next move.</p>
+                <p>Profiling involves identifying an actor's motivations, capabilities, and intent.</p>
+                <span class="ksa-tag">DCWF Alignment: KSA 3504 | Task: 2434</span>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Types of Threat Actors</h2>
+                <ul>
+                    <li><strong>Nation-State (APT):</strong> Highly skilled, well-funded groups working for a government. Focus on espionage or sabotage.</li>
+                    <li><strong>Cybercriminals:</strong> Motivated by financial gain. Often use ransomware or phishing.</li>
+                    <li><strong>Hacktivists:</strong> Motivated by political or social causes. Often use DDoS or website defacement.</li>
+                    <li><strong>Insider Threats:</strong> Employees or contractors with authorized access who cause harm (intentional or not).</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Adversary Profiling</h2>
+                <p>Profiling helps defenders answer critical questions:</p>
+                <ul>
+                    <li>What are their primary targets?</li>
+                    <li>What tools and malware do they prefer?</li>
+                    <li>How sophisticated are their operations?</li>
+                    <li>What is their typical attack pattern (TTPs)?</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Profiling')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 6. Threat Actors & Profiling - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

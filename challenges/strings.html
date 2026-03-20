@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings Analysis - FIAC Challenge</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .challenge-box {
+            background: var(--dark-grey);
+            padding: 25px;
+            border: 1px solid var(--lavender-medium);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 800px;
+            text-align: left;
+        }
+        .download-area {
+            background: var(--black);
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid var(--medium-grey);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .text-area {
+            width: 100%;
+            height: 150px;
+            background: var(--black);
+            color: var(--lavender);
+            border: 1px solid var(--medium-grey);
+            border-radius: 4px;
+            padding: 10px;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            overflow-y: auto;
+        }
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+            max-height: 250px;
+            overflow-y: auto;
+            border: 1px solid var(--lavender-medium);
+            background: rgba(230, 230, 250, 0.05);
+        }
+        .artifact-list {
+            list-style: none;
+            padding: 0;
+        }
+        .artifact-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--medium-grey);
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+        .artifact-category {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--lavender-medium);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .validation-step {
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--black);
+            border-radius: 4px;
+            border-left: 4px solid var(--lavender-medium);
+            display: none;
+        }
+        .input-group {
+            margin-top: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--lavender);
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background: var(--dark-grey);
+            border: 1px solid var(--medium-grey);
+            color: var(--lavender);
+            border-radius: 4px;
+            font-family: var(--font-mono);
+        }
+        .feedback {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 4px;
+            display: none;
+        }
+        .feedback.correct { background: rgba(76, 175, 80, 0.2); border: 1px solid #4caf50; color: #a5d6a7; }
+        .feedback.incorrect { background: rgba(244, 67, 54, 0.2); border: 1px solid #f44336; color: #ef9a9a; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Strings Analysis Challenge</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="challenge-box">
+                <h2>Challenge: Extract & Identify Artifacts</h2>
+                <span class="ksa-tag">DCWF Alignment: KSA 3298</span>
+                
+                <p style="margin-bottom: 15px;">Analyze the recovered file to find the command-and-control (C2) domain.</p>
+
+                <div class="download-area">
+                    <span>Target File: <code>sample_malware.txt</code></span>
+                    <a href="../data/sample_malware.txt" download class="btn" style="font-size: 0.8rem; padding: 5px 15px;">Download File</a>
+                </div>
+                
+                <textarea class="text-area" id="binaryContent" placeholder="Paste file contents here to run the extractor..."></textarea>
+
+                <button class="btn" onclick="analyzeStrings()">Run Extractor</button>
+
+                <div id="resultBox" class="result-box">
+                    <h3>Extractor Results</h3>
+                    <ul id="artifactList" class="artifact-list"></ul>
+                </div>
+
+                <!-- Step 2: Validation -->
+                <div id="validationStep" class="validation-step">
+                    <h3>Verification Objective</h3>
+                    <p>Based on the strings extracted above, identify the <strong>malicious domain</strong> used for C2 updates.</p>
+                    
+                    <div class="input-group">
+                        <label for="domainInput">Enter the C2 Domain:</label>
+                        <input type="text" id="domainInput" placeholder="example.com">
+                    </div>
+                    <button class="btn" style="margin-top: 15px;" onclick="validateDomain()">Verify Domain</button>
+                    <div id="validationFeedback" class="feedback"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Strings Analysis - FIAC Challenge | <a href="../index.html" style="color: var(--lavender-medium); text-decoration: none;">&larr; Back to Dashboard</a></p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script>
+        const CORRECT_DOMAIN = "cdn-updates.net";
+
+        function analyzeStrings() {
+            const content = document.getElementById('binaryContent').value;
+            const resultBox = document.getElementById('resultBox');
+            const artifactList = document.getElementById('artifactList');
+            const validationStep = document.getElementById('validationStep');
+
+            if (!content.trim()) return;
+
+            // Regex patterns
+            const ipRegex = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g;
+            const urlRegex = /https?:\/\/([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}/gi;
+            const pathRegex = /\b[A-Z]:\\[^ \n\r\t]+\b/g;
+
+            const artifacts = [];
+            
+            let match;
+            while ((match = ipRegex.exec(content)) !== null) artifacts.push({cat: 'IP', val: match[0]});
+            while ((match = urlRegex.exec(content)) !== null) artifacts.push({cat: 'URL', val: match[0]});
+            while ((match = pathRegex.exec(content)) !== null) artifacts.push({cat: 'PATH', val: match[0]});
+
+            artifactList.innerHTML = '';
+            
+            if (artifacts.length === 0) {
+                artifactList.innerHTML = '<li>No significant artifacts found. Try pasting the full file content.</li>';
+            } else {
+                // Deduplicate
+                const unique = Array.from(new Set(artifacts.map(a => JSON.stringify(a)))).map(s => JSON.parse(s));
+                
+                unique.forEach(art => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<span class="artifact-category">[${art.cat}]</span> ${art.val}`;
+                    artifactList.appendChild(li);
+                });
+
+                // Show validation step
+                validationStep.style.display = 'block';
+                validationStep.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            resultBox.style.display = 'block';
+        }
+
+        function validateDomain() {
+            const input = document.getElementById('domainInput').value.trim().toLowerCase();
+            const feedback = document.getElementById('validationFeedback');
+
+            feedback.style.display = 'block';
+
+            if (input === CORRECT_DOMAIN) {
+                feedback.className = "feedback correct";
+                feedback.innerHTML = "<strong>Correct!</strong> <code>cdn-updates.net</code> is the malicious domain found in the binary strings.";
+                
+                if (typeof markCompleted === 'function') {
+                    markCompleted('strings');
+                }
+
+                // Redirect to dashboard after a delay
+                setTimeout(() => {
+                    location.href = '../index.html';
+                }, 2000);
+            } else {
+                feedback.className = "feedback incorrect";
+                feedback.innerHTML = "<strong>Incorrect.</strong> Look at the extracted URLs and find the base domain.";
+            }
+        }
+    </script>
+</body>
+</html>

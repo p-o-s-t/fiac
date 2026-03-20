@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15. Adversary Emulation - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Adversary Emulation</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>What is Adversary Emulation?</h2>
+                <p><strong>Adversary Emulation</strong> is a type of security testing where defenders mimic the known TTPs of a specific threat actor to verify how well their organization can detect and respond to those specific behaviors.</p>
+                <p>Unlike traditional red teaming, which is goal-oriented (e.g., "get the domain admin"), emulation is <strong>behavior-oriented</strong>.</p>
+                <span class="ksa-tag">DCWF Alignment: Task 3460</span>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Emulation vs. Simulation</h2>
+                <p>While often used interchangeably, there is a subtle difference in a CTI context:</p>
+                <ul>
+                    <li><strong>Simulation:</strong> Creating a custom or synthetic "threat-like" behavior to test a control.</li>
+                    <li><strong>Emulation:</strong> Following a specific "recipe" or playbook derived directly from CTI reports about a real-world actor (e.g., "Emulate APT29's use of ISO files for initial access").</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Tools and Frameworks</h2>
+                <p>Adversary emulation is often performed using specialized tools mapped to the MITRE ATT&CK framework:</p>
+                <ul>
+                    <li><strong>Atomic Red Team:</strong> A library of simple, modular tests that every security team can execute to test their defenses.</li>
+                    <li><strong>CALDERA:</strong> An automated adversary emulation system that allows for the creation and execution of complex operation chains.</li>
+                    <li><strong>MITRE Emulation Plans:</strong> Publicly available, step-by-step guides for emulating sophisticated actors like FIN6 or APT29.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Emulation')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 15. Adversary Emulation - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

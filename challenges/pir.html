@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIR Development - FIAC Challenge</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .challenge-box {
+            background: var(--dark-grey);
+            padding: 25px;
+            border: 1px solid var(--lavender-medium);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 800px;
+            text-align: left;
+        }
+        .scenario-box {
+            background: var(--black);
+            padding: 20px;
+            border-left: 4px solid var(--lavender-medium);
+            margin-bottom: 30px;
+        }
+        .pir-builder {
+            background: rgba(230, 230, 250, 0.05);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px dashed var(--medium-grey);
+            line-height: 2.5;
+            font-size: 1.1rem;
+        }
+        .pir-builder select {
+            padding: 5px 10px;
+            background: var(--black);
+            color: var(--lavender-medium);
+            border: 1px solid var(--medium-grey);
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        .feedback.correct { background: rgba(76, 175, 80, 0.2); border: 1px solid #4caf50; color: #a5d6a7; }
+        .feedback.incorrect { background: rgba(244, 67, 54, 0.2); border: 1px solid #f44336; color: #ef9a9a; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: PIR Development</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="challenge-box">
+                <h2>Challenge: Healthcare Sector PIR</h2>
+                <span class="ksa-tag">DCWF Alignment: Task 2288</span>
+                
+                <div class="scenario-box">
+                    <strong>Scenario:</strong> You are the lead CTI analyst for a large hospital network. Following a recent surge in ransomware attacks against medical facilities, your Chief Information Security Officer (CISO) needs to know which specific threat groups are targeting patient health records and medical IoT devices in your region.
+                </div>
+
+                <p style="margin-bottom: 15px;">Construct the most effective PIR by selecting the correct components below:</p>
+
+                <div class="pir-builder">
+                    Which 
+                    <select id="subject">
+                        <option value="">-- Select Subject --</option>
+                        <option value="employees">IT employees</option>
+                        <option value="threat_groups">threat groups</option>
+                        <option value="software_vendors">software vendors</option>
+                    </select>
+                    are currently 
+                    <select id="action">
+                        <option value="">-- Select Action --</option>
+                        <option value="hiring">hiring new staff</option>
+                        <option value="targeting">targeting</option>
+                        <option value="patching">patching</option>
+                    </select>
+                    our 
+                    <select id="assets">
+                        <option value="">-- Select Assets --</option>
+                        <option value="office_supplies">office supplies</option>
+                        <option value="health_records">patient health records and medical IoT</option>
+                        <option value="marketing_data">public marketing data</option>
+                    </select>
+                    within the 
+                    <select id="context">
+                        <option value="">-- Select Context --</option>
+                        <option value="global">global economy</option>
+                        <option value="healthcare">healthcare sector in our region</option>
+                        <option value="education">education sector</option>
+                    </select>
+                    ?
+                </div>
+
+                <button class="btn" style="margin-top: 25px;" onclick="checkPIR()">Verify Requirement</button>
+
+                <div id="feedbackBox" class="feedback"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 PIR Development - FIAC Challenge</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script>
+        function checkPIR() {
+            const subject = document.getElementById('subject').value;
+            const action = document.getElementById('action').value;
+            const assets = document.getElementById('assets').value;
+            const context = document.getElementById('context').value;
+            const feedbackBox = document.getElementById('feedbackBox');
+
+            feedbackBox.style.display = 'block';
+
+            if (subject === 'threat_groups' && action === 'targeting' && assets === 'health_records' && context === 'healthcare') {
+                feedbackBox.className = "feedback correct";
+                feedbackBox.innerHTML = "<strong>Correct!</strong> This PIR is specific, actionable, and directly addresses the decision-maker's concerns in the healthcare sector.";
+                
+                if (typeof markCompleted === 'function') {
+                    markCompleted('pir');
+                }
+            } else {
+                feedbackBox.className = "feedback incorrect";
+                feedbackBox.innerHTML = "<strong>Incorrect.</strong> Review the scenario again. The PIR should focus on the specific threats, actions, and assets mentioned by the CISO.";
+            }
+        }
+    </script>
+</body>
+</html>

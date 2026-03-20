@@ -1,0 +1,338 @@
+[
+    {
+        "topic": "Fundamentals",
+        "question": "What does the 'T' in CTI stand for?",
+        "options": ["Technical", "Threat", "Tactical", "Target"],
+        "answer": 1
+    },
+    {
+        "topic": "Fundamentals",
+        "question": "Which type of intelligence is focused on high-level decision makers?",
+        "options": ["Tactical", "Operational", "Strategic", "Technical"],
+        "answer": 2
+    },
+    {
+        "topic": "Fundamentals",
+        "question": "What is the primary goal of CTI?",
+        "options": ["To catch every hacker", "To provide evidence-based knowledge for decision-making", "To replace antivirus software", "To write code"],
+        "answer": 1
+    },
+    {
+        "topic": "Fundamentals",
+        "question": "Which type of intelligence describes specific tools and techniques used by an actor?",
+        "options": ["Strategic", "Tactical", "Financial", "Personnel"],
+        "answer": 1
+    },
+    {
+        "topic": "Lifecycle",
+        "question": "Which phase involves gathering raw data from various sources?",
+        "options": ["Planning", "Collection", "Processing", "Analysis"],
+        "answer": 1
+    },
+    {
+        "topic": "Lifecycle",
+        "question": "What is the final phase of the Intelligence Lifecycle?",
+        "options": ["Analysis", "Dissemination", "Collection", "Feedback"],
+        "answer": 1
+    },
+    {
+        "topic": "Lifecycle",
+        "question": "Which phase involves turning raw data into a usable format (e.g., translation, normalization)?",
+        "options": ["Collection", "Processing", "Analysis", "Direction"],
+        "answer": 1
+    },
+    {
+        "topic": "Lifecycle",
+        "question": "What is the result of a successful 'Analysis' phase?",
+        "options": ["Raw data", "Finished Intelligence", "More questions", "An encrypted file"],
+        "answer": 1
+    },
+    {
+        "topic": "Cyberspace",
+        "question": "Which of these is considered a unique property of the cyber domain?",
+        "options": ["Physical boundaries", "Low cost of entry", "Slow speed of attacks", "Easy attribution"],
+        "answer": 1
+    },
+    {
+        "topic": "Cyberspace",
+        "question": "Attribution (identifying the actor) in cyberspace is generally considered:",
+        "options": ["Instant and easy", "Difficult and time-consuming", "Illegal", "Unnecessary"],
+        "answer": 1
+    },
+    {
+        "topic": "Cyberspace",
+        "question": "The domain of cyberspace is unique because it is:",
+        "options": ["Naturally occurring", "Man-made", "Infinitely large", "Only in the USA"],
+        "answer": 1
+    },
+    {
+        "topic": "Frameworks",
+        "question": "The MITRE ATT&CK framework primarily focuses on:",
+        "options": ["Adversary motivations", "Adversary TTPs", "Victim vulnerabilities", "Legal prosecution"],
+        "answer": 1
+    },
+    {
+        "topic": "Frameworks",
+        "question": "Which framework is best for analyzing the relationship between an adversary and a victim?",
+        "options": ["Cyber Kill Chain", "Diamond Model", "MITRE ATT&CK", "CVSS"],
+        "answer": 1
+    },
+    {
+        "topic": "Frameworks",
+        "question": "How many stages are in the standard Lockheed Martin Cyber Kill Chain?",
+        "options": ["5", "7", "10", "12"],
+        "answer": 1
+    },
+    {
+        "topic": "Frameworks",
+        "question": "In the Diamond Model, what vertex represents the systems or tools used by the actor?",
+        "options": ["Victim", "Capability", "Infrastructure", "Adversary"],
+        "answer": 2
+    },
+    {
+        "topic": "Requirements",
+        "question": "What does PIR stand for in CTI?",
+        "options": ["Primary Incident Response", "Priority Intelligence Requirement", "Public Intelligence Record", "Private Information Retrieval"],
+        "answer": 1
+    },
+    {
+        "topic": "Requirements",
+        "question": "Who should ideally drive the creation of Priority Intelligence Requirements (PIRs)?",
+        "options": ["Junior Analysts", "Decision-makers and Stakeholders", "The IT Helpdesk", "Software Developers"],
+        "answer": 1
+    },
+    {
+        "topic": "Requirements",
+        "question": "Specific Intelligence Requirements (SIRs) are typically derived from:",
+        "options": ["The news", "PIRs", "Antivirus logs", "Twitter"],
+        "answer": 1
+    },
+    {
+        "topic": "Profiling",
+        "question": "Which type of actor is primarily motivated by political change?",
+        "options": ["Cybercriminal", "Hacktivist", "Script Kiddie", "Insider Threat"],
+        "answer": 1
+    },
+    {
+        "topic": "Profiling",
+        "question": "What does APT stand for?",
+        "options": ["Advanced Persistent Threat", "Automated Private Tool", "Always Present Tracker", "Active Profile Target"],
+        "answer": 0
+    },
+    {
+        "topic": "Profiling",
+        "question": "An 'Insider Threat' is defined as someone who:",
+        "options": ["Is a skilled hacker", "Has authorized access to the organization", "Works for a competitor", "Only attacks on weekends"],
+        "answer": 1
+    },
+    {
+        "topic": "Attack Surface",
+        "question": "What is the 'external attack surface'?",
+        "options": ["Internal servers", "Everything an outsider can see and attack", "Physical security guards", "The CEO's home network"],
+        "answer": 1
+    },
+    {
+        "topic": "Attack Surface",
+        "question": "OSINT stands for:",
+        "options": ["Open Source Intelligence", "Operating System Internal Network", "Official Secure Intelligence Network", "On-Site Integrated Node"],
+        "answer": 0
+    },
+    {
+        "topic": "Attack Surface",
+        "question": "Monitoring an organization's attack surface should be:",
+        "options": ["A one-time event", "A continuous process", "Done only after a breach", "Outsourced to a law firm"],
+        "answer": 1
+    },
+    {
+        "topic": "Malware",
+        "question": "Executing malware in a sandbox is an example of:",
+        "options": ["Static Analysis", "Dynamic Analysis", "Reverse Engineering", "Social Engineering"],
+        "answer": 1
+    },
+    {
+        "topic": "Malware",
+        "question": "Extracting text strings from a binary file without running it is:",
+        "options": ["Dynamic Analysis", "Static Analysis", "Fuzzing", "Scanning"],
+        "answer": 1
+    },
+    {
+        "topic": "Malware",
+        "question": "What is the primary use of a 'hash' (e.g., SHA-256) in malware analysis?",
+        "options": ["To encrypt the malware", "To uniquely identify a file", "To bypass antivirus", "To speed up the computer"],
+        "answer": 1
+    },
+    {
+        "topic": "Landscape",
+        "question": "A 'Zero-Day' vulnerability is one that:",
+        "options": ["Is 0 days old", "Has no known patch", "Is easy to fix", "Was discovered by the vendor"],
+        "answer": 1
+    },
+    {
+        "topic": "Landscape",
+        "question": "RaaS stands for:",
+        "options": ["Reporting as a Service", "Ransomware-as-a-Service", "Remote access as a Service", "Red-teaming as a Service"],
+        "answer": 1
+    },
+    {
+        "topic": "Landscape",
+        "question": "A 'Supply Chain Attack' targets:",
+        "options": ["Single users", "A vendor to reach their customers", "Physical shipping trucks", "Internet Service Providers"],
+        "answer": 1
+    },
+    {
+        "topic": "Data Marking",
+        "question": "Under TLP:AMBER, who can you share the information with?",
+        "options": ["The public", "Anyone in your sector", "Your organization and its clients", "Recipients only"],
+        "answer": 2
+    },
+    {
+        "topic": "Data Marking",
+        "question": "TLP:RED information can be shared with:",
+        "options": ["Your team members", "Recipients only", "The entire industry", "Your family"],
+        "answer": 1
+    },
+    {
+        "topic": "Data Marking",
+        "question": "The 'Permissible Actions Protocol' (PAP) focuses on:",
+        "options": ["Who can see data", "What you can do with the data", "Where the data is stored", "How long data is kept"],
+        "answer": 1
+    },
+    {
+        "topic": "Communication",
+        "question": "BLUF in report writing stands for:",
+        "options": ["Bottom Line Up Front", "Basic Logic Unit Format", "Brief List Under Findings", "Better Look Until Finished"],
+        "answer": 0
+    },
+    {
+        "topic": "Communication",
+        "question": "Why is 'estimative language' (e.g., 'highly likely') used in intelligence reports?",
+        "options": ["To confuse the reader", "To express levels of confidence based on evidence", "To avoid taking responsibility", "Because analysts aren't sure"],
+        "answer": 1
+    },
+    {
+        "topic": "Communication",
+        "question": "Objective reporting should primarily avoid:",
+        "options": ["Technical terms", "Bias and unsupported assumptions", "Short sentences", "Numbered lists"],
+        "answer": 1
+    },
+    {
+        "topic": "RFI",
+        "question": "What does RFI stand for in an intelligence context?",
+        "options": ["Reason for Investigation", "Request for Information", "Report for Intelligence", "Requirement for Integration"],
+        "answer": 1
+    },
+    {
+        "topic": "RFI",
+        "question": "What is the primary purpose of an RFI?",
+        "options": ["To assign blame", "To bridge an intelligence gap", "To request a budget increase", "To install new software"],
+        "answer": 1
+    },
+    {
+        "topic": "RFI",
+        "question": "A good RFI should be:",
+        "options": ["Broad and vague", "Specific, actionable, and time-bound", "At least 10 pages long", "Confidential from everyone"],
+        "answer": 1
+    },
+    {
+        "topic": "RFI",
+        "question": "When answering an RFI, why is timeliness critical?",
+        "options": ["To show you are working hard", "To ensure the info is available before a decision is made", "To avoid extra paperwork", "To fill up your schedule"],
+        "answer": 1
+    },
+    {
+        "topic": "COA",
+        "question": "What does MLCOA stand for in Course of Action development?",
+        "options": ["Minimum Level Cyber Operations Area", "Most Likely Course of Action", "Main Logical Connection of Adversaries", "Major Loss of Core Assets"],
+        "answer": 1
+    },
+    {
+        "topic": "COA",
+        "question": "Which COA describes the adversary behavior that would cause the most significant impact?",
+        "options": ["MLCOA", "MDCOA", "Tactical COA", "Strategic COA"],
+        "answer": 1
+    },
+    {
+        "topic": "COA",
+        "question": "Why is 'Time-Left-To-Act' an important indicator for COA development?",
+        "options": ["To track analyst overtime", "To define the response window for defenders", "To measure computer processing speed", "To schedule lunch breaks"],
+        "answer": 1
+    },
+    {
+        "topic": "COA",
+        "question": "The primary goal of COA development is to:",
+        "options": ["Choose the cheapest software", "Predict adversary behavior and recommend responses", "Write complex code", "Ignore low-level threats"],
+        "answer": 1
+    },
+    {
+        "topic": "Tracking",
+        "question": "What is 'Activity Group clustering'?",
+        "options": ["Installing updates on multiple PCs", "Grouping related malicious events to identify a single actor", "Organizing files by date", "Creating a list of employee passwords"],
+        "answer": 1
+    },
+    {
+        "topic": "Tracking",
+        "question": "In the context of the Diamond Model, what is 'threading'?",
+        "options": ["Repairing a physical network cable", "Connecting multiple Diamond Models to show activity evolution", "Running a multi-threaded CPU process", "Securing a database connection"],
+        "answer": 1
+    },
+    {
+        "topic": "Tracking",
+        "question": "The 'Rule of Two' in activity clustering suggests an observation is part of a cluster if it shares:",
+        "options": ["At least two common IP addresses", "Two unique, high-confidence artifacts or TTPs", "Two different file extensions", "Two login attempts"],
+        "answer": 1
+    },
+    {
+        "topic": "Tracking",
+        "question": "Why is the Rule of Two important for attribution?",
+        "options": ["It makes the report twice as long", "It reduces the risk of misattribution from spoofed indicators", "It requires two analysts to agree", "It only applies to two-person teams"],
+        "answer": 1
+    },
+    {
+        "topic": "Emulation",
+        "question": "What is the primary focus of Adversary Emulation?",
+        "options": ["Getting domain admin access", "Mimicking real-world threat actor behaviors/TTPs", "Installing the latest firewall", "Hiring more employees"],
+        "answer": 1
+    },
+    {
+        "topic": "Emulation",
+        "question": "Which tool provides a library of simple, modular tests mapped to MITRE ATT&CK?",
+        "options": ["Atomic Red Team", "Wireshark", "Microsoft Word", "Notepad++"],
+        "answer": 0
+    },
+    {
+        "topic": "Emulation",
+        "question": "What is the key difference between Emulation and traditional Red Teaming?",
+        "options": ["Emulation is behavior-oriented, while Red Teaming is goal-oriented", "Red Teaming is only for large companies", "Emulation is always illegal", "There is no difference"],
+        "answer": 0
+    },
+    {
+        "topic": "Emulation",
+        "question": "CALDERA is an example of an:",
+        "options": ["Automated adversary emulation system", "Operating system", "Encryption algorithm", "External hard drive"],
+        "answer": 0
+    },
+    {
+        "topic": "Data Management",
+        "question": "What is the primary purpose of a Threat Intelligence Platform (TIP)?",
+        "options": ["To replace analysts with AI", "To aggregate, correlate, and analyze threat data from multiple sources", "To host public websites", "To manage employee payroll"],
+        "answer": 1
+    },
+    {
+        "topic": "Data Management",
+        "question": "Which of these is an example of an INTERNAL data source?",
+        "options": ["Twitter/X threat feeds", "SIEM logs and EDR telemetry", "Industry ISAC bulletins", "Commercial threat reports"],
+        "answer": 1
+    },
+    {
+        "topic": "Data Management",
+        "question": "What is a 'Collection Framework' used for?",
+        "options": ["Mapping data sources back to intelligence requirements", "Organizing office furniture", "Scheduling analyst vacations", "Collecting physical mail"],
+        "answer": 0
+    },
+    {
+        "topic": "Data Management",
+        "question": "Which open-source project is a popular Threat Intelligence Platform?",
+        "options": ["MISP", "Microsoft Excel", "Google Chrome", "Adobe Acrobat"],
+        "answer": 0
+    }
+]

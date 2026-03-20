@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14. Tracking & Attribution - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Tracking & Attribution</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Activity Group Clustering</h2>
+                <p>Tracking involves grouping related malicious events into <strong>Activity Groups</strong>. Analysts look for shared characteristics across different campaigns to identify a single actor.</p>
+                <p>By clustering data, we can move from seeing isolated incidents to understanding a persistent threat actor's lifecycle.</p>
+                <span class="ksa-tag">DCWF Alignment: Task 2593</span>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Diamond Model Threading</h2>
+                <p><strong>Threading</strong> is the process of connecting multiple Diamond Models to show how an adversary's activity evolves over time.</p>
+                <ul>
+                    <li><strong>Activity Threads:</strong> Linking events where the same infrastructure or capability is used against different victims.</li>
+                    <li><strong>Pivoting:</strong> Using an artifact from one vertex (e.g., a malware sample) to discover a new vertex (e.g., a C2 server).</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>The Rule of Two</h2>
+                <p>When clustering activity, the <strong>Rule of Two</strong> is a common analytical standard:</p>
+                <p>An observation is considered part of a specific activity cluster if it shares at least <strong>two unique, high-confidence artifacts or TTPs</strong> with that cluster.</p>
+                <ul>
+                    <li>Example: Using the same custom backdoor AND the same unique C2 registration email.</li>
+                    <li>This reduces the risk of misattribution based on a single, easily spoofed indicator.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Tracking')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 14. Tracking & Attribution - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

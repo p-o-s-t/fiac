@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. Intelligence Requirements - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Intelligence Requirements</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>What is a Requirement?</h2>
+                <p>Intelligence begins with a question. A requirement is a statement of information needed by a decision-maker to reduce uncertainty.</p>
+                <p>Without clear requirements, an intelligence team can quickly become overwhelmed by data and lose focus on what matters most.</p>
+                <span class="ksa-tag">DCWF Alignment: KSA 3019 | Task: 2446</span>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Priority Intelligence Requirements (PIRs)</h2>
+                <p><strong>PIRs</strong> are the most critical questions facing an organization. They are often high-level and drive the entire collection process.</p>
+                <p>Example: "What threat actors are currently targeting the financial sector in our region?"</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Specific Intelligence Requirements (SIRs)</h2>
+                <p><strong>SIRs</strong> break down PIRs into smaller, more manageable questions that can be answered through collection and analysis.</p>
+                <p>Example: "What malware families are associated with the APT groups identified in our PIR?"</p>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Requirements')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 5. Intelligence Requirements - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

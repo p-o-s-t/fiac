@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13. Course of Action Development - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Course of Action Development</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>What is COA Development?</h2>
+                <p><strong>Course of Action (COA)</strong> development involves predicting an adversary's future behavior and developing defensive strategies to counter those moves.</p>
+                <p>Intelligence analysts help decision-makers choose the best path forward based on threat assessments.</p>
+                <span class="ksa-tag">DCWF Alignment: Task 2059</span>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Predicting Adversary Paths</h2>
+                <p>Analysts typically identify two primary paths an adversary might take:</p>
+                <ul>
+                    <li><strong>Most Likely COA (MLCOA):</strong> The behavior the adversary is most likely to exhibit based on their history, TTPs, and current situation.</li>
+                    <li><strong>Most Dangerous COA (MDCOA):</strong> The behavior that would cause the most significant impact or damage to the organization, even if it is less likely.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Time-Based Predictions</h2>
+                <p>Predictions are more valuable when they include a temporal component. Analysts use "Time-Left-To-Act" indicators:</p>
+                <ul>
+                    <li><strong>Early Warning:</strong> Identifying the first signs of preparation (e.g., domain registration).</li>
+                    <li><strong>Imminence:</strong> Recognizing indicators that an attack is about to happen (e.g., increased scanning).</li>
+                    <li><strong>Response Window:</strong> Defining the amount of time defenders have to implement a counter-COA.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('COA')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 13. Course of Action Development - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>
