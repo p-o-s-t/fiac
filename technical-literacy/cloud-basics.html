@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Computing - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Cloud Computing</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Service Models</h2>
+                <p>Cloud computing services are categorized into three primary models:</p>
+                <ul>
+                    <li><strong>IaaS (Infrastructure as a Service):</strong> Provides virtualized computing resources (servers, storage, networks). Examples: AWS EC2, Azure VMs.</li>
+                    <li><strong>PaaS (Platform as a Service):</strong> Provides a platform for developers to build and deploy applications without managing underlying infrastructure. Examples: Google App Engine, Heroku.</li>
+                    <li><strong>SaaS (Software as a Service):</strong> Delivers software applications over the internet. Examples: Office 365, Salesforce, Gmail.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Deployment Models</h2>
+                <p>Cloud services can be deployed in different environments:</p>
+                <ul>
+                    <li><strong>Public Cloud:</strong> Services are delivered over the public internet and shared across organizations. Examples: AWS, Azure, GCP.</li>
+                    <li><strong>Private Cloud:</strong> Dedicated to a single organization, often managed internally or by a third party.</li>
+                    <li><strong>Hybrid Cloud:</strong> A combination of public and private clouds, allowing data and applications to be shared between them.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Shared Responsibility Model</h2>
+                <p>A critical concept in cloud security: Who is responsible for what?</p>
+                <ul>
+                    <li><strong>Cloud Provider:</strong> Responsible for the security <strong>OF</strong> the cloud (hardware, global infrastructure).</li>
+                    <li><strong>Customer:</strong> Responsible for security <strong>IN</strong> the cloud (customer data, identity/access management, platform/OS configuration).</li>
+                </ul>
+                <p>Misconfigurations in the customer's area of responsibility are a leading cause of cloud data breaches.</p>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Cloud')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="lesson-metadata">
+                <span class="ksa-tag">DCWF Alignment: KSA 0170</span>
+                <span class="ref-tag">Reference: NIST SP 800-145</span>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Cloud Computing - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

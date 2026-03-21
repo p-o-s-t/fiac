@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking Fundamentals - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Networking Fundamentals</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>The OSI Model</h2>
+                <p>The <strong>OSI (Open Systems Interconnection)</strong> model breaks network communication into seven layers. Understanding these is essential for locating where an attack is occurring:</p>
+                <ul>
+                    <li><strong>7. Application:</strong> Interface for users/apps (HTTP, FTP).</li>
+                    <li><strong>6. Presentation:</strong> Data formatting and encryption (SSL/TLS).</li>
+                    <li><strong>5. Session:</strong> Managing connections (NetBIOS).</li>
+                    <li><strong>4. Transport:</strong> End-to-end communication (TCP, UDP).</li>
+                    <li><strong>3. Network:</strong> Logical addressing and routing (IP, ICMP).</li>
+                    <li><strong>2. Data Link:</strong> Physical addressing (MAC addresses, ARP).</li>
+                    <li><strong>1. Physical:</strong> The actual hardware (cables, hubs).</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>TCP vs UDP</h2>
+                <p>At the Transport Layer, two protocols dominate how data is moved:</p>
+                <ul>
+                    <li><strong>TCP (Transmission Control Protocol):</strong> Connection-oriented, ensuring reliable data delivery. Used by HTTP, SSH, and SMTP. It uses a <em>three-way handshake</em> (SYN, SYN-ACK, ACK).</li>
+                    <li><strong>UDP (User Datagram Protocol):</strong> Connectionless and fast, with no guarantee of delivery. Used by DNS, DHCP, and media streaming.</li>
+                </ul>
+                <p>CTI analysts monitor for unusual volumes of either protocol to identify scanning or exfiltration.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Common Ports</h2>
+                <p>Network services use standard <strong>ports</strong>. Analysts look for communication on these ports to identify active services:</p>
+                <ul>
+                    <li><strong>22 (SSH):</strong> Secure Shell, used for remote access.</li>
+                    <li><strong>80 (HTTP):</strong> Web traffic, often used by malware for C2 (Command and Control).</li>
+                    <li><strong>443 (HTTPS):</strong> Encrypted web traffic, harder to inspect.</li>
+                    <li><strong>3389 (RDP):</strong> Remote Desktop Protocol, a common target for brute-force and initial access.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>DNS and CTI</h2>
+                <p>The <strong>Domain Name System (DNS)</strong> translates human-readable domain names (example.com) into IP addresses (93.184.216.34).</p>
+                <p>DNS is a goldmine for CTI:</p>
+                <ul>
+                    <li><strong>DGA (Domain Generation Algorithms):</strong> Used by malware to generate thousands of domains for C2.</li>
+                    <li><strong>Fast Flux:</strong> A technique where multiple IP addresses are assigned to a single domain name, which change rapidly.</li>
+                    <li><strong>Passive DNS:</strong> Historic records showing which IP a domain pointed to in the past, helping track actor infrastructure.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Networking')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="lesson-metadata">
+                <span class="ksa-tag">DCWF Alignment: KSA 0001</span>
+                <span class="ref-tag">Reference: Kurose & Ross, Computer Networking</span>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Networking Fundamentals - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

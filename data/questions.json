@@ -284,7 +284,7 @@
     {
         "topic": "Tracking",
         "question": "Why is the Rule of Two important for attribution?",
-        "options": ["It makes the report twice as long", "It reduces the risk of misattribution from spoofed indicators", "It requires two analysts to agree", "It only applies to two-person teams"],
+        "options": ["It makes the report twice as long", "It reduces the risk of misattribution from spoofed indicators", "It reduces the risk of misattribution from spoofed indicators", "It requires two analysts to agree"],
         "answer": 1
     },
     {
@@ -334,5 +334,329 @@
         "question": "Which open-source project is a popular Threat Intelligence Platform?",
         "options": ["MISP", "Microsoft Excel", "Google Chrome", "Adobe Acrobat"],
         "answer": 0
+    },
+    {
+        "topic": "IOCs",
+        "question": "What is an Indicator of Compromise (IoC)?",
+        "options": ["A legal document", "An artifact indicating a computer intrusion", "A hardware component", "A type of programming language"],
+        "answer": 1
+    },
+    {
+        "topic": "IOCs",
+        "question": "Which of these is an example of an ATOMIC indicator?",
+        "options": ["An IP Address", "A File Hash", "A JA3 Fingerprint", "A PowerShell execution pattern"],
+        "answer": 0
+    },
+    {
+        "topic": "IOCs",
+        "question": "Which type of indicator requires a mathematical function to derive?",
+        "options": ["Atomic", "Computed", "Behavioral", "Strategic"],
+        "answer": 1
+    },
+    {
+        "topic": "IOCs",
+        "question": "On the Pyramid of Pain, which type of indicator is the most difficult (painful) for an adversary to change?",
+        "options": ["IP Addresses", "Domain Names", "File Hashes", "Behavioral (TTPs)"],
+        "answer": 3
+    },
+    {
+        "topic": "IOCs",
+        "question": "A specific command-line execution pattern is considered a/an:",
+        "options": ["Atomic indicator", "Computed indicator", "Behavioral indicator", "Static indicator"],
+        "answer": 2
+    },
+    {
+        "topic": "OS",
+        "question": "What does NTFS stand for?",
+        "options": ["Network Transfer File System", "New Technology File System", "Nodes and Tables File Storage", "Normal Text File System"],
+        "answer": 1
+    },
+    {
+        "topic": "OS",
+        "question": "Which Windows component is a hierarchical database of configuration settings often used for persistence?",
+        "options": ["System32", "The Registry", "BIOS", "NTFS"],
+        "answer": 1
+    },
+    {
+        "topic": "OS",
+        "question": "What is the standard binary format for Linux executables?",
+        "options": ["PE", "ELF", "DMG", "EXE"],
+        "answer": 1
+    },
+    {
+        "topic": "Networking",
+        "question": "Which OSI layer is responsible for logical addressing and routing (IP)?",
+        "options": ["Layer 2 (Data Link)", "Layer 3 (Network)", "Layer 4 (Transport)", "Layer 7 (Application)"],
+        "answer": 1
+    },
+    {
+        "topic": "Networking",
+        "question": "Which transport protocol uses a three-way handshake to ensure reliable delivery?",
+        "options": ["UDP", "ICMP", "TCP", "HTTP"],
+        "answer": 2
+    },
+    {
+        "topic": "Networking",
+        "question": "Which port is standard for Secure Shell (SSH) remote access?",
+        "options": ["80", "443", "22", "3389"],
+        "answer": 2
+    },
+    {
+        "topic": "Networking",
+        "question": "What is 'Fast Flux' in the context of DNS?",
+        "options": ["A way to speed up the internet", "Rapidly changing the IP addresses assigned to a domain", "An encryption algorithm", "A hardware router feature"],
+        "answer": 1
+    },
+    {
+        "topic": "Triads",
+        "question": "Which part of the CIA triad ensures that data is only accessible to authorized users?",
+        "options": ["Confidentiality", "Integrity", "Availability", "Alteration"],
+        "answer": 0
+    },
+    {
+        "topic": "Triads",
+        "question": "What is the direct opposite of Integrity in the DAD triad?",
+        "options": ["Disclosure", "Alteration", "Destruction", "Availability"],
+        "answer": 1
+    },
+    {
+        "topic": "Triads",
+        "question": "Which triad component is primarily impacted by a DDoS attack?",
+        "options": ["Confidentiality", "Integrity", "Availability", "Disclosure"],
+        "answer": 2
+    },
+    {
+        "topic": "Cloud",
+        "question": "Which cloud service model provides virtualized servers and storage (e.g., AWS EC2)?",
+        "options": ["SaaS", "PaaS", "IaaS", "DaaS"],
+        "answer": 2
+    },
+    {
+        "topic": "Cloud",
+        "question": "In the Shared Responsibility Model, who is typically responsible for security IN the cloud (e.g., customer data)?",
+        "options": ["The Cloud Provider", "The Customer", "The Government", "Internet Service Providers"],
+        "answer": 1
+    },
+    {
+        "topic": "Cloud",
+        "question": "Which deployment model combines public and private clouds?",
+        "options": ["Community Cloud", "Hybrid Cloud", "Global Cloud", "Multi-tenant Cloud"],
+        "answer": 1
+    },
+    {
+        "topic": "Cryptography",
+        "question": "Which type of encryption uses a pair of keys: one public and one private?",
+        "options": ["Symmetric", "Asymmetric", "Hashing", "Obfuscation"],
+        "answer": 1
+    },
+    {
+        "topic": "Cryptography",
+        "question": "What is the primary purpose of a cryptographic hash (e.g., SHA-256)?",
+        "options": ["Encryption", "Integrity", "Compression", "Authentication"],
+        "answer": 1
+    },
+    {
+        "topic": "Cryptography",
+        "question": "JA4 fingerprinting is used to identify software by analyzing which type of traffic?",
+        "options": ["HTTP", "SSH", "TLS negotiation", "DNS"],
+        "answer": 2
+    },
+    {
+        "topic": "Policy",
+        "question": "Which phase of the Incident Response Plan (IRP) involves removing a threat from the environment?",
+        "options": ["Containment", "Eradication", "Recovery", "Identification"],
+        "answer": 1
+    },
+    {
+        "topic": "Policy",
+        "question": "Which plan ensures that essential business functions can continue during and after a disaster?",
+        "options": ["IRP", "BCP", "DRP", "SOP"],
+        "answer": 1
+    },
+    {
+        "topic": "Policy",
+        "question": "What does RPO (Recovery Point Objective) measure?",
+        "options": ["The time taken to restore a system", "The maximum acceptable amount of data loss", "The cost of a disaster", "The number of employees required for recovery"],
+        "answer": 1
+    },
+    {
+        "topic": "Tech",
+        "question": "Which type of firewall is designed to protect web applications from SQLi and XSS attacks?",
+        "options": ["Next-Gen Firewall (NGFW)", "Web Application Firewall (WAF)", "Host-based Firewall", "Proxy Server"],
+        "answer": 1
+    },
+    {
+        "topic": "Tech",
+        "question": "What is the primary difference between traditional Antivirus (AV) and EDR?",
+        "options": ["AV is for home use, EDR is for business", "AV is signature-based, EDR is behavior-based", "EDR is always more expensive", "AV does not require an agent"],
+        "answer": 1
+    },
+    {
+        "topic": "Tech",
+        "question": "Which security system is used to aggregate and analyze logs from across the enterprise?",
+        "options": ["IDS/IPS", "SIEM", "VPN", "Active Directory"],
+        "answer": 1
+    },
+    {
+        "topic": "Tech",
+        "question": "In XDR (Extended Detection and Response), what does the 'X' stand for?",
+        "options": ["External", "Extended", "Exclusive", "Excellent"],
+        "answer": 1
+    },
+    {
+        "topic": "Tech",
+        "question": "Which of these devices acts as an intermediary for requests, providing anonymity and content filtering?",
+        "options": ["Router", "Switch", "Proxy Server", "IDS"],
+        "answer": 2
+    },
+    {
+        "topic": "Roles",
+        "question": "Which role is responsible for monitoring security alerts and performing initial triage?",
+        "options": ["SOC Analyst", "Security Architect", "GRC Manager", "Compliance Officer"],
+        "answer": 0
+    },
+    {
+        "topic": "Roles",
+        "question": "Which specialist role reverse-engineers malicious code to understand its functionality?",
+        "options": ["Digital Forensics", "Malware Researcher", "Threat Hunter", "Security Engineer"],
+        "answer": 1
+    },
+    {
+        "topic": "Roles",
+        "question": "What does GRC stand for in a cybersecurity context?",
+        "options": ["General Risk Control", "Governance, Risk, and Compliance", "Global Response Center", "Government Rules and Codes"],
+        "answer": 1
+    },
+    {
+        "topic": "Roles",
+        "question": "Which role designs secure system architectures and ensures security is integrated into business processes?",
+        "options": ["Incident Responder", "Vulnerability Manager", "Security Architect", "SOC Tier 1"],
+        "answer": 2
+    },
+    {
+        "topic": "Roles",
+        "question": "The CTI Analyst connects different security roles primarily through:",
+        "options": ["Intelligence dissemination", "Installing hardware", "Writing legal policies", "Managing payroll"],
+        "answer": 0
+    },
+    {
+        "topic": "Vulnerabilities",
+        "question": "What does the 'E' in CVE stand for?",
+        "options": ["Exposures", "Evidence", "Encryption", "Exploitation"],
+        "answer": 0
+    },
+    {
+        "topic": "Vulnerabilities",
+        "question": "Which metric group in CVSS represents the intrinsic qualities of a vulnerability?",
+        "options": ["Temporal", "Environmental", "Base", "Operational"],
+        "answer": 2
+    },
+    {
+        "topic": "Vulnerabilities",
+        "question": "EPSS estimates the probability of a vulnerability being exploited within how many days?",
+        "options": ["7", "30", "90", "365"],
+        "answer": 1
+    },
+    {
+        "topic": "Vulnerabilities",
+        "question": "The CISA KEV list catalog contains vulnerabilities that are:",
+        "options": ["Theoretical", "Confirmed to be exploited in the wild", "Only found in Windows", "Easy to patch"],
+        "answer": 1
+    },
+    {
+        "topic": "Vulnerabilities",
+        "question": "Which database provides additional analysis for CVEs, such as CVSS scores?",
+        "options": ["NVD", "MITRE", "HackerOne", "GitHub"],
+        "answer": 0
+    },
+    {
+        "topic": "Bounty",
+        "question": "What is the ethical practice of reporting a vulnerability to a vendor before making it public?",
+        "options": ["Full Disclosure", "Responsible Disclosure", "Zero-Day Trading", "Bug Bountying"],
+        "answer": 1
+    },
+    {
+        "topic": "Bounty",
+        "question": "Which of these is a popular platform for bug bounty programs?",
+        "options": ["Slack", "HackerOne", "LinkedIn", "Salesforce"],
+        "answer": 1
+    },
+    {
+        "topic": "Bounty",
+        "question": "What is a primary defensive benefit of a bug bounty program?",
+        "options": ["Increased licensing costs", "Reduced Attack Surface", "Better branding", "Higher employee retention"],
+        "answer": 1
+    },
+    {
+        "topic": "Bounty",
+        "question": "In a bug bounty model, organizations typically pay for:",
+        "options": ["Time spent", "Valid bugs found", "Number of reports", "Employee training"],
+        "answer": 1
+    },
+    {
+        "topic": "Bounty",
+        "question": "Coordinated Vulnerability Disclosure (CVD) is another term for:",
+        "options": ["Responsible Disclosure", "Secret Disclosure", "Immediate Disclosure", "Forced Disclosure"],
+        "answer": 0
+    },
+    {
+        "topic": "ExploitFrameworks",
+        "question": "Which open-source framework is known for its extensive library of exploits and payloads?",
+        "options": ["Metasploit", "Wireshark", "Nmap", "Burp Suite"],
+        "answer": 0
+    },
+    {
+        "topic": "ExploitFrameworks",
+        "question": "Cobalt Strike is an example of which type of framework?",
+        "options": ["Antivirus", "Post-Exploitation / C2", "Web Development", "Database Management"],
+        "answer": 1
+    },
+    {
+        "topic": "ExploitFrameworks",
+        "question": "What is a 'beacon' in the context of C2 frameworks?",
+        "options": ["A physical tracking device", "The communication signal between an infected host and the C2 server", "A light on a server rack", "A security alert"],
+        "answer": 1
+    },
+    {
+        "topic": "ExploitFrameworks",
+        "question": "Which framework is specifically designed to evade modern EDR solutions?",
+        "options": ["Metasploit", "Brute Ratel", "Armitage", "BeEF"],
+        "answer": 1
+    },
+    {
+        "topic": "ExploitFrameworks",
+        "question": "Detecting default certificates or unique beaconing patterns helps analysts identify:",
+        "options": ["Employee names", "Network artifacts of a framework", "Hardware serial numbers", "Software version numbers"],
+        "answer": 1
+    },
+    {
+        "topic": "Marketplaces",
+        "question": "Initial Access Brokers (IABs) primarily sell:",
+        "options": ["Software licenses", "Unauthorized access to organizations", "Physical hardware", "Cloud storage"],
+        "answer": 1
+    },
+    {
+        "topic": "Marketplaces",
+        "question": "RedLine, Vidar, and Lumma are examples of which type of malware?",
+        "options": ["Ransomware", "Infostealers", "Adware", "Rootkits"],
+        "answer": 1
+    },
+    {
+        "topic": "Marketplaces",
+        "question": "Where are stolen credentials and browser cookies typically sold in bulk?",
+        "options": ["Amazon", "Criminal Marketplaces / Dark Web", "The Apple Store", "Public Forums"],
+        "answer": 1
+    },
+    {
+        "topic": "Marketplaces",
+        "question": "What does EDaaS stand for in a cybercrime context?",
+        "options": ["Exploit Development as a Service", "Enterprise Data as a Service", "Encryption Defense as a Service", "Electronic Delivery as a Service"],
+        "answer": 0
+    },
+    {
+        "topic": "Marketplaces",
+        "question": "Dark Web marketplaces facilitate the exchange of which illicit goods?",
+        "options": ["Only stolen physical goods", "Stolen data, malware, and exploit kits", "Used books", "Open-source software"],
+        "answer": 1
     }
 ]

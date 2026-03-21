@@ -7,7 +7,14 @@ let score = 0;
 async function loadQuestions(topic) {
     try {
         // Determine path based on current location (root vs subfolder)
-        const isSubfolder = window.location.pathname.includes('/lessons/') || window.location.pathname.includes('/challenges/');
+        const categories = [
+            '/problem-solving/', 
+            '/professional-effectiveness/', 
+            '/technical-literacy/', 
+            '/cyber-threat-proficiency/', 
+            '/challenges/'
+        ];
+        const isSubfolder = categories.some(cat => window.location.pathname.includes(cat));
         const path = isSubfolder ? '../data/questions.json' : 'data/questions.json';
         
         const response = await fetch(path);

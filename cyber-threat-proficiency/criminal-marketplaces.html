@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criminal Marketplaces - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Criminal Marketplaces</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Dark Web Forums and Marketplaces</h2>
+                <p>The <strong>Dark Web</strong> is home to numerous underground forums and marketplaces where cybercriminals trade illicit goods and services.</p>
+                <p>These platforms facilitate the exchange of stolen data, malware, exploit kits, and other specialized tools used in cyberattacks.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Initial Access Brokers (IABs)</h2>
+                <p><strong>Initial Access Brokers (IABs)</strong> are specialized actors who gain unauthorized access to an organization's network and then sell that access to other cybercriminals, such as ransomware operators.</p>
+                <p>By purchasing access, attackers can bypass the initial stages of an attack and move directly to post-exploitation, significantly reducing the time and effort required to conduct a successful campaign.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Infostealer Logs</h2>
+                <p><strong>Infostealers</strong> are malware designed to steal sensitive information, such as login credentials, browser cookies, and cryptocurrency wallet data from infected systems. Examples include:</p>
+                <ul>
+                    <li><strong>RedLine Stealer:</strong> One of the most common infostealers, often distributed through cracked software and malicious advertisements.</li>
+                    <li><strong>Vidar:</strong> A modular infostealer that can capture data from a wide range of applications.</li>
+                    <li><strong>Lumma Stealer:</strong> A relatively new infostealer that has gained popularity for its effectiveness and ease of use.</li>
+                </ul>
+                <p>The stolen data is often compiled into "logs" and sold in bulk on criminal marketplaces.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Exploit Development as a Service</h2>
+                <p>Cybercriminals also offer <strong>Exploit Development as a Service (EDaaS)</strong>, where specialized developers create and sell custom exploits for zero-day vulnerabilities or unpatched software.</p>
+                <p>This allows less technically skilled attackers to use sophisticated exploits in their campaigns, further lowering the barrier to entry for cybercrime.</p>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Marketplaces')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="lesson-metadata">
+                <span class="ksa-tag">DCWF Alignment: KSA 0134</span>
+                <span class="ref-tag">Reference: UNODC, Comprehensive Study on Cybercrime</span>
+            </div>
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Criminal Marketplaces - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

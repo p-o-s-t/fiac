@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adversary Frameworks - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Adversary Frameworks</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Exploit Frameworks</h2>
+                <p><strong>Exploit Frameworks</strong> are used to deliver payloads and exploit vulnerabilities during the initial stages of an attack. Common examples include:</p>
+                <ul>
+                    <li><strong>Metasploit:</strong> A widely used open-source framework with thousands of exploits and payloads for various platforms.</li>
+                    <li><strong>Core Impact:</strong> A commercial-grade penetration testing tool that automates complex exploitation tasks.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Post-Exploitation Frameworks</h2>
+                <p><strong>Post-Exploitation (C2) Frameworks</strong> are used by attackers to maintain persistence, move laterally, and exfiltrate data after initial access. Popular tools include:</p>
+                <ul>
+                    <li><strong>Cobalt Strike:</strong> A powerful commercial tool favored by both red teams and advanced persistent threat (APT) groups.</li>
+                    <li><strong>Sliver:</strong> A modern, open-source cross-platform C2 framework developed by Bishop Fox.</li>
+                    <li><strong>Brute Ratel:</strong> A specialized C2 tool designed to evade modern EDR and antivirus solutions.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>The Analyst's Role</h2>
+                <p>CTI analysts must understand the artifacts left behind by these frameworks to detect and respond to threats effectively:</p>
+                <ul>
+                    <li><strong>Network Artifacts:</strong> Identifying unique beaconing patterns, C2 communication protocols, and default certificates.</li>
+                    <li><strong>Host Artifacts:</strong> Detecting specific file names, registry keys, and process behavior associated with these tools.</li>
+                    <li><strong>Memory Forensics:</strong> Analyzing memory dumps to find framework-specific signatures and injected code.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('ExploitFrameworks')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="lesson-metadata">
+                <span class="ksa-tag">DCWF Alignment: KSA 0001, Task 2115</span>
+                <span class="ref-tag">Reference: MITRE ATT&CK, Software Category</span>
+            </div>
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Adversary Frameworks - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

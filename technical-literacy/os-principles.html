@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating Systems - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Operating Systems</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Windows Operating System</h2>
+                <p>The Windows OS is characterized by several key architectural components critical for CTI analysts:</p>
+                <ul>
+                    <li><strong>NTFS (New Technology File System):</strong> Supports features like permissions, encryption, and Alternate Data Streams (ADS), which malware can use for hiding.</li>
+                    <li><strong>Registry:</strong> A hierarchical database storing configuration settings. Often used by malware for persistence (e.g., Run keys).</li>
+                    <li><strong>PE (Portable Executable) Files:</strong> The standard format for Windows executables, DLLs, and drivers. Understanding its headers and sections is vital for malware analysis.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Linux Operating System</h2>
+                <p>Linux is a Unix-like OS widely used in servers and embedded devices:</p>
+                <ul>
+                    <li><strong>Filesystem Hierarchy:</strong> Follows a standard structure (e.g., /etc for config, /var/log for logs, /tmp for temporary files).</li>
+                    <li><strong>Permissions:</strong> Uses a robust model (read, write, execute) for owners, groups, and others. Root is the all-powerful superuser.</li>
+                    <li><strong>ELF (Executable and Linkable Format):</strong> The standard binary format for Linux. CTI analysts look for ELF-based malware targeting cloud environments.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>macOS</h2>
+                <p>Built on a Unix base (Darwin), macOS includes unique security features:</p>
+                <ul>
+                    <li><strong>Unix Foundation:</strong> Shares many command-line tools and filesystem similarities with Linux.</li>
+                    <li><strong>Security Features:</strong> Includes <em>Gatekeeper</em> (verifying apps), <em>System Integrity Protection (SIP)</em> (protecting system files), and <em>XProtect</em> (built-in malware scanning).</li>
+                    <li><strong>App Sandboxing:</strong> Restricts what data an app can access, limiting the potential impact of a compromise.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('OS')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="lesson-metadata">
+                <span class="ksa-tag">DCWF Alignment: KSA 0003, 0006</span>
+                <span class="ref-tag">Reference: Silberschatz, Operating System Concepts</span>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Operating Systems - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

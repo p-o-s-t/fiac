@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIA Triad - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: CIA Triad</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>The CIA Triad</h2>
+                <p>The <strong>CIA Triad</strong> is a fundamental model for information security:</p>
+                <ul>
+                    <li><strong>Confidentiality:</strong> Ensuring data is only accessible to authorized users. Threats include data breaches and theft.</li>
+                    <li><strong>Integrity:</strong> Ensuring data remains accurate and unaltered. Threats include unauthorized modifications or tampering.</li>
+                    <li><strong>Availability:</strong> Ensuring data and systems are accessible when needed. Threats include DDoS attacks and hardware failure.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>The DAD Triad</h2>
+                <p>The <strong>DAD Triad</strong> represents the direct opposites of the CIA triad, often used to describe the <em>impact</em> of a security incident:</p>
+                <ul>
+                    <li><strong>Disclosure (vs Confidentiality):</strong> Unauthorized exposure of sensitive information.</li>
+                    <li><strong>Alteration (vs Integrity):</strong> Unauthorized modification of data or system settings.</li>
+                    <li><strong>Destruction (vs Availability):</strong> Data or systems are deleted, corrupted, or otherwise rendered unusable.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Real-World Application</h2>
+                <p>In threat assessment, we use these triads to categorize the <strong>impact</strong> of an event:</p>
+                <ul>
+                    <li><strong>Ransomware:</strong> Primarily impacts <em>Availability</em> (through encryption) and <em>Confidentiality</em> (through exfiltration and extortion).</li>
+                    <li><strong>Website Defacement:</strong> Primarily impacts <em>Integrity</em> by altering the displayed content.</li>
+                    <li><strong>Industrial Control Systems (ICS):</strong> Often prioritize <em>Availability</em> and <em>Integrity</em> over Confidentiality, as uptime and safety are critical.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Triads')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="lesson-metadata">
+                <span class="ksa-tag">DCWF Alignment: KSA 0005</span>
+                <span class="ref-tag">Reference: NIST SP 800-12</span>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Security Triads - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

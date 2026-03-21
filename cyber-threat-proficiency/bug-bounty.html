@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Bounty Programs - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Bug Bounty Programs</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Responsible Disclosure</h2>
+                <p><strong>Responsible Disclosure</strong> (or Coordinated Vulnerability Disclosure) is the ethical practice of reporting a vulnerability to the software vendor before making it public.</p>
+                <p>This allows the vendor to fix the vulnerability and release a patch, protecting users and preventing exploitation by malicious actors.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Bug Bounty Platforms</h2>
+                <p>Bug bounty platforms connect organizations with security researchers. Popular platforms include:</p>
+                <ul>
+                    <li><strong>HackerOne:</strong> A leading platform that hosts bug bounty programs for major companies and government agencies.</li>
+                    <li><strong>Bugcrowd:</strong> Another prominent platform that utilizes a crowdsourced security model to identify vulnerabilities.</li>
+                </ul>
+                <p>These platforms manage the reporting, triage, and reward process for security researchers.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Benefits to Defense</h2>
+                <p>Bug bounty programs offer several advantages for an organization's defense:</p>
+                <ul>
+                    <li><strong>Reduced Attack Surface:</strong> Continuous testing by thousands of researchers helps identify and close vulnerabilities before attackers find them.</li>
+                    <li><strong>Cost-Effective:</strong> Organizations pay for results (valid bugs found) rather than for time spent by traditional penetration testers.</li>
+                    <li><strong>Diverse Expertise:</strong> Access to a global community of researchers with a wide range of specialized skills and perspectives.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Bounty')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="lesson-metadata">
+                <span class="ksa-tag">DCWF Alignment: KSA 0137</span>
+                <span class="ref-tag">Reference: NIST SP 800-216</span>
+            </div>
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Bug Bounty Programs - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -93,14 +93,28 @@ main {
 }
 
 .section-title {
-    color: var(--lavender);
-    font-size: 1.2rem;
+    display: inline-block;
+    padding: 8px 18px;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 15px;
-    border-left: 4px solid var(--lavender-medium);
-    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 25px; /* Pill shape */
+    color: var(--black);
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: default; /* No pointer to indicate it's not clickable */
 }
+
+/* Section-specific hues (variations of purple/lavender) */
+.section-problem-solving .section-title { background-color: #b39ddb; } /* Deep Purple 100 */
+.section-professional .section-title { background-color: #9575cd; }    /* Deep Purple 300 */
+.section-technical .section-title { background-color: #7986cb; }       /* Indigo 300 */
+.section-cyber-threat .section-title { background-color: #ba68c8; }    /* Muted Purple (Deep Purple 300 equivalent) */
+.section-challenges .section-title { background-color: #9575cd; }      /* Muted Indigo (Deep Purple 300) */
+
+/* Adjust card borders slightly to match section theme if desired, 
+   but for now we'll stick to the title background as requested. */
 
 .dashboard-grid {
     display: grid;
@@ -320,18 +334,34 @@ footer {
     margin-bottom: 20px;
 }
 
-.ksa-tag {
+.ksa-tag, .ref-tag {
     font-size: 0.75rem;
-    color: var(--lavender-medium);
-    background: rgba(147, 112, 219, 0.1);
     padding: 4px 10px;
     border-radius: 15px;
     display: inline-block;
-    margin-top: 15px;
-    border: 1px solid rgba(147, 112, 219, 0.3);
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+.ksa-tag {
+    color: var(--lavender-medium);
+    background: rgba(147, 112, 219, 0.1);
+    border: 1px solid rgba(147, 112, 219, 0.3);
+}
+
+.ref-tag {
+    color: var(--accent);
+    background: rgba(216, 191, 216, 0.1);
+    border: 1px solid rgba(216, 191, 216, 0.3);
+}
+
+.lesson-metadata {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
 @keyframes fadeIn {

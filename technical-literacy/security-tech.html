@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Technologies - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Security Technologies</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Network Security</h2>
+                <p><strong>Firewalls:</strong> Provide visibility and control at the network boundary.</p>
+                <ul>
+                    <li><strong>Next-Gen Firewalls (NGFW):</strong> Go beyond port/protocol filtering to include deep packet inspection and application awareness.</li>
+                    <li><strong>Web Application Firewalls (WAF):</strong> Specifically designed to protect web applications from common attacks like SQLi and XSS.</li>
+                    <li><strong>IDS/IPS:</strong> Intrusion Detection/Prevention Systems monitor for malicious activity or policy violations.</li>
+                    <li><strong>Proxies:</strong> Act as intermediaries for requests, providing anonymity and content filtering.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Endpoint Security</h2>
+                <p><strong>EDR/XDR:</strong> Modern endpoint protection that focuses on behavioral detection and response.</p>
+                <ul>
+                    <li><strong>Antivirus (AV):</strong> Traditionally signature-based, focused on known malicious files.</li>
+                    <li><strong>Endpoint Detection & Response (EDR):</strong> Continuously monitors endpoint events (processes, network connections, file changes) for suspicious behavior.</li>
+                    <li><strong>XDR:</strong> Extended Detection and Response, integrating data from multiple sources (network, cloud, email) for a holistic view.</li>
+                    <li><strong>Host-based Firewalls:</strong> Control traffic at the individual device level (e.g., Windows Firewall).</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Log Management</h2>
+                <p><strong>SIEM:</strong> Security Information and Event Management systems aggregate and analyze security data.</p>
+                <ul>
+                    <li><strong>Log Aggregation:</strong> Collecting logs from various sources (firewalls, endpoints, servers) into a single location.</li>
+                    <li><strong>Centralized Logging:</strong> Essential for correlation and incident response across the enterprise.</li>
+                    <li><strong>Decentralized Logging:</strong> Logs reside on individual systems, making holistic analysis difficult.</li>
+                    <li><strong>SIEM Goals:</strong> Real-time monitoring, correlation of events, and long-term storage for forensic analysis.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Tech')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="lesson-metadata">
+                <span class="ksa-tag">DCWF Alignment: KSA 0033</span>
+                <span class="ref-tag">Reference: NIST SP 800-115</span>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Security Technologies - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

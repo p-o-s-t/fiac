@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Policy</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Incident Response Plan (IRP)</h2>
+                <p>The <strong>IRP</strong> is a set of instructions to help IT staff detect, respond to, and recover from network security incidents:</p>
+                <ul>
+                    <li><strong>Preparation:</strong> Establishing the IR team and tools.</li>
+                    <li><strong>Identification:</strong> Determining if an incident has occurred.</li>
+                    <li><strong>Containment:</strong> Limiting the scope and impact of the incident.</li>
+                    <li><strong>Eradication:</strong> Removing the threat from the environment.</li>
+                    <li><strong>Recovery:</strong> Restoring systems to normal operation.</li>
+                    <li><strong>Lessons Learned:</strong> Improving future responses.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Business Continuity Plan (BCP)</h2>
+                <p>The <strong>BCP</strong> ensures that essential business functions can continue during and after a disaster. It is a broad plan that encompasses more than just IT:</p>
+                <ul>
+                    <li><strong>Critical Functions:</strong> Identifying what processes are vital for survival.</li>
+                    <li><strong>Redundancy:</strong> Establishing secondary locations or personnel.</li>
+                    <li><strong>Communication:</strong> Ensuring key stakeholders are kept informed.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Disaster Recovery Plan (DRP)</h2>
+                <p>A <strong>DRP</strong> is a subset of the BCP focused on restoring the IT infrastructure and systems after a disaster:</p>
+                <ul>
+                    <li><strong>RTO (Recovery Time Objective):</strong> The maximum acceptable time for a system to be down.</li>
+                    <li><strong>RPO (Recovery Point Objective):</strong> The maximum acceptable amount of data loss (measured in time).</li>
+                    <li><strong>Backups:</strong> Regular, tested copies of critical data.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>The Analyst's Role</h2>
+                <p>CTI analysts play a vital role in supporting policy development and incident response:</p>
+                <ul>
+                    <li><strong>Threat Intelligence:</strong> Informing the IRP with knowledge of current actor TTPs.</li>
+                    <li><strong>Risk Assessment:</strong> Helping prioritize resources for the BCP based on the threat landscape.</li>
+                    <li><strong>Post-Incident Analysis:</strong> Providing context for the "Lessons Learned" phase of the IRP.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Policy')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="lesson-metadata">
+                <span class="ksa-tag">DCWF Alignment: KSA 0015</span>
+                <span class="ref-tag">Reference: NIST SP 800-34</span>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Essential Security Policy - FIACcopy; 2026 Policy - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptography - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Cryptography</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Encryption Types</h2>
+                <p>Cryptography is the science of securing communication. CTI analysts must understand two main types of encryption:</p>
+                <ul>
+                    <li><strong>Symmetric Encryption:</strong> Uses a single key for both encryption and decryption. Fast but key management is challenging. Examples: AES, ChaCha20.</li>
+                    <li><strong>Asymmetric Encryption:</strong> Uses a pair of keys: a <em>public key</em> (for encryption) and a <em>private key</em> (for decryption). Used for secure key exchange and digital signatures. Examples: RSA, ECC.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Hashing</h2>
+                <p>A hash function takes an input of any size and produces a fixed-size string of characters. It is <em>one-way</em> and used for <strong>Integrity checks</strong>:</p>
+                <ul>
+                    <li><strong>Malware Identification:</strong> Unique hashes (MD5, SHA-256) act as fingerprints for specific files.</li>
+                    <li><strong>Password Security:</strong> Storing hashes instead of plaintext passwords.</li>
+                    <li><strong>Integrity:</strong> Verifying that a downloaded file hasn't been tampered with.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>SSL/TLS and Fingerprinting</h2>
+                <p><strong>SSL/TLS</strong> encrypts network traffic (HTTPS). Analysts use it for attribution:</p>
+                <ul>
+                    <li><strong>Certificates:</strong> Information about the certificate issuer can link infrastructure to known actors.</li>
+                    <li><strong>JA4 Fingerprinting:</strong> A modern method for identifying client/server software based on how they negotiate a TLS connection. This helps identify malware and C2 servers even when the traffic itself is encrypted.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Encryption in Malware</h2>
+                <p>Threat actors leverage cryptography in various ways:</p>
+                <ul>
+                    <li><strong>Ransomware:</strong> Encrypts victim data to extort payment, often using a combination of symmetric and asymmetric encryption.</li>
+                    <li><strong>C2 Communications:</strong> Malware encrypts traffic to its Command and Control server to bypass network security monitoring.</li>
+                    <li><strong>String Obfuscation:</strong> Malware authors encrypt strings (like C2 domains or registry keys) within the binary to hinder analysis.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Cryptography')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="lesson-metadata">
+                <span class="ksa-tag">DCWF Alignment: KSA 0004</span>
+                <span class="ref-tag">Reference: NIST SP 800-175B</span>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Cryptography in CTI - FIACcopy; 2026 Cryptography - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

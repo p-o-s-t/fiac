@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicators of Compromise - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Indicators of Compromise</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Defining Indicators (IoCs)</h2>
+                <p>An <strong>Indicator of Compromise (IoC)</strong> is an artifact observed on a network or in an operating system that, with high confidence, indicates a computer intrusion.</p>
+                <p>Not all indicators are created equal. We categorize them by their stability, complexity, and how easily an adversary can change them.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>1. Atomic Indicators</h2>
+                <p><strong>Atomic indicators</strong> are those which cannot be broken down into smaller parts and retain their meaning in the context of an intrusion.</p>
+                <ul>
+                    <li><strong>IP Addresses:</strong> e.g., <code>185.25.12.34</code></li>
+                    <li><strong>Domain Names:</strong> e.g., <code>evil-malware-c2.com</code></li>
+                    <li><strong>Email Addresses:</strong> e.g., <code>phish-king@gmail.com</code></li>
+                </ul>
+                <p><em>Adversary effort:</em> Low. These are very easy for an attacker to change.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>2. Computed Indicators</h2>
+                <p><strong>Computed indicators</strong> are those which are derived from data, often involving a mathematical function.</p>
+                <ul>
+                    <li><strong>File Hashes:</strong> SHA-256, MD5, or SHA-1 hashes of malicious files.</li>
+                    <li><strong>JA3/JA4 Fingerprints:</strong> Unique identifiers for SSL/TLS handshakes.</li>
+                    <li><strong>Fuzzy Hashes:</strong> e.g., SSDEEP, which can identify similar (but not identical) files.</li>
+                </ul>
+                <p><em>Adversary effort:</em> Medium. Changing a single bit in a file changes the hash, but changing the TLS implementation takes more work.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>3. Behavioral Indicators</h2>
+                <p><strong>Behavioral indicators</strong> represent the <em>how</em> of an attack. They describe the patterns of activity that an adversary performs.</p>
+                <ul>
+                    <li><strong>Execution Patterns:</strong> <code>cmd.exe</code> launching <code>powershell.exe</code> with an encoded command.</li>
+                    <li><strong>Network Patterns:</strong> A server making unusual DNS requests for random subdomains (DNS Tunneling).</li>
+                    <li><strong>Registry Keys:</strong> Specific keys created for persistence after a reboot.</li>
+                </ul>
+                <p><em>Adversary effort:</em> High. This is David Bianco's <strong>"Tough"</strong> or <strong>"Painful"</strong> level on the Pyramid of Pain.</p>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('IOCs')">Start Quiz</button>
+                </div>
+            </div>
+
+                        <div class="lesson-metadata">
+                <span class="ksa-tag">DCWF Alignment: KSA 0011 | Task: 1530</span>
+                <span class="ref-tag">Reference: David Bianco, The Pyramid of Pain</span>
+            </div>
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Indicators of Compromise - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

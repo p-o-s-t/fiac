@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVEs - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: CVEs</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>The CVE Process</h2>
+                <p><strong>Common Vulnerabilities and Exposures (CVE)</strong> is a list of publicly disclosed cybersecurity vulnerabilities. Each CVE entry is assigned a unique identification number by a CVE Numbering Authority (CNA).</p>
+                <p>The <strong>National Vulnerability Database (NVD)</strong>, maintained by NIST, synchronizes with the CVE list and provides additional analysis, such as CVSS scores and mapping to CWE (Common Weakness Enumeration).</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>CVSS: Common Vulnerability Scoring System</h2>
+                <p><strong>CVSS</strong> provides a numerical score reflecting the severity of a vulnerability. It is composed of three metric groups:</p>
+                <ul>
+                    <li><strong>Base:</strong> Represents the intrinsic qualities of a vulnerability.</li>
+                    <li><strong>Temporal:</strong> Reflects characteristics that change over time (e.g., exploit availability).</li>
+                    <li><strong>Environmental:</strong> Tailors the score to a specific user's environment.</li>
+                </ul>
+                <p>Scores range from 0.0 to 10.0, with 10.0 being the most severe.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>EPSS: Exploit Prediction Scoring System</h2>
+                <p>While CVSS measures <em>severity</em>, <strong>EPSS</strong> estimates the <em>probability</em> that a vulnerability will be exploited in the wild within the next 30 days.</p>
+                <p>Using EPSS helps organizations prioritize patching based on actual threat data rather than just the theoretical impact of a vulnerability.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>CISA KEV List</h2>
+                <p>The <strong>Known Exploited Vulnerabilities (KEV)</strong> catalog is maintained by CISA. It lists vulnerabilities that have been confirmed to be exploited in the wild.</p>
+                <p>For many federal agencies and regulated industries, patching vulnerabilities on the KEV list is a mandatory requirement within specified timeframes.</p>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Vulnerabilities')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="lesson-metadata">
+                <span class="ksa-tag">DCWF Alignment: KSA 0013, 0359</span>
+                <span class="ref-tag">Reference: FIRST.org CVSS/EPSS Documentation</span>
+            </div>
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Vulnerabilities & CVSS - FIACcopy; 2026 CVEs - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Roles - FIAC</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC: Cybersecurity Roles</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="slide active">
+                <h2>Operations Roles</h2>
+                <p>The <strong>Operations</strong> team is the front line of defense, monitoring systems and responding to immediate threats:</p>
+                <ul>
+                    <li><strong>SOC Analysts (Tiers 1-3):</strong> Monitor security alerts, triage events, and perform initial investigations.</li>
+                    <li><strong>Incident Responders (IR):</strong> Specialized personnel who lead the response to active security breaches and containment.</li>
+                    <li><strong>Vulnerability Management:</strong> Identify, prioritize, and manage the remediation of security weaknesses in systems and software.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Specialist Roles</h2>
+                <p><strong>Specialists</strong> provide deep technical expertise in specific domains of cybersecurity:</p>
+                <ul>
+                    <li><strong>Digital Forensics (DFIR):</strong> Analyze digital evidence to reconstruct events, identify data exfiltration, and support legal or internal investigations.</li>
+                    <li><strong>Malware Researchers:</strong> Reverse-engineer malicious code to understand its functionality, origin, and indicators of compromise.</li>
+                    <li><strong>Threat Hunters:</strong> Proactively search through networks and logs to find hidden threats that have bypassed automated security controls.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Architecture & GRC</h2>
+                <p>These roles focus on long-term strategy, system design, and organizational compliance:</p>
+                <ul>
+                    <li><strong>Security Architects:</strong> Design secure system architectures and ensure security requirements are integrated into business processes.</li>
+                    <li><strong>GRC (Governance, Risk, Compliance):</strong> Manage organizational risk, ensure compliance with laws/regulations (e.g., GDPR, HIPAA), and develop security policies.</li>
+                    <li><strong>Security Engineers:</strong> Build and maintain the security infrastructure, such as firewalls, SIEMs, and EDR systems.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>The CTI Analyst</h2>
+                <p>The <strong>Cyber Threat Intelligence (CTI) Analyst</strong> acts as the "glue" that connects these disparate roles:</p>
+                <ul>
+                    <li><strong>Dissemination:</strong> Sharing actionable intelligence with Operations for better detection and IR for faster containment.</li>
+                    <li><strong>Strategic Guidance:</strong> Helping Architecture and GRC prioritize investments based on the actual threat landscape.</li>
+                    <li><strong>Feedback Loop:</strong> Taking findings from Malware Researchers and Forensics to improve overall organizational knowledge.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden" id="quiz-slide">
+                <h2>Knowledge Check</h2>
+                <div id="quiz-container">
+                    <button class="btn" onclick="startQuiz('Roles')">Start Quiz</button>
+                </div>
+            </div>
+
+            <div class="lesson-metadata">
+                <span class="ksa-tag">DCWF Alignment: KSA 0001, Task 2115</span>
+                <span class="ref-tag">Reference: NIST NICE Framework (SP 800-181)</span>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="btn" id="prevBtn" onclick="prevSlide()">Previous</button>
+                <button class="btn" id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Cybersecurity Roles - FIAC</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script src="../assets/js/slides.js"></script>
+    <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -20,118 +20,88 @@
 
         <main>
             <div class="dashboard-sections">
-                <section>
-                    <h2 class="section-title">Knowledge</h2>
+                <section class="section-problem-solving">
+                    <h2 class="section-title">Problem Solving</h2>
                     <div class="dashboard-grid">
-                        <!-- Knowledge cards here... -->
-                        <div class="card" data-id="fundamentals" onclick="location.href='lessons/fundamentals.html'">
+                        <div class="card" data-id="lifecycle" onclick="location.href='problem-solving/lifecycle.html'">
                             <div>
-                                <h3>1. Intelligence Fundamentals</h3>
-                                <p>Core concepts, definitions, and the importance of CTI.</p>
-                            </div>
-                            <span class="badge basic">Basic</span>
-                        </div>
-                        <div class="card" data-id="lifecycle" onclick="location.href='lessons/lifecycle.html'">
-                            <div>
-                                <h3>2. Intelligence Lifecycle</h3>
+                                <h3>Intelligence Lifecycle</h3>
                                 <p>Planning, direction, collection, analysis, and dissemination.</p>
                             </div>
                             <span class="badge basic">Basic</span>
                         </div>
-                        <div class="card" data-id="cyberspace" onclick="location.href='lessons/cyberspace.html'">
+                        <div class="card" data-id="frameworks" onclick="location.href='problem-solving/frameworks.html'">
                             <div>
-                                <h3>3. Intelligence in Cyberspace</h3>
-                                <p>Understanding the digital battlefield and its unique properties.</p>
-                            </div>
-                            <span class="badge basic">Basic</span>
-                        </div>
-                        <div class="card" data-id="frameworks" onclick="location.href='lessons/frameworks.html'">
-                            <div>
-                                <h3>4. Frameworks</h3>
+                                <h3>Frameworks</h3>
                                 <p>Diamond Model, Kill Chain, and MITRE ATT&CK.</p>
                             </div>
                             <span class="badge basic">Basic</span>
                         </div>
-                        <div class="card" data-id="requirements" onclick="location.href='lessons/requirements.html'">
+                        <div class="card" data-id="requirements" onclick="location.href='problem-solving/requirements.html'">
                             <div>
-                                <h3>5. Intelligence Requirements</h3>
+                                <h3>Intelligence Requirements</h3>
                                 <p>Defining PIRs and setting the direction for collection.</p>
                             </div>
                             <span class="badge intermediate">Intermediate</span>
                         </div>
-                        <div class="card" data-id="profiling" onclick="location.href='lessons/profiling.html'">
+                        <div class="card" data-id="rfi" onclick="location.href='problem-solving/rfi.html'">
                             <div>
-                                <h3>6. Threat Actors & Profiling</h3>
-                                <p>Identifying motivations, capabilities, and intent.</p>
-                            </div>
-                            <span class="badge intermediate">Intermediate</span>
-                        </div>
-                        <div class="card" data-id="attack-surface" onclick="location.href='lessons/attack-surface.html'">
-                            <div>
-                                <h3>7. Attack Surface</h3>
-                                <p>Mapping external visibility and vulnerabilities.</p>
-                            </div>
-                            <span class="badge intermediate">Intermediate</span>
-                        </div>
-                        <div class="card" data-id="malware" onclick="location.href='lessons/malware.html'">
-                            <div>
-                                <h3>8. Basic Malware Analysis</h3>
-                                <p>Static vs Dynamic analysis for CTI practitioners.</p>
-                            </div>
-                            <span class="badge intermediate">Intermediate</span>
-                        </div>
-                        <div class="card" data-id="landscape" onclick="location.href='lessons/landscape.html'">
-                            <div>
-                                <h3>9. Threat Landscape</h3>
-                                <p>Current trends, emerging threats, and geopolitical factors.</p>
-                            </div>
-                            <span class="badge intermediate">Intermediate</span>
-                        </div>
-                        <div class="card" data-id="data-marking" onclick="location.href='lessons/data-marking.html'">
-                            <div>
-                                <h3>10. Data Marking</h3>
-                                <p>TLP, PAP, and ensuring information security.</p>
-                            </div>
-                            <span class="badge basic">Basic</span>
-                        </div>
-                        <div class="card" data-id="reporting" onclick="location.href='lessons/reporting.html'">
-                            <div>
-                                <h3>11. Effective Communication</h3>
-                                <p>Communicating findings to stakeholders effectively.</p>
-                            </div>
-                            <span class="badge basic">Basic</span>
-                        </div>
-                        <div class="card" data-id="rfi" onclick="location.href='lessons/rfi.html'">
-                            <div>
-                                <h3>12. Requests for Information</h3>
+                                <h3>Requests for Information</h3>
                                 <p>Generating and answering intelligence requirements.</p>
                             </div>
                             <span class="badge basic">Basic</span>
                         </div>
-                        <div class="card" data-id="coa" onclick="location.href='lessons/coa.html'">
+                        <div class="card" data-id="malware" onclick="location.href='problem-solving/malware.html'">
                             <div>
-                                <h3>13. Course of Action Development</h3>
+                                <h3>Basic Malware Analysis</h3>
+                                <p>Static vs Dynamic analysis for CTI practitioners.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="iocs" onclick="location.href='problem-solving/iocs.html'">
+                            <div>
+                                <h3>Indicators of Compromise</h3>
+                                <p>Types of indicators: Atomic, Computed, and Behavioral.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-professional">
+                    <h2 class="section-title">Professional Effectiveness</h2>
+                    <div class="dashboard-grid">
+                        <div class="card" data-id="fundamentals" onclick="location.href='professional-effectiveness/fundamentals.html'">
+                            <div>
+                                <h3>Intelligence Fundamentals</h3>
+                                <p>Core concepts, definitions, and the importance of CTI.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="reporting" onclick="location.href='professional-effectiveness/reporting.html'">
+                            <div>
+                                <h3>Effective Communication</h3>
+                                <p>Communicating findings to stakeholders effectively.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="coa" onclick="location.href='professional-effectiveness/coa.html'">
+                            <div>
+                                <h3>Course of Action Development</h3>
                                 <p>Predicting adversary behavior and recommending responses.</p>
                             </div>
                             <span class="badge intermediate">Intermediate</span>
                         </div>
-                        <div class="card" data-id="tracking" onclick="location.href='lessons/tracking.html'">
+                        <div class="card" data-id="data-marking" onclick="location.href='professional-effectiveness/data-marking.html'">
                             <div>
-                                <h3>14. Tracking & Attribution</h3>
-                                <p>Clustering activity and identifying threat actors.</p>
+                                <h3>Data Marking</h3>
+                                <p>TLP, PAP, and ensuring information security.</p>
                             </div>
-                            <span class="badge advanced">Advanced</span>
+                            <span class="badge basic">Basic</span>
                         </div>
-                        <div class="card" data-id="emulation" onclick="location.href='lessons/emulation.html'">
+                        <div class="card" data-id="data-management" onclick="location.href='professional-effectiveness/data-management.html'">
                             <div>
-                                <h3>15. Adversary Emulation</h3>
-                                <p>Testing defenses by mimicking real-world threat behaviors.</p>
-                            </div>
-                            <span class="badge advanced">Advanced</span>
-                        </div>
-                        <div class="card" data-id="data-management" onclick="location.href='lessons/data-management.html'">
-                            <div>
-                                <h3>16. Data Management</h3>
+                                <h3>Data Management</h3>
                                 <p>Managing platforms, sources, and collection frameworks.</p>
                             </div>
                             <span class="badge intermediate">Intermediate</span>
@@ -139,7 +109,145 @@
                     </div>
                 </section>
 
-                <section>
+                <section class="section-technical">
+                    <h2 class="section-title">Technical Literacy</h2>
+                    <div class="dashboard-grid">
+                        <div class="card" data-id="cyberspace" onclick="location.href='technical-literacy/cyberspace.html'">
+                            <div>
+                                <h3>Intelligence in Cyberspace</h3>
+                                <p>Understanding the digital battlefield and its unique properties.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="os-principles" onclick="location.href='technical-literacy/os-principles.html'">
+                            <div>
+                                <h3>Operating Systems</h3>
+                                <p>Foundational principles of Windows, Linux, and macOS for CTI.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="networking" onclick="location.href='technical-literacy/networking.html'">
+                            <div>
+                                <h3>Networking Fundamentals</h3>
+                                <p>The OSI model, TCP/IP, common ports, and DNS in intelligence.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="cia-triad" onclick="location.href='technical-literacy/cia-triad.html'">
+                            <div>
+                                <h3>CIA Triad</h3>
+                                <p>Core security concepts and their application in threat assessment.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="cloud-basics" onclick="location.href='technical-literacy/cloud-basics.html'">
+                            <div>
+                                <h3>Cloud Computing</h3>
+                                <p>Service models, deployment models, and shared responsibility.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="cryptography" onclick="location.href='technical-literacy/cryptography.html'">
+                            <div>
+                                <h3>Cryptography</h3>
+                                <p>Encryption, hashing, and their use by both defenders and actors.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="policy" onclick="location.href='technical-literacy/policy.html'">
+                            <div>
+                                <h3>Policy</h3>
+                                <p>Understanding IRP, BCP, and DRP from an analyst's perspective.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="security-tech" onclick="location.href='technical-literacy/security-tech.html'">
+                            <div>
+                                <h3>Security Technologies</h3>
+                                <p>Network boundaries, endpoint security, and log management.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="security-roles" onclick="location.href='technical-literacy/security-roles.html'">
+                            <div>
+                                <h3>Cybersecurity Roles</h3>
+                                <p>Operations, specialist roles, and the CTI analyst's place.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-cyber-threat">
+                    <h2 class="section-title">Cyber Threat Proficiency</h2>
+                    <div class="dashboard-grid">
+                        <div class="card" data-id="profiling" onclick="location.href='cyber-threat-proficiency/profiling.html'">
+                            <div>
+                                <h3>Threat Actors & Profiling</h3>
+                                <p>Identifying motivations, capabilities, and intent.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="attack-surface" onclick="location.href='cyber-threat-proficiency/attack-surface.html'">
+                            <div>
+                                <h3>Attack Surface</h3>
+                                <p>Mapping external visibility and vulnerabilities.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="landscape" onclick="location.href='cyber-threat-proficiency/landscape.html'">
+                            <div>
+                                <h3>Threat Landscape</h3>
+                                <p>Current trends, emerging threats, and geopolitical factors.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="tracking" onclick="location.href='cyber-threat-proficiency/tracking.html'">
+                            <div>
+                                <h3>Tracking & Attribution</h3>
+                                <p>Clustering activity and identifying threat actors.</p>
+                            </div>
+                            <span class="badge advanced">Advanced</span>
+                        </div>
+                        <div class="card" data-id="emulation" onclick="location.href='cyber-threat-proficiency/emulation.html'">
+                            <div>
+                                <h3>Adversary Emulation</h3>
+                                <p>Testing defenses by mimicking real-world threat behaviors.</p>
+                            </div>
+                            <span class="badge advanced">Advanced</span>
+                        </div>
+                        <div class="card" data-id="vulnerabilities" onclick="location.href='cyber-threat-proficiency/vulnerabilities.html'">
+                            <div>
+                                <h3>CVEs</h3>
+                                <p>CVE process, CVSS, and Exploit Prediction (EPSS).</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="bug-bounty" onclick="location.href='cyber-threat-proficiency/bug-bounty.html'">
+                            <div>
+                                <h3>Bug Bounty Programs</h3>
+                                <p>Responsible disclosure and bug bounty platforms.</p>
+                            </div>
+                            <span class="badge basic">Basic</span>
+                        </div>
+                        <div class="card" data-id="adversary-frameworks" onclick="location.href='cyber-threat-proficiency/adversary-frameworks.html'">
+                            <div>
+                                <h3>Adversary Frameworks</h3>
+                                <p>Post-exploitation and exploit frameworks like Cobalt Strike.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <div class="card" data-id="criminal-marketplaces" onclick="location.href='cyber-threat-proficiency/criminal-marketplaces.html'">
+                            <div>
+                                <h3>Criminal Marketplaces</h3>
+                                <p>Dark web, infostealer logs, and initial access brokers.</p>
+                            </div>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-challenges">
                     <h2 class="section-title">Challenges</h2>
                     <div class="dashboard-grid">
                         <div class="card" data-id="ssl-tls" onclick="location.href='challenges/ssl-tls.html'">
@@ -190,7 +298,10 @@
         </main>
 
         <footer>
-            <p>&copy; 2026 FIAC - Future Intelligence Analyst Course | v0.1</p>
+            <p>&copy; 2026 FIAC - Future Intelligence Analyst Course | v0.2</p>
+            <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.8;">
+                Based on the Mandiant CTI Analyst Core Competencies Framework. Built with assistance from Gemini.
+            </p>
         </footer>
     </div>
 </body>
