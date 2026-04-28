@@ -12,6 +12,7 @@ Welcome to the Future Intelligence Analyst Course (FIAC), an interactive, static
 - **Progress Tracking**: Session-based progress saved to `localStorage`, with visual indicators on the dashboard.
 - **DCWF Alignment**: Modules are mapped to KSAs from the Defense Cyber Workforce Framework.
 - **Resources Library**: Collection of frameworks, tools, and research links collected over the years to help get spun up.
+- **Templates**: Generic templates written in markdown that can fit most needs. Not prescriptive, just informative. Modify as needed/wanted.
 
 ## Technical Details
 - **Frontend**: Vanilla HTML5, CSS3 (using CSS Variables), and ES6+ JavaScript.
