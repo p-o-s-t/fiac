@@ -1,16 +1,16 @@
 # Threat Actor Report: [Actor Name]
 
-**Report ID:** [ID-YYYYMMDD]  
-**Analyst ID:** [Analyst-ID]  
+**Report ID:** [YY-serial]  
+**Analyst ID:** [AnalystID]  
 **CAO Date:** [YYYY-MM-DD]  
-**TLP:** [CLEAR/GREEN/AMBER/AMBER+STRICT/RED]  
-**Criticality:** [Low/Moderate/High/Critical]
+**TLP:** [CLEAR|GREEN|AMBER|AMBER+STRICT|RED]  
+**Criticality:** [Low|Moderate|High|Critical]
 
 ---
 
 ## 1. Executive Summary
 
-[A high-level overview of the threat actor, their primary motivations, and the overall risk they pose to the organization or sector.]
+[Provide a formal, non-conversational synopsis of the threat actor. This section should synthesize key findings from the entire report—including motivations, technical proficiencies, targeting profiles, and operational trends—into a cohesive overview of the risk posed by the actor.]
 
 ## 2. Key Points
 
@@ -21,7 +21,7 @@
 
 ## 3. Assessment
 
-[Analytical assessment of the actor's capabilities, intent, and likely future activity. Include confidence levels (e.g., "High Confidence").]
+[Analytical assessment of the actor's capabilities, intent, and likely future activity. Include confidence levels (e.g., "High Confidence") rating the amount of information that indicates that the threat actor will attempt to achieve their objective.  Follow this by a timeframe in which the threat actor will carry out their actions.  Then list the actions they will take to achieve the overall goal.]
 
 ## 4. Threat Actor Profile
 ### 4.1 Summary
@@ -33,7 +33,7 @@
 [List of activity groups tracked by other organizations, such as Microsoft or Crowdstrike.  Separate names by comma (,).]
 
 ### 4.3 Tactics, Techniques, and Procedures (TTPs)
-*This TTP table uses MITRE ATT&CK version X[.Y].*
+*This table uses MITRE ATT&CK version X[.Y].*
 
 | Tactic | Technique | Procedure |
 | --- | --- | --- |
@@ -49,27 +49,21 @@
 * **Primary:** [Specific industries or government entities]
 * **Secondary:** [Supply chain partners, media, etc.]
 
-## 5. Technical Indicators (IOCs)
-### 5.1 Network Indicators
-* [IP Addresses]
-* [Domains/URLs]
+### 4.6 Known Tools
 
-### 5.2 Host-Based Indicators
-* [File Hashes (MD5/SHA256)]
-* [Registry Keys]
-* [File Paths]
+[List and describe specialized malware families, C2 frameworks, and utility tools used by the actor (e.g., Mimikatz, BRICKSTORM).]
 
-## 6. Intelligence Gaps
+## 5. Intelligence Gaps
 What we don't know yet: 
 - Leadership structure
 - specific toolsets
 - future targets
 
-## 7. Data Sources & Citations
+## 6. Data Sources & Citations
 * [Source 1]
 * [Source 2]
 
-## Appendix A - Historial IOCs
+## Appendix A - Technical Indicators (IOCs)
 ### Host
 - [filehash]
 - [filename]
@@ -85,3 +79,7 @@ What we don't know yet:
 | Date | Location | Sector | Activity Description |
 | --- | --- | --- | --- |
 | [YYYY-MM-DD] | [Region] | [Industry] | [Brief description of the event] |
+
+## Appendix C - Detection Signatures
+
+[Provide YARA, Suricata, Snort, or Sigma rules designed to detect the actor's activity.]
