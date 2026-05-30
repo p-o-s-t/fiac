@@ -21,34 +21,54 @@
         <main class="slide-container">
             <!-- Slide 1: Introduction -->
             <div class="slide active">
-                <h2>What is Cyber Threat Intelligence?</h2>
-                <p>Cyber Threat Intelligence (CTI) is the collection, processing, and analysis of data about cyber threats to understand an adversary's motivations, targets, and attack behaviors.</p>
-                <p>It's not just data (like a list of IP addresses); it's <strong>evidence-based knowledge</strong> that helps organizations make informed security decisions.</p>
+                <h2>Introduction to Cyber Threat Intelligence</h2>
+                <p><strong>Cyber Threat Intelligence (CTI)</strong> is the evidence-based knowledge—including context, mechanisms, indicators, implications, and actionable advice—about an existing or emerging hazard to assets.</p>
+                <p>CTI is not simply raw logs or threat feeds. It uses the <strong>DIKW Pyramid</strong> (Data, Information, Knowledge, Wisdom) to transform raw data points into actionable security wisdom.</p>
             </div>
 
-            <!-- Slide 2: Why CTI? -->
+            <!-- Slide 2: Core Objectives of CTI -->
             <div class="slide hidden">
-                <h2>Why do we need CTI?</h2>
+                <h2>Core Objectives of CTI</h2>
+                <p>CTI operations seek to reduce the uncertainty surrounding threat events, allowing security leaders to allocate resources efficiently.</p>
                 <ul>
-                    <li><strong>Proactive Defense:</strong> Shift from reactive to predictive security.</li>
-                    <li><strong>Reduced Risk:</strong> Identify threats before they impact the business.</li>
-                    <li><strong>Better Decisions:</strong> Provide high-level context for leadership.</li>
-                    <li><strong>Resource Optimization:</strong> Focus defense on the most relevant threats.</li>
+                    <li><strong>Proactive Defense:</strong> Enabling organizations to deploy defenses and verify controls before an attacker strikes.</li>
+                    <li><strong>Strategic Risk Reduction:</strong> Guiding budgeting, threat modeling, and long-term security architecture planning.</li>
+                    <li><strong>Incident Response Acceleration:</strong> Providing context (e.g., actor playbook, tools) during active breaches to speed up containment.</li>
                 </ul>
             </div>
 
-            <!-- Slide 3: Types of Intelligence -->
+            <!-- Slide 3: The Intelligence Spectrum: Strategic & Operational -->
             <div class="slide hidden">
-                <h2>Types of Intelligence</h2>
+                <h2>The Spectrum: Strategic & Operational</h2>
+                <p>Intelligence is divided into tiers based on its target audience, scope, and lifecycle duration:</p>
                 <ul>
-                    <li><strong>Strategic:</strong> High-level trends and geopolitical context for decision-makers.</li>
-                    <li><strong>Operational:</strong> Details about specific attacks and adversary capabilities.</li>
-                    <li><strong>Tactical:</strong> Tactics, Techniques, and Procedures (TTPs) used by actors.</li>
-                    <li><strong>Technical:</strong> Specific indicators (IOCs) like IPs, MD5 hashes, and domains.</li>
+                    <li><strong>Strategic Intelligence:</strong> High-level threat landscapes, attribution, and geopolitical motives. Designed for executives (CISOs, board members) to guide risk management and capital investments.</li>
+                    <li><strong>Operational Intelligence:</strong> Details of ongoing or incoming campaigns, threat group movements, and capabilities. Designed for security managers to prioritize resources.</li>
                 </ul>
             </div>
 
-            <!-- Slide 4: Knowledge Check -->
+            <!-- Slide 4: The Intelligence Spectrum: Tactical & Technical -->
+            <div class="slide hidden">
+                <h2>The Spectrum: Tactical & Technical</h2>
+                <p>Lower-tier intelligence focuses on immediate technical actions and engineering-level defense mechanisms:</p>
+                <ul>
+                    <li><strong>Tactical Intelligence:</strong> Focuses on adversary Tactics, Techniques, and Procedures (TTPs), mapping attacker behaviors (like credential dumping). Designed for SOC analysts and detection engineers.</li>
+                    <li><strong>Technical Intelligence:</strong> Short-lived, atomic indicators of compromise (IoCs) like malicious IPs, file hashes, and registry values used directly in EDR or SIEM watchlists.</li>
+                </ul>
+            </div>
+
+            <!-- Slide 5: Consumers of Threat Intelligence -->
+            <div class="slide hidden">
+                <h2>Consumers of CTI</h2>
+                <p>CTI must be tailored to meet the varying requirements of different teams across the enterprise:</p>
+                <ul>
+                    <li><strong>Security Operations (SOC):</strong> Uses technical indicators for alerting and tactical profiles to triage alerts.</li>
+                    <li><strong>Vulnerability Management:</strong> Integrates exploit threat data (e.g., EPSS scores) to prioritize patch cycles.</li>
+                    <li><strong>Executive Leadership (C-Suite):</strong> Consumes strategic briefings to evaluate business risk and align corporate policy with threat realities.</li>
+                </ul>
+            </div>
+
+            <!-- Slide 6: Knowledge Check -->
             <div class="slide hidden" id="quiz-slide">
                 <h2>Knowledge Check</h2>
                 <p>Test your understanding of CTI fundamentals.</p>

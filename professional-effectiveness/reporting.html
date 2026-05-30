@@ -20,24 +20,47 @@
 
         <main class="slide-container">
             <div class="slide active">
-                <h2>Communicating Intelligence</h2>
-                <p>Intelligence is only valuable if it is communicated effectively to those who need to act on it. Communication is the final phase of the intelligence lifecycle.</p>
-                <p>A good product is clear, concise, and focused on the <strong>bottom line</strong>.</p>
+                <h2>Principles of CTI Reporting</h2>
+                <p>Intelligence is only as valuable as the decisions it enables. An analyst may perform outstanding technical research, but if the final deliverable fails to communicate the threat clearly, the work is functionally useless.</p>
+                <p>CTI reporting follows strict professional guidelines: it must be structured, clear, precise, and immediately highlight the operational impact for the target stakeholder.</p>
             </div>
 
             <div class="slide hidden">
-                <h2>BLUF (Bottom Line Up Front)</h2>
-                <p>Place your most important findings and recommendations at the very beginning of your communication.</p>
-                <p>Decision-makers are often busy and may not read beyond the first page. BLUF ensures they see the key message immediately.</p>
-            </div>
-
-            <div class="slide hidden">
-                <h2>Analytical Writing Tips</h2>
+                <h2>Implementing BLUF (Bottom Line Up Front)</h2>
+                <p>A core practice in intelligence reporting is placing your most critical assessments and recommendations at the very beginning of the document.</p>
                 <ul>
-                    <li><strong>Be Objective:</strong> Avoid bias and stick to the evidence.</li>
-                    <li><strong>Use Estimative Language:</strong> Express levels of confidence (e.g., "high confidence," "likely," "possibly").</li>
-                    <li><strong>Know Your Audience:</strong> Tailor the technical depth to the recipient (e.g., CEO vs. SOC Analyst).</li>
-                    <li><strong>Keep it Concise:</strong> Avoid unnecessary jargon and wordiness.</li>
+                    <li><strong>The Executive Summary:</strong> The first section of the report must state what has happened, why it matters, and what action is required.</li>
+                    <li><strong>Context-First:</strong> Avoid forcing busy readers to read through five pages of technical analysis before reaching the conclusion.</li>
+                    <li><strong>Example:</strong> *“A zero-day exploit targeting our mail server is actively being used in our sector. Action is required immediately to isolate these servers.”*</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Estimative Language & Analytic Rigor</h2>
+                <p>Threat intelligence reports deal with incomplete information. To maintain credibility and precision, analysts align with <strong>ODNI ICD 203 Standards</strong>:</p>
+                <ul>
+                    <li><strong>Confidence Levels:</strong> Explicitly state analytical confidence: *High Confidence* (solid sources, logical patterns), *Medium Confidence* (interpretable data but gaps exist), or *Low Confidence* (fragmented or uncorroborated sources).</li>
+                    <li><strong>Probability Expressions:</strong> Use standardized words to communicate likelihood: *Almost Certain* (95%+), *Highly Likely* (70%-90%), *Likely* (55%-69%), *Unlikely* (20%-45%).</li>
+                    <li><strong>Separating Fact from Assessment:</strong> Always make it clear where raw evidence ends and analytical interpretation begins.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Structured Reporting Formats</h2>
+                <p>Intelligence teams use standardized formats depending on the nature of the findings and the delivery mechanism:</p>
+                <ul>
+                    <li><strong>Threat Advisories:</strong> Fast-paced, tactical documents focusing on a single malware campaign, detailing atomic IoCs and host signatures (YARA).</li>
+                    <li><strong>Threat Activity Briefs:</strong> Operational reports outlining threat actor movements, campaigns, and shifts in regional activity.</li>
+                    <li><strong>Strategic Assessments:</strong> Long-term reports looking at industry threat trends, threat models, and predictions for the upcoming quarter.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Targeting Your Audience</h2>
+                <p>A single report cannot serve all stakeholders. Analysts customize report complexity and depth based on the consumer's role:</p>
+                <ul>
+                    <li><strong>Executive Reports:</strong> Focus on business impact, cost of downtime, resource impact, and mitigation requirements. Tech details are omitted or placed in appendices.</li>
+                    <li><strong>Defender Advisories:</strong> Packed with registry paths, system files, network signatures, EDR queries, and step-by-step mitigation instructions for SOC and IR teams.</li>
                 </ul>
             </div>
 

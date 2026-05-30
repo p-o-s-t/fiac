@@ -20,27 +20,48 @@
 
         <main class="slide-container">
             <div class="slide active">
-                <h2>What is COA Development?</h2>
-                <p><strong>Course of Action (COA)</strong> development involves predicting an adversary's future behavior and developing defensive strategies to counter those moves.</p>
-                <p>Intelligence analysts help decision-makers choose the best path forward based on threat assessments.</p>
+                <h2>Threat Mitigation & Courses of Action</h2>
+                <p>A <strong>Course of Action (COA)</strong> in threat intelligence is a set of defensive recommendations designed to prevent, mitigate, or disrupt threat actor activities before or during an attack.</p>
+                <p>Rather than reacting to infections after they happen, COA development shifts focus to proactive shields, hardening systems, and closing attack paths identified in adversary intelligence.</p>
             </div>
 
             <div class="slide hidden">
-                <h2>Predicting Adversary Paths</h2>
-                <p>Analysts typically identify two primary paths an adversary might take:</p>
+                <h2>Adversary Path Analysis: MLCOA & MDCOA</h2>
+                <p>When analyzing a threat campaign, intelligence analysts forecast the adversary’s movements by defining two primary routes:</p>
                 <ul>
-                    <li><strong>Most Likely COA (MLCOA):</strong> The behavior the adversary is most likely to exhibit based on their history, TTPs, and current situation.</li>
-                    <li><strong>Most Dangerous COA (MDCOA):</strong> The behavior that would cause the most significant impact or damage to the organization, even if it is less likely.</li>
+                    <li><strong>Most Likely COA (MLCOA):</strong> The behavior and TTPs the adversary is statistically most likely to use, based on historic trends, known skills, and standard playbooks.</li>
+                    <li><strong>Most Dangerous COA (MDCOA):</strong> The worst-case scenario that would result in the highest business impact (e.g., destructive wiping of databases), regardless of its likelihood.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Time-Based Predictions</h2>
-                <p>Predictions are more valuable when they include a temporal component. Analysts use "Time-Left-To-Act" indicators:</p>
+                <h2>Time-Based Predictions & Warnings</h2>
+                <p>For COAs to be actionable, they must include temporal metrics that define when security operations must act:</p>
                 <ul>
-                    <li><strong>Early Warning:</strong> Identifying the first signs of preparation (e.g., domain registration).</li>
-                    <li><strong>Imminence:</strong> Recognizing indicators that an attack is about to happen (e.g., increased scanning).</li>
-                    <li><strong>Response Window:</strong> Defining the amount of time defenders have to implement a counter-COA.</li>
+                    <li><strong>Early Warning Indicators:</strong> Detecting adversary preparations (e.g., typosquatting domain registration, targeted credential harvesting).</li>
+                    <li><strong>Imminence Indicators:</strong> Signs of imminent attack execution (e.g., active vulnerability scanning against target servers, target network pinging).</li>
+                    <li><strong>Response Window:</strong> The estimated time defenders have to deploy counter-COAs before impact occurs.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Defensive Counter-COAs</h2>
+                <p>Defensive options are selected to match the stage of the attack and the organization's capabilities, following <strong>NIST SP 800-160</strong> guidance:</p>
+                <ul>
+                    <li><strong>Block / Restrict:</strong> Blocking malicious IPs, domains, or hashes via EDR, firewall, and mail filters.</li>
+                    <li><strong>Isolate:</strong> Separating targeted assets from the core network to prevent lateral movement.</li>
+                    <li><strong>Decoy / Deceive:</strong> Route scanning activity to honeypots to monitor attacker methodologies.</li>
+                    <li><strong>Harden:</strong> Applying specific patches, disabling unused protocols, or altering user access privileges.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Operationalizing COAs</h2>
+                <p>COA recommendations must be integrated directly into security operations to ensure rapid execution:</p>
+                <ul>
+                    <li><strong>Playbook Integration:</strong> Translating COAs into EDR/SOAR playbooks that can be executed automatically or with a single click.</li>
+                    <li><strong>Patching Prioritization:</strong> Utilizing threat intelligence to override standard patching schedules and deploy hotfixes for actively exploited CVEs.</li>
+                    <li><strong>Red Team Validation:</strong> Simulating predicted adversary COAs to test the effectiveness of deployed counter-COAs.</li>
                 </ul>
             </div>
 

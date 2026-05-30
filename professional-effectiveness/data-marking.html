@@ -20,25 +20,52 @@
 
         <main class="slide-container">
             <div class="slide active">
-                <h2>Protecting Information</h2>
-                <p>CTI often contains sensitive information about an organization's defenses or ongoing investigations. Data marking ensures that this information is shared safely and securely.</p>
-                <p>The most common standard for CTI is the <strong>Traffic Light Protocol (TLP)</strong>.</p>
+                <h2>Information Security & Sharing</h2>
+                <p>Threat intelligence sharing is vital to collective defense. However, CTI reports often contain sensitive details about an organization’s proprietary systems, security posture, and active investigations.</p>
+                <p>To facilitate secure exchange, analysts use standardized data marking protocols that establish legal boundaries for who can view the information and what actions they can perform with it.</p>
             </div>
 
             <div class="slide hidden">
-                <h2>Traffic Light Protocol (TLP)</h2>
+                <h2>Traffic Light Protocol (TLP 2.0)</h2>
+                <p>Created by FIRST, the <strong>Traffic Light Protocol (TLP)</strong> is the industry standard for indicating the sharing restrictions of a threat intelligence product:</p>
                 <ul>
-                    <li><strong>TLP:RED:</strong> For the recipients' eyes only. No further sharing.</li>
-                    <li><strong>TLP:AMBER:</strong> Shared within the recipients' organization and its clients who need to know.</li>
-                    <li><strong>TLP:GREEN:</strong> Shared within the recipients' community or sector.</li>
-                    <li><strong>TLP:CLEAR:</strong> For public consumption. No restrictions on sharing.</li>
+                    <li><strong>TLP:RED:</strong> Restricted to the specific human recipients. No further sharing inside or outside the organization.</li>
+                    <li><strong>TLP:AMBER:</strong> Shared within the recipient's organization and its immediate clients on a strict "need-to-know" basis.</li>
+                    <li><strong>TLP:AMBER+STRICT:</strong> Restricts sharing strictly to the recipient's organization (clients are excluded).</li>
+                    <li><strong>TLP:GREEN:</strong> Shared within the wider peer community, trust groups (ISACs), or sector partners. Not for public disclosure.</li>
+                    <li><strong>TLP:CLEAR:</strong> Publicly releasable. No sharing restrictions (replaces the older TLP:WHITE label).</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
                 <h2>Permissible Actions Protocol (PAP)</h2>
-                <p>While TLP focuses on <em>who</em> can see information, <strong>PAP</strong> focuses on <em>what</em> a recipient can do with it.</p>
-                <p>PAP helps ensure that intelligence is used effectively without accidentally alerting an adversary (e.g., "PAP:RED" might mean "do not block these IPs yet").</p>
+                <p>While TLP dictates *who* has access to data, the <strong>Permissible Actions Protocol (PAP)</strong> specifies *what actions* the recipient can take once they have the data:</p>
+                <ul>
+                    <li><strong>PAP:RED:</strong> Non-detectable operations only. Do not use this data for active EDR blocks, firewall rules, or DNS blocking, as this could alert the attacker.</li>
+                    <li><strong>PAP:AMBER:</strong> Limited action. Detections can be configured, but only within the internal organization's infrastructure.</li>
+                    <li><strong>PAP:GREEN:</strong> Active defensive operations allowed. The indicators can be used for automated defenses and shared with trusted service providers.</li>
+                    <li><strong>PAP:WHITE:</strong> No restrictions. Actions can be taken publicly, including active scans or scanning remote infrastructure.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Operational Safeguards & Trusts</h2>
+                <p>Beyond TLP and PAP, analysts navigate other trust structures when sharing threat intelligence details:</p>
+                <ul>
+                    <li><strong>Chatham House Rule:</strong> Allows recipients to use the information received, but prohibits identifying the identity of the speaker or their organization.</li>
+                    <li><strong>Source Anonymization:</strong> Scrubbing local IP subnets, user names, and domain tags from reports before sharing them with public or community platforms.</li>
+                    <li><strong>NDAs & Bilateral Agreements:</strong> Establishing formal non-disclosure agreements before initiating direct exchanges of raw malware or breach artifacts.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Applying Labels at Scale</h2>
+                <p>Data marking must be automated to remain effective across high-volume sharing environments:</p>
+                <ul>
+                    <li><strong>Header & Footer Tagging:</strong> Standardized text labels placed at the top and bottom of every page in threat advisory PDFs and emails.</li>
+                    <li><strong>STIX 2.1 Metadata:</strong> Encoding sharing policies directly into threat indicators using the STIX <code>marking-definition</code> object.</li>
+                    <li><strong>TIP Automations:</strong> Configuring threat intelligence platforms (like MISP) to enforce TLP tags during automated TAXII feed synchronization.</li>
+                </ul>
             </div>
 
             <div class="slide hidden" id="quiz-slide">

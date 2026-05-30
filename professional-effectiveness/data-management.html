@@ -20,33 +20,50 @@
 
         <main class="slide-container">
             <div class="slide active">
-                <h2>Threat Intelligence Platforms (TIP)</h2>
-                <p>A <strong>TIP</strong> is a central repository used to aggregate, correlate, and analyze threat data from multiple sources. It automates the collection and dissemination of indicators (IOCs).</p>
+                <h2>CTI Storage & Curation</h2>
+                <p>Threat intelligence is generated at a velocity and volume that quickly overwhelms manual spreadsheets. Effective data management requires structured database repositories and platforms that ensure threat information is searchable, indexable, and correlated.</p>
+                <p>Analysts store threat data not just to keep a historical log, but to construct actionable relational links between files, hosts, network endpoints, and adversary profiles.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Internal vs. External Telemetry Curation</h2>
+                <p>A comprehensive threat intelligence program balances telemetry collected from internal security platforms with feeds acquired from external organizations:</p>
                 <ul>
-                    <li><strong>Open Source:</strong> MISP (Malware Information Sharing Platform), OpenCTI.</li>
-                    <li><strong>Commercial:</strong> ThreatConnect, ThreatQuotient, Anomali.</li>
+                    <li><strong>Internal Telemetry:</strong> Ingesting logs from EDR, SIEM, firewall access records, email servers, and corporate vulnerability scans.</li>
+                    <li><strong>External Telemetry:</strong> Ingesting commercial vendor feeds, open-source blacklists, government alerts (e.g., CISA), and ISAC sharing streams.</li>
+                    <li><strong>Metadata Curation:</strong> Tracking telemetry sources to evaluate feed reliability, true positive rates, and resource costs.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Data Sources: Internal & External</h2>
-                <p>Effective CTI relies on a diverse range of data sources to build a complete picture of the threat landscape.</p>
+                <h2>Threat Intelligence Platforms (TIPs)</h2>
+                <p>A **TIP** acts as a central aggregator and correlation engine for security operations, supporting both open-source (MISP, OpenCTI) and commercial solutions.</p>
                 <ul>
-                    <li><strong>Internal Sources:</strong> SIEM logs, EDR telemetry, incident response reports, and internal vulnerability scans.</li>
-                    <li><strong>External Sources:</strong> OSINT (blogs, Twitter), ISAC feeds, commercial data providers, and government alerts.</li>
+                    <li><strong>Standardized Formats:</strong> Utilizing **STIX 2.1** (Structured Threat Information Expression) to define indicators, actors, TTPs, and campaigns as relational JSON objects.</li>
+                    <li><strong>Sharing Protocols:</strong> Deploying **TAXII** (Trusted Automated Exchange of Intelligence Information) to automate the machine-to-machine exchange of STIX packages.</li>
+                    <li><strong>Correlation:</strong> Automatically linking a newly observed IP to historic campaigns and malware families registered in the platform.</li>
                 </ul>
-                <p>Analysts must document these sources to ensure reliability and track intelligence gaps.</p>
             </div>
 
             <div class="slide hidden">
-                <h2>Collection Frameworks</h2>
-                <p>A <strong>Collection Framework</strong> helps analysts map their data sources back to their intelligence requirements (PIRs).</p>
+                <h2>Collection Management & Mapping</h2>
+                <p>To prevent collecting data that does not serve the organization, analysts deploy a **Collection Management** strategy to map sources back to active requirements:</p>
                 <ul>
-                    <li><strong>Source Mapping:</strong> Identifying which specific tool or feed provides the data needed to answer a PIR.</li>
-                    <li><strong>Gap Analysis:</strong> Identifying requirements that cannot currently be met with existing data sources.</li>
-                    <li><strong>Lifecycle Management:</strong> Regularly reviewing and updating collection plans to ensure they remain relevant.</li>
+                    <li><strong>Source Mapping:</strong> Documenting which security tools or feeds are responsible for gathering data to address specific PIRs.</li>
+                    <li><strong>Gap Analysis:</strong> Formally identifying PIRs that cannot be answered due to a lack of telemetry, prompting new tool acquisitions or feed subscriptions.</li>
+                    <li><strong>Feeds Auditing:</strong> Regularly auditing sources to retire redundant or low-fidelity feeds that produce high false-positive rates.</li>
                 </ul>
                 <span class="ksa-tag">DCWF Alignment: Task 2881 | NICE Alignment: K0989, S0712</span>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Threat Data Lifecycle & Quality Control</h2>
+                <p>Data stored in a TIP decays over time. CTI operations utilize data pipelines to enforce automated quality control:</p>
+                <ul>
+                    <li><strong>Deduplication:</strong> Merging overlapping records of the same indicator from different sources to maintain a clean database.</li>
+                    <li><strong>Validation:</strong> Cross-checking ingested indicators against whitelist databases to prevent blocking critical services (e.g., DNS providers, cloud APIs).</li>
+                    <li><strong>Indicator Aging:</strong> Implementing aging pipelines that lower indicator confidence scores or delete them entirely once their active duration expires.</li>
+                </ul>
             </div>
 
             <div class="slide hidden" id="quiz-slide">
