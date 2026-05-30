@@ -43,6 +43,28 @@
                 <p>By understanding what is visible, organizations can proactively address vulnerabilities before an attacker can exploit them.</p>
             </div>
 
+            <div class="slide hidden">
+                <h2>Digital Footprinting & Shadow IT</h2>
+                <p>Defenders must account for unauthorized and hidden assets that expand the risk profile:</p>
+                <ul>
+                    <li><strong>Shadow IT:</strong> Services, cloud buckets, or software deployed by business units without IT approval or security oversight.</li>
+                    <li><strong>Orphaned Assets:</strong> Legacy servers, forgotten test environments, or decommissioned websites that are still running and unpatched.</li>
+                    <li><strong>Data Leakage:</strong> Sensitive data exposed in public code repositories, open storage instances, or corporate document metadata.</li>
+                    <li><strong>Third-Party SaaS:</strong> External services integrated with internal networks that introduce supply chain risks.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Prioritization & Risk Reduction</h2>
+                <p>Reducing the attack surface requires active mitigation and resource optimization:</p>
+                <ul>
+                    <li><strong>Criticality Mapping:</strong> Categorizing assets based on business value and the sensitivity of the data they store or process.</li>
+                    <li><strong>Service Hardening:</strong> Enforcing strict access controls, disabling non-essential ports (e.g., exposing SSH/RDP), and implementing MFA.</li>
+                    <li><strong>Automated Scanning:</strong> Using Shodan, Censys, and domain discovery tools to monitor the internet perimeter continuously.</li>
+                    <li><strong>Vulnerability Correlation:</strong> Mapping exposed assets to known CVEs to prioritize remediation efforts where they matter most.</li>
+                </ul>
+            </div>
+
             <div class="slide hidden" id="quiz-slide">
                 <h2>Knowledge Check</h2>
                 <div id="quiz-container">
@@ -50,7 +72,7 @@
                 </div>
             </div>
 
-                        <div class="lesson-metadata">
+            <div class="lesson-metadata">
                 <span class="ksa-tag">DCWF Alignment: KSA 3137, 3630 | NICE Alignment: K0683, K0752</span>
                 <span class="ref-tag">Reference: OWASP Attack Surface Analysis</span>
             </div>

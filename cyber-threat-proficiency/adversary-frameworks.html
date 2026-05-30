@@ -48,6 +48,28 @@
                 </ul>
             </div>
 
+            <div class="slide hidden">
+                <h2>C2 Profiles & Beaconing</h2>
+                <p>Adversaries configure command-and-control communications to mimic normal web activity:</p>
+                <ul>
+                    <li><strong>Malleable Profiles:</strong> Custom configurations that let threat actors rewrite HTTP headers, user-agents, and data payloads to look like legitimate traffic.</li>
+                    <li><strong>Sleep & Jitter:</strong> Injecting randomized delay times (jitter) between beacon check-ins to evade time-interval detection systems.</li>
+                    <li><strong>Diverse Protocols:</strong> Utilizing protocols such as HTTPS, DNS, SMB, and gRPC to route C2 signals through corporate firewalls.</li>
+                    <li><strong>DNS Tunneling:</strong> Encoding C2 messages within DNS queries and responses (e.g., TXT/CNAME records) to bypass proxy restrictions.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Mitigating Framework Footprints</h2>
+                <p>Detecting and blocking framework activities requires a layered defense model:</p>
+                <ul>
+                    <li><strong>Behavioral EDR:</strong> Using advanced Endpoint Detection and Response tools to catch process injection anomalies and parent-child process abuse.</li>
+                    <li><strong>TLS Inspection:</strong> Decrypting boundary traffic to search for default framework headers and custom C2 profiles.</li>
+                    <li><strong>Outbound Network Baselines:</strong> Standardizing internal egress paths to flag long-running TCP connections or anomalous port usage.</li>
+                    <li><strong>Signature Hunting:</strong> Scanning for default certificates, default beacon compile keys, and known C2 server hostnames.</li>
+                </ul>
+            </div>
+
             <div class="slide hidden" id="quiz-slide">
                 <h2>Knowledge Check</h2>
                 <div id="quiz-container">

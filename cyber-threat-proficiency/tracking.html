@@ -44,6 +44,28 @@
                 </ul>
             </div>
 
+            <div class="slide hidden">
+                <h2>Attribution Confidence Levels</h2>
+                <p>Assigning responsibility for an attack requires careful, standardized evaluation:</p>
+                <ul>
+                    <li><strong>Estimative Language:</strong> Expressing attribution claims using structured confidence terms (e.g., "highly likely," "moderate confidence") per ICD 209 guidelines.</li>
+                    <li><strong>False Flag Analysis:</strong> Identifying if an actor intentionally left misleading artifacts (like Russian language strings in a Chinese malware compile) to deceive analysts.</li>
+                    <li><strong>Temporal Correlation:</strong> Analyzing compile times and C2 activity logs to determine the operator's working hours and timezone.</li>
+                    <li><strong>Infrastructure Spoofing:</strong> Accounting for rented, shared, or compromised infrastructure (like VPN endpoints) which lowers direct attribution confidence.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Campaign Tracking Databases</h2>
+                <p>CTI teams rely on specialized software and rulesets to map and track adversary footprints:</p>
+                <ul>
+                    <li><strong>Graph Databases:</strong> Using systems like Neo4j or Maltego to map connections between domains, IP addresses, hashes, and target sectors.</li>
+                    <li><strong>Yara Rule Deployment:</strong> Deploying rules to retroactively scan malware repositories (e.g., VirusTotal) to find older, undocumented campaign samples.</li>
+                    <li><strong>TIP Correlation:</strong> Utilizing Threat Intelligence Platforms (e.g., MISP) to auto-correlate indicators across separate internal incidents.</li>
+                    <li><strong>Indicator Lifecycle Management:</strong> Dynamically retiring or aging out indicators that have been abandoned by the actor to reduce false positives.</li>
+                </ul>
+            </div>
+
             <div class="slide hidden" id="quiz-slide">
                 <h2>Knowledge Check</h2>
                 <div id="quiz-container">
@@ -51,7 +73,7 @@
                 </div>
             </div>
 
-                        <div class="lesson-metadata">
+            <div class="lesson-metadata">
                 <span class="ksa-tag">DCWF Alignment: Task 2593 | NICE Alignment: T1053, T1767</span>
                 <span class="ref-tag">Reference: Microsoft, Tracking Adversaries via Activity Groups</span>
             </div>

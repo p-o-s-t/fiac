@@ -44,6 +44,28 @@
                 </ul>
             </div>
 
+            <div class="slide hidden">
+                <h2>Designing an Emulation Campaign</h2>
+                <p>A systematic process ensures that adversary emulation runs safely and effectively:</p>
+                <ul>
+                    <li><strong>Threat Selection:</strong> Choosing an adversary relevant to the organization's industry, geographic location, and intelligence profile.</li>
+                    <li><strong>TTP Extraction:</strong> Analyzing intelligence reports to extract specific techniques and mapping them to MITRE ATT&CK.</li>
+                    <li><strong>Scope & Safety Boundaries:</strong> Defining rules of engagement, target endpoints, and testing schedules to prevent disruption.</li>
+                    <li><strong>Execution & Logging:</strong> Conducting the operations while confirming that host, network, and security logs are recording the activity.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Purple Teaming Integration</h2>
+                <p>Emulation serves as the bridge between red and blue teams in a Purple Team engagement:</p>
+                <ul>
+                    <li><strong>Collaborative Analysis:</strong> Red and blue teams review the timing and output of emulation runs together in real time.</li>
+                    <li><strong>Detection Gap Identification:</strong> Confirming whether the security stack (EDR, SIEM, firewall) blocked, alerted, or missed each action.</li>
+                    <li><strong>Signature & Rule Creation:</strong> Drafting and deploying detection rules (e.g., Sigma, Yara) to address the identified gaps.</li>
+                    <li><strong>Continuous Validation:</strong> Re-executing tests to verify that modifications to security configurations successfully catch the threat.</li>
+                </ul>
+            </div>
+
             <div class="slide hidden" id="quiz-slide">
                 <h2>Knowledge Check</h2>
                 <div id="quiz-container">
@@ -51,7 +73,7 @@
                 </div>
             </div>
 
-                        <div class="lesson-metadata">
+            <div class="lesson-metadata">
                 <span class="ksa-tag">DCWF Alignment: Task 3460 | NICE Alignment: S0516, S0446</span>
                 <span class="ref-tag">Reference: MITRE TME (Threat Management Engine)</span>
             </div>
