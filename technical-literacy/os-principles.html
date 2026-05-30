@@ -20,32 +20,51 @@
 
         <main class="slide-container">
             <div class="slide active">
-                <h2>Windows Operating System</h2>
-                <p>The Windows OS is characterized by several key architectural components critical for CTI analysts:</p>
+                <h2>Windows Internals & CTI</h2>
+                <p>The Windows Operating System is the primary target for desktop malware. Understanding its internal architecture is key to finding adversary traces:</p>
                 <ul>
-                    <li><strong>NTFS (New Technology File System):</strong> Supports features like permissions, encryption, and Alternate Data Streams (ADS), which malware can use for hiding.</li>
-                    <li><strong>Registry:</strong> A hierarchical database storing configuration settings. Often used by malware for persistence (e.g., Run keys).</li>
-                    <li><strong>PE (Portable Executable) Files:</strong> The standard format for Windows executables, DLLs, and drivers. Understanding its headers and sections is vital for malware analysis.</li>
+                    <li><strong>Registry Database:</strong> A hierarchical configuration database. Actors use it for persistence (e.g., Run keys, Services creation, Active Setup hijacking).</li>
+                    <li><strong>NTFS alternate Data Streams (ADS):</strong> A filesystem capability allowing data to be attached to an existing file descriptor, often abused to hide payloads.</li>
+                    <li><strong>Portable Executable (PE):</strong> The standard format for Windows executables, DLLs, and drivers. Analysts inspect PE headers (e.g., sections like `.text`, `.data`) to analyze malicious imports.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Linux Operating System</h2>
-                <p>Linux is a Unix-like OS widely used in servers and embedded devices:</p>
+                <h2>Linux Security & Logs</h2>
+                <p>Linux is the foundation of the cloud and enterprise servers, making Linux-based attacks highly impactful:</p>
                 <ul>
-                    <li><strong>Filesystem Hierarchy:</strong> Follows a standard structure (e.g., /etc for config, /var/log for logs, /tmp for temporary files).</li>
-                    <li><strong>Permissions:</strong> Uses a robust model (read, write, execute) for owners, groups, and others. Root is the all-powerful superuser.</li>
-                    <li><strong>ELF (Executable and Linkable Format):</strong> The standard binary format for Linux. CTI analysts look for ELF-based malware targeting cloud environments.</li>
+                    <li><strong>Standard Logging:</strong> System logs (stored in `/var/log/`, like `secure`, `syslog`, `cron`) track user logins, cron executions, and service failures.</li>
+                    <li><strong>Executable & Linkable Format (ELF):</strong> The standard binary executable format for Linux, often targeted by cross-platform actors using languages like Go and Rust.</li>
+                    <li><strong>Virtual Filesystem (/proc):</strong> A pseudo-filesystem tracking active kernel memory and process executions. Checking `/proc/[PID]/exe` helps identify hidden run paths.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>macOS</h2>
-                <p>Built on a Unix base (Darwin), macOS includes unique security features:</p>
+                <h2>macOS Security Architecture</h2>
+                <p>Built on the BSD Unix-based Darwin kernel, macOS deploys unique structural security controls:</p>
                 <ul>
-                    <li><strong>Unix Foundation:</strong> Shares many command-line tools and filesystem similarities with Linux.</li>
-                    <li><strong>Security Features:</strong> Includes <em>Gatekeeper</em> (verifying apps), <em>System Integrity Protection (SIP)</em> (protecting system files), and <em>XProtect</em> (built-in malware scanning).</li>
-                    <li><strong>App Sandboxing:</strong> Restricts what data an app can access, limiting the potential impact of a compromise.</li>
+                    <li><strong>TCC (Transparency, Consent, Control):</strong> The framework that manages application permissions to hardware (mic, camera) and files (Desktop, Documents).</li>
+                    <li><strong>System Integrity Protection (SIP):</strong> A kernel-level constraint preventing even the root user from modifying protected system folders.</li>
+                    <li><strong>Gatekeeper & XProtect:</strong> Apple's built-in controls. Gatekeeper verifies app cryptographic signatures, while XProtect provides signature-based malware detection.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>OS Memory & Processes</h2>
+                <p>Advanced adversaries manipulate memory structures directly to execute code without writing payloads to the disk:</p>
+                <ul>
+                    <li><strong>Process Injection:</strong> Injecting malicious code into legitimate running processes (e.g., `explorer.exe`) via techniques like DLL Injection or Process Hollowing.</li>
+                    <li><strong>LSASS Dumping:</strong> Dumping the Local Security Authority Subsystem Service (LSASS) memory to harvest plaintext credentials and NTLM password hashes.</li>
+                    <li><strong>Virtual Memory:</strong> Understanding how the OS maps physical RAM to process address spaces (Heap for dynamic variables, Stack for execution tracking).</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Virtualization & Containerization</h2>
+                <p>Modern server environments run multiple logical operating systems on shared physical hardware:</p>
+                <ul>
+                    <li><strong>Hypervisors (Type 1 & 2):</strong> Software that creates and runs Virtual Machines (VMs), providing strong hardware-level isolation.</li>
+                    <li><strong>Containers (Docker/Kubernetes):</strong> OS-level virtualization sharing the host OS kernel. Containers are faster than VMs but share resources, making them vulnerable to **Container Breakout** attacks where an attacker escapes to the host system.</li>
                 </ul>
             </div>
 

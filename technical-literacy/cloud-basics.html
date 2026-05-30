@@ -20,33 +20,53 @@
 
         <main class="slide-container">
             <div class="slide active">
-                <h2>Service Models</h2>
-                <p>Cloud computing services are categorized into three primary models:</p>
+                <h2>Cloud Service Models</h2>
+                <p>Cloud computing transforms physical server resources into dynamic, logical services hosted over the internet, categorized into three core layers:</p>
                 <ul>
-                    <li><strong>IaaS (Infrastructure as a Service):</strong> Provides virtualized computing resources (servers, storage, networks). Examples: AWS EC2, Azure VMs.</li>
-                    <li><strong>PaaS (Platform as a Service):</strong> Provides a platform for developers to build and deploy applications without managing underlying infrastructure. Examples: Google App Engine, Heroku.</li>
-                    <li><strong>SaaS (Software as a Service):</strong> Delivers software applications over the internet. Examples: Office 365, Salesforce, Gmail.</li>
+                    <li><strong>IaaS (Infrastructure as a Service):</strong> Virtualized compute, storage, and networking. The customer installs and manages the OS and applications (e.g., AWS EC2, Azure VMs).</li>
+                    <li><strong>PaaS (Platform as a Service):</strong> Pre-configured execution environments. The customer only manages application code and data (e.g., Google App Engine, AWS Elastic Beanstalk).</li>
+                    <li><strong>SaaS (Software as a Service):</strong> Completed web-hosted applications. The customer only manages settings and access permissions (e.g., Microsoft 365, Salesforce).</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Deployment Models</h2>
-                <p>Cloud services can be deployed in different environments:</p>
+                <h2>Deployment Models & Architecture</h2>
+                <p>Organizations customize their cloud environment based on compliance, risk, and scalability requirements:</p>
                 <ul>
-                    <li><strong>Public Cloud:</strong> Services are delivered over the public internet and shared across organizations. Examples: AWS, Azure, GCP.</li>
-                    <li><strong>Private Cloud:</strong> Dedicated to a single organization, often managed internally or by a third party.</li>
-                    <li><strong>Hybrid Cloud:</strong> A combination of public and private clouds, allowing data and applications to be shared between them.</li>
+                    <li><strong>Public Cloud:</strong> Shared infrastructure owned by third-party hyperscalers (AWS, Azure, Google Cloud) and accessed over the public internet.</li>
+                    <li><strong>Private Cloud:</strong> Infrastructure dedicated entirely to a single organization, hosting applications on-premise or in private datacenters.</li>
+                    <li><strong>Hybrid & Multi-Cloud:</strong> Integrating on-premise resources with public clouds, or orchestrating microservices across multiple cloud vendors using Kubernetes.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Shared Responsibility Model</h2>
-                <p>A critical concept in cloud security: Who is responsible for what?</p>
+                <h2>The Shared Responsibility Model</h2>
+                <p>A critical cloud security concept is the dividing line of security duties between the provider and the customer:</p>
                 <ul>
-                    <li><strong>Cloud Provider:</strong> Responsible for the security <strong>OF</strong> the cloud (hardware, global infrastructure).</li>
-                    <li><strong>Customer:</strong> Responsible for security <strong>IN</strong> the cloud (customer data, identity/access management, platform/OS configuration).</li>
+                    <li><strong>Provider Duties (Security OF the Cloud):</strong> Securing physical datacenters, server host machines, hypervisors, and global core network routing.</li>
+                    <li><strong>Customer Duties (Security IN the Cloud):</strong> Securing databases, configuring firewalls (Security Groups), patching guest operating systems, and managing identity and access controls (IAM).</li>
+                    <li><strong>Risk:</strong> The majority of cloud breaches target customer responsibilities, specifically IAM misconfigurations.</li>
                 </ul>
-                <p>Misconfigurations in the customer's area of responsibility are a leading cause of cloud data breaches.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Cloud-Specific Attack Vectors</h2>
+                <p>Threat actors exploit the unique architectural features of cloud environments to gain initial access and move laterally:</p>
+                <ul>
+                    <li><strong>Exposed Storage Buckets:</strong> Misconfiguring AWS S3 buckets or Azure Blobs to allow anonymous public reading, leading to massive data leaks.</li>
+                    <li><strong>Credential Leaks:</strong> Accidentally uploading hardcoded cloud API access keys to public repositories (such as GitHub).</li>
+                    <li><strong>IAM Role Assumption:</strong> Exploiting over-privileged server profiles to assume administrator roles and move laterally to other cloud projects.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Cloud Threat Intelligence & Auditing</h2>
+                <p>To investigate cloud intrusions, threat analysts pivot from analyzing host-level hard drives to parsing massive log streams:</p>
+                <ul>
+                    <li><strong>API Audit Logs:</strong> Analyzing services like AWS CloudTrail, Google Cloud Audit Logs, and Azure Activity Logs to track who made what API call.</li>
+                    <li><strong>Network Logs:</strong> Querying VPC Flow Logs to trace network connections, data volumes, and protocols moving across virtual network segments.</li>
+                    <li><strong>Anomalous Activity:</strong> Flagging suspicious API behaviors, such as logins from unexpected countries or bulk data exfiltration from storage buckets.</li>
+                </ul>
             </div>
 
             <div class="slide hidden" id="quiz-slide">

@@ -20,40 +20,48 @@
 
         <main class="slide-container">
             <div class="slide active">
-                <h2>Encryption Types</h2>
-                <p>Cryptography is the science of securing communication. CTI analysts must understand two main types of encryption:</p>
+                <h2>Cryptographic Encryption Types</h2>
+                <p>Cryptography secures communication through mathematically complex key operations. CTI analysts dissect two main forms of encryption:</p>
                 <ul>
-                    <li><strong>Symmetric Encryption:</strong> Uses a single key for both encryption and decryption. Fast but key management is challenging. Examples: AES, ChaCha20.</li>
-                    <li><strong>Asymmetric Encryption:</strong> Uses a pair of keys: a <em>public key</em> (for encryption) and a <em>private key</em> (for decryption). Used for secure key exchange and digital signatures. Examples: RSA, ECC.</li>
+                    <li><strong>Symmetric Encryption:</strong> Uses a single secret key to both encrypt and decrypt data. Extremely fast but requires secure out-of-band key sharing. Algorithms: AES (Advanced Encryption Standard), ChaCha20.</li>
+                    <li><strong>Asymmetric Encryption:</strong> Uses a mathematically linked key pair: a *Public Key* (freely shared, encrypts data) and a *Private Key* (kept secret, decrypts data). Algorithms: RSA, ECC (Elliptic Curve Cryptography). Often used for key exchange protocols (Diffie-Hellman).</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Hashing</h2>
-                <p>A hash function takes an input of any size and produces a fixed-size string of characters. It is <em>one-way</em> and used for <strong>Integrity checks</strong>:</p>
+                <h2>Cryptographic Hashing for CTI</h2>
+                <p>Hash functions convert an input of arbitrary size into a unique, fixed-size mathematical representation. Hashes are strictly one-way and collision-resistant:</p>
                 <ul>
-                    <li><strong>Malware Identification:</strong> Unique hashes (MD5, SHA-256) act as fingerprints for specific files.</li>
-                    <li><strong>Password Security:</strong> Storing hashes instead of plaintext passwords.</li>
-                    <li><strong>Integrity:</strong> Verifying that a downloaded file hasn't been tampered with.</li>
+                    <li><strong>Payload Identification:</strong> Using MD5, SHA-1, and SHA-256 to create unique signatures (fingerprints) for malicious files.</li>
+                    <li><strong>Fuzzy Hashing:</strong> Using algorithms like **SSDEEP** or **TLSH** to measure file similarity, helping analysts identify modified variants of known malware.</li>
+                    <li><strong>Import Hashing (Imphash):</strong> Hashing the list of API functions imported by a Portable Executable. If two files have the same Imphash, they likely share the same source code structure, indicating a common origin.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>SSL/TLS and Fingerprinting</h2>
-                <p><strong>SSL/TLS</strong> encrypts network traffic (HTTPS). Analysts use it for attribution:</p>
+                <h2>SSL/TLS & CTI Fingerprinting</h2>
+                <p>The **SSL/TLS** protocol encrypts network communications (HTTPS). While encryption hides payload data, the handshake metadata is a goldmine for tracking infrastructure:</p>
                 <ul>
-                    <li><strong>Certificates:</strong> Information about the certificate issuer can link infrastructure to known actors.</li>
-                    <li><strong>JA4 Fingerprinting:</strong> A modern method for identifying client/server software based on how they negotiate a TLS connection. This helps identify malware and C2 servers even when the traffic itself is encrypted.</li>
+                    <li><strong>Certificate Pivoting:</strong> Analysts pivot on TLS certificate fields (e.g., Issuer, Serial Number, Subject Alternative Names) to identify other C2 servers registered by the same threat group.</li>
+                    <li><strong>JA3/JA4 Fingerprinting:</strong> A method to identify the client application negotiating the TLS handshake based on cipher suites and extensions. Allows analysts to identify specific malware communication channels even if they are fully encrypted.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Encryption in Malware</h2>
-                <p>Threat actors leverage cryptography in various ways:</p>
+                <h2>Encryption in Ransomware</h2>
+                <p>Modern ransomware uses a sophisticated **hybrid encryption scheme** to rapidly lock data and prevent decryption without paying the ransom:</p>
                 <ul>
-                    <li><strong>Ransomware:</strong> Encrypts victim data to extort payment, often using a combination of symmetric and asymmetric encryption.</li>
-                    <li><strong>C2 Communications:</strong> Malware encrypts traffic to its Command and Control server to bypass network security monitoring.</li>
-                    <li><strong>String Obfuscation:</strong> Malware authors encrypt strings (like C2 domains or registry keys) within the binary to hinder analysis.</li>
+                    <li><strong>The Scheme:</strong> The ransomware generates a unique *Symmetric Key* (e.g., AES) local to the host to encrypt files quickly. It then encrypts this symmetric key using the attacker's embedded *Asymmetric Public Key*.</li>
+                    <li><strong>Decryption Control:</strong> The symmetric key cannot be decrypted without the attacker's matching *Private Key*, which never leaves the attacker's command server.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>C2 Encryption & Obfuscation</h2>
+                <p>Adversaries implement cryptographic mechanisms inside their payloads to evade perimeter security detection:</p>
+                <ul>
+                    <li><strong>C2 Traffic Encryption:</strong> Malware encrypts HTTP payloads (using custom RC4 or AES) before transmission to ensure network IDS cannot inspect command strings.</li>
+                    <li><strong>String Encryption:</strong> Malware authors encrypt API strings and domain configurations inside the binary. The malware decrypts them in memory only when needed, bypassing static string analysis.</li>
                 </ul>
             </div>
 
@@ -76,7 +84,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2026 Cryptography in CTI - FIACcopy; 2026 Cryptography - FIAC</p>
+            <p>&copy; 2026 Cryptography - FIAC</p>
         </footer>
     </div>
 

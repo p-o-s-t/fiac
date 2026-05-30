@@ -20,35 +20,51 @@
 
         <main class="slide-container">
             <div class="slide active">
-                <h2>Network Security</h2>
-                <p><strong>Firewalls:</strong> Provide visibility and control at the network boundary.</p>
+                <h2>Network Boundary Security</h2>
+                <p>Boundary defense platforms inspect and filter traffic at the perimeter of the corporate network to block ingress attacks and flag egress anomalies:</p>
                 <ul>
-                    <li><strong>Next-Gen Firewalls (NGFW):</strong> Go beyond port/protocol filtering to include deep packet inspection and application awareness.</li>
-                    <li><strong>Web Application Firewalls (WAF):</strong> Specifically designed to protect web applications from common attacks like SQLi and XSS.</li>
-                    <li><strong>IDS/IPS:</strong> Intrusion Detection/Prevention Systems monitor for malicious activity or policy violations.</li>
-                    <li><strong>Proxies:</strong> Act as intermediaries for requests, providing anonymity and content filtering.</li>
+                    <li><strong>NGFW (Next-Generation Firewalls):</strong> Filter traffic based on ports, protocols, and application awareness (e.g., detecting TOR protocols hidden over port 443).</li>
+                    <li><strong>WAF (Web Application Firewalls):</strong> Positioned in front of web applications to detect and block web-based exploits (like SQL Injection, Cross-Site Scripting, and path traversal).</li>
+                    <li><strong>IDS/IPS (Intrusion Detection/Prevention):</strong> Signature and behavioral-based engines that flag known exploit patterns or block traffic dynamically.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Endpoint Security</h2>
-                <p><strong>EDR/XDR:</strong> Modern endpoint protection that focuses on behavioral detection and response.</p>
+                <h2>Endpoint Protection Systems</h2>
+                <p>Endpoint security platforms defend user workstations, active servers, and mobile devices against local execution of malware:</p>
                 <ul>
-                    <li><strong>Antivirus (AV):</strong> Traditionally signature-based, focused on known malicious files.</li>
-                    <li><strong>Endpoint Detection & Response (EDR):</strong> Continuously monitors endpoint events (processes, network connections, file changes) for suspicious behavior.</li>
-                    <li><strong>XDR:</strong> Extended Detection and Response, integrating data from multiple sources (network, cloud, email) for a holistic view.</li>
-                    <li><strong>Host-based Firewalls:</strong> Control traffic at the individual device level (e.g., Windows Firewall).</li>
+                    <li><strong>Legacy Antivirus (AV):</strong> Relies on static cryptographic hashes to block known files. Easily bypassed by changing a few bytes of code.</li>
+                    <li><strong>EDR (Endpoint Detection & Response):</strong> deploys lightweight agents that monitor process executions, file system writes, and memory calls (detecting threats like process hollowing).</li>
+                    <li><strong>XDR (Extended Detection & Response):</strong> Integrates endpoint EDR logs with network firewalls, email filters, and cloud telemetry for cross-domain investigations.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Log Management</h2>
-                <p><strong>SIEM:</strong> Security Information and Event Management systems aggregate and analyze security data.</p>
+                <h2>Log Aggregation & SIEM</h2>
+                <p>Security Information and Event Management (**SIEM**) systems act as the primary operational brain for the Security Operations Center (SOC):</p>
                 <ul>
-                    <li><strong>Log Aggregation:</strong> Collecting logs from various sources (firewalls, endpoints, servers) into a single location.</li>
-                    <li><strong>Centralized Logging:</strong> Essential for correlation and incident response across the enterprise.</li>
-                    <li><strong>Decentralized Logging:</strong> Logs reside on individual systems, making holistic analysis difficult.</li>
-                    <li><strong>SIEM Goals:</strong> Real-time monitoring, correlation of events, and long-term storage for forensic analysis.</li>
+                    <li><strong>Normalization:</strong> Converting log records from firewalls (JSON), Windows events (XML), and Linux system logs (syslog) into a standard schema.</li>
+                    <li><strong>Correlation Engines:</strong> Running real-time queries to find patterns of threat events across different systems (e.g., flagging a user logging in from two countries within an hour).</li>
+                    <li><strong>Forensics Storage:</strong> Storing historical audit trails to enable post-incident scoping and tracking of threat activity timelines.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Deception Technologies</h2>
+                <p>Deception systems shift the advantage to the defender by deploying fake assets across the network to detect and monitor adversaries:</p>
+                <ul>
+                    <li><strong>Honeypots:</strong> Decoy servers configured to look like high-value databases or domain controllers, generating high-fidelity alerts if accessed.</li>
+                    <li><strong>Canary Tokens:</strong> Hidden files, database entries, or API credentials scattered across workstations. If opened or used, they instantly alert security operations.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Vulnerability & Application Security</h2>
+                <p>Proactive security requires identifying and remediation of system vulnerabilities before they are leveraged by threat actors:</p>
+                <ul>
+                    <li><strong>Vulnerability Scanners (Nessus, Qualys):</strong> Automated platforms that probe host configurations to identify unpatched software and weak protocol settings.</li>
+                    <li><strong>Static/Dynamic Application Security Testing (SAST/DAST):</strong> Inspecting custom application source code (SAST) or running app binaries (DAST) to find logical security vulnerabilities.</li>
+                    <li><strong>SBOM (Software Bill of Materials):</strong> Inventory of all third-party libraries used in software, allowing teams to quickly locate systems vulnerable to newly disclosed CVEs (like Log4j).</li>
                 </ul>
             </div>
 

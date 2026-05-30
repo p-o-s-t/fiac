@@ -21,42 +21,50 @@
         <main class="slide-container">
             <div class="slide active">
                 <h2>Operations Roles</h2>
-                <p>The <strong>Operations</strong> team is the front line of defense, monitoring systems and responding to immediate threats:</p>
+                <p>The **Operations** team runs the daily tactical defenses of the organization, continuously triaging events and responding to security alerts:</p>
                 <ul>
-                    <li><strong>SOC Analysts (Tiers 1-3):</strong> Monitor security alerts, triage events, and perform initial investigations.</li>
-                    <li><strong>Incident Responders (IR):</strong> Specialized personnel who lead the response to active security breaches and containment.</li>
-                    <li><strong>Vulnerability Management:</strong> Identify, prioritize, and manage the remediation of security weaknesses in systems and software.</li>
+                    <li><strong>SOC Analysts (Tiers 1-3):</strong> Monitor real-time security alerts. Tier 1 performs initial triaging, Tier 2 runs deep investigations, and Tier 3 leads advanced analysis.</li>
+                    <li><strong>Incident Responders (IR):</strong> The tactical fire-fighters who deploy containment playbooks, isolate hosts, and lead eradication processes during active breaches.</li>
+                    <li><strong>Vulnerability Management:</strong> Program managers responsible for scanning internal networks, cataloging software assets, and overseeing patching schedules.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Specialist Roles</h2>
-                <p><strong>Specialists</strong> provide deep technical expertise in specific domains of cybersecurity:</p>
+                <h2>Specialist Security Roles</h2>
+                <p>**Specialists** provide deep, dedicated engineering and scientific expertise in specific sub-domains of cybersecurity:</p>
                 <ul>
-                    <li><strong>Digital Forensics (DFIR):</strong> Analyze digital evidence to reconstruct events, identify data exfiltration, and support legal or internal investigations.</li>
-                    <li><strong>Malware Researchers:</strong> Reverse-engineer malicious code to understand its functionality, origin, and indicators of compromise.</li>
-                    <li><strong>Threat Hunters:</strong> Proactively search through networks and logs to find hidden threats that have bypassed automated security controls.</li>
+                    <li><strong>Digital Forensics (DFIR):</strong> Reconstructing events post-incident by extracting system artifacts, reviewing registry changes, and identifying file exfiltration.</li>
+                    <li><strong>Malware Researchers:</strong> Reversing malicious binaries (PE, ELF, Mach-O) in sandboxes and debuggers to document execution logic and extract IoCs.</li>
+                    <li><strong>Threat Hunters:</strong> Proactively searching through SIEM databases and EDR telemetry to hunt down stealthy actors who bypass automated alert rules.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Architecture & GRC</h2>
-                <p>These roles focus on long-term strategy, system design, and organizational compliance:</p>
+                <h2>Strategy, Architecture, & GRC</h2>
+                <p>These strategic roles focus on the long-term design, tooling, policy compliance, and overall risk management of the organization:</p>
                 <ul>
-                    <li><strong>Security Architects:</strong> Design secure system architectures and ensure security requirements are integrated into business processes.</li>
-                    <li><strong>GRC (Governance, Risk, Compliance):</strong> Manage organizational risk, ensure compliance with laws/regulations (e.g., GDPR, HIPAA), and develop security policies.</li>
-                    <li><strong>Security Engineers:</strong> Build and maintain the security infrastructure, such as firewalls, SIEMs, and EDR systems.</li>
+                    <li><strong>Security Architects:</strong> Designing secure system networks, cloud models, and ensuring that software builds follow security-by-design principles.</li>
+                    <li><strong>Security Engineers:</strong> Deploying and tuning security tools, maintaining firewall configs, EDR scripts, and central SIEM platforms.</li>
+                    <li><strong>GRC (Governance, Risk, Compliance):</strong> Overseeing third-party vendor risks, maintaining policies, and ensuring compliance with regulatory bodies (GDPR, HIPAA, SOC 2).</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>The CTI Analyst</h2>
-                <p>The <strong>Cyber Threat Intelligence (CTI) Analyst</strong> acts as the "glue" that connects these disparate roles:</p>
+                <h2>The CTI Analyst Interface</h2>
+                <p>The **Cyber Threat Intelligence Analyst** acts as the central information highway, feeding actionable intelligence to every role:</p>
                 <ul>
-                    <li><strong>Dissemination:</strong> Sharing actionable intelligence with Operations for better detection and IR for faster containment.</li>
-                    <li><strong>Strategic Guidance:</strong> Helping Architecture and GRC prioritize investments based on the actual threat landscape.</li>
-                    <li><strong>Feedback Loop:</strong> Taking findings from Malware Researchers and Forensics to improve overall organizational knowledge.</li>
-                    <li><strong>NICE Role Alignment:</strong> Formally maps to the <strong>Threat Analysis</strong> work role (<strong>PD-WRL-006</strong>) under the NIST NICE Framework v2.2.0.</li>
+                    <li><strong>SOC & IR support:</strong> Supplying tactical profiles and C2 domain lists to optimize SIEM query speeds and speed up IR isolation decisions.</li>
+                    <li><strong>GRC & Architecture Advising:</strong> Helping architects prioritize network segmentations based on the actual threat groups targeting their sector.</li>
+                    <li><strong>Collaborative Loops:</strong> Receiving binary samples from IR and forensics, and feeding back decoded configurations to security engineers.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>The NIST NICE Framework</h2>
+                <p>The **NIST NICE Framework v2.2.0** provides a standardized taxonomy mapping cybersecurity jobs to specific workforce roles and capabilities:</p>
+                <ul>
+                    <li><strong>Threat Analysis (PD-WRL-006):</strong> The official NICE work role mapping to CTI analysts, defining competencies in threat modeling and database correlation.</li>
+                    <li><strong>TKS Statements:</strong> Defining exact Task (T), Knowledge (K), and Skill (S) requirements needed to fulfill each work role (e.g., K0857: malware analysis).</li>
                 </ul>
             </div>
 

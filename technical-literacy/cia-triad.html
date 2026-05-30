@@ -21,31 +21,49 @@
         <main class="slide-container">
             <div class="slide active">
                 <h2>The CIA Triad</h2>
-                <p>The <strong>CIA Triad</strong> is a fundamental model for information security:</p>
+                <p>The **CIA Triad** is the core foundational model designed to guide security policies and posture within an organization, balancing three essential pillars:</p>
                 <ul>
-                    <li><strong>Confidentiality:</strong> Ensuring data is only accessible to authorized users. Threats include data breaches and theft.</li>
-                    <li><strong>Integrity:</strong> Ensuring data remains accurate and unaltered. Threats include unauthorized modifications or tampering.</li>
-                    <li><strong>Availability:</strong> Ensuring data and systems are accessible when needed. Threats include DDoS attacks and hardware failure.</li>
+                    <li><strong>Confidentiality:</strong> Preventing unauthorized disclosure of information (ensuring secrets remain secret).</li>
+                    <li><strong>Integrity:</strong> Protecting data from unauthorized modification, tampering, or deletion (ensuring data remains trustworthy).</li>
+                    <li><strong>Availability:</strong> Ensuring authorized users have reliable, timely access to data and systems (ensuring uptime and accessibility).</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>The DAD Triad</h2>
-                <p>The <strong>DAD Triad</strong> represents the direct opposites of the CIA triad, often used to describe the <em>impact</em> of a security incident:</p>
+                <h2>The DAD Triad - Incident Impact</h2>
+                <p>When threat events occur, analysts assess the damage using the **DAD Triad**, which represents the direct, adversarial opposites of the CIA Triad:</p>
                 <ul>
-                    <li><strong>Disclosure (vs Confidentiality):</strong> Unauthorized exposure of sensitive information.</li>
-                    <li><strong>Alteration (vs Integrity):</strong> Unauthorized modification of data or system settings.</li>
-                    <li><strong>Destruction (vs Availability):</strong> Data or systems are deleted, corrupted, or otherwise rendered unusable.</li>
+                    <li><strong>Disclosure (vs. Confidentiality):</strong> Unauthorized parties read or exfiltrate private data (e.g., database theft, breach of customer records).</li>
+                    <li><strong>Alteration (vs. Integrity):</strong> Data is modified or falsified (e.g., altering financial records, tampering with code repositories).</li>
+                    <li><strong>Destruction/Denial (vs. Availability):</strong> Systems or data are deleted, corrupted, or blocked (e.g., wiping servers, locking files, DDoS attacks).</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Real-World Application</h2>
-                <p>In threat assessment, we use these triads to categorize the <strong>impact</strong> of an event:</p>
+                <h2>Threats to Confidentiality & Integrity</h2>
+                <p>CTI operations categorize adversary goals based on which security pillar they target:</p>
                 <ul>
-                    <li><strong>Ransomware:</strong> Primarily impacts <em>Availability</em> (through encryption) and <em>Confidentiality</em> (through exfiltration and extortion).</li>
-                    <li><strong>Website Defacement:</strong> Primarily impacts <em>Integrity</em> by altering the displayed content.</li>
-                    <li><strong>Industrial Control Systems (ICS):</strong> Often prioritize <em>Availability</em> and <em>Integrity</em> over Confidentiality, as uptime and safety are critical.</li>
+                    <li><strong>Confidentiality Violations:</strong> Adversaries deploy spy implants, intercept network traffic (MitM), or run phishing campaigns targeting corporate intellectual property.</li>
+                    <li><strong>Integrity Violations:</strong> Threat groups target software update servers to insert backdoors (supply chain attacks), deface customer websites, or inject false entries into threat databases.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Threats to Availability</h2>
+                <p>Availability attacks target business operations directly, seeking to disrupt communication or force operations offline:</p>
+                <ul>
+                    <li><strong>Ransomware:</strong> Encrypts operational data and backups, creating immediate denial-of-service to internal business platforms.</li>
+                    <li><strong>Wipers (Destructive Malware):</strong> Payloads designed purely to destroy system boot records and partition tables, leaving servers unbootable (e.g., WhisperGate, HermeticWiper).</li>
+                    <li><strong>DDoS Attacks:</strong> Overwhelming network bandwidth or application resources to deny access to external customers.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>IT vs. OT Security Priorities</h2>
+                <p>The priority ordering of the CIA triad differs dramatically depending on the operational domain:</p>
+                <ul>
+                    <li><strong>IT (Information Technology):</strong> Prioritizes **Confidentiality** first (protecting user data and business secrets), followed by Integrity, then Availability.</li>
+                    <li><strong>OT (Operational Technology / ICS):</strong> Prioritizes **Availability** and safety first (ensuring assembly lines, power grids, and water systems remain operational), followed by Integrity, and lastly Confidentiality.</li>
                 </ul>
             </div>
 

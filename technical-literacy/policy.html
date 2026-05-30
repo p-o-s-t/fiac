@@ -20,45 +20,50 @@
 
         <main class="slide-container">
             <div class="slide active">
-                <h2>Incident Response Plan (IRP)</h2>
-                <p>The <strong>IRP</strong> is a set of instructions to help IT staff detect, respond to, and recover from network security incidents:</p>
+                <h2>Incident Response Plans (IRP)</h2>
+                <p>An **IRP** is a structured document outlining how an organization detects, responds to, and recovers from cyber incidents, following standard frameworks like **NIST SP 800-61 r2**:</p>
                 <ul>
-                    <li><strong>Preparation:</strong> Establishing the IR team and tools.</li>
-                    <li><strong>Identification:</strong> Determining if an incident has occurred.</li>
-                    <li><strong>Containment:</strong> Limiting the scope and impact of the incident.</li>
-                    <li><strong>Eradication:</strong> Removing the threat from the environment.</li>
-                    <li><strong>Recovery:</strong> Restoring systems to normal operation.</li>
-                    <li><strong>Lessons Learned:</strong> Improving future responses.</li>
+                    <li><strong>1. Preparation:</strong> Developing response tools, setting up communication lines, and training personnel.</li>
+                    <li><strong>2. Detection & Analysis:</strong> Monitoring alerts, analyzing vectors, and scoping the extent of the breach.</li>
+                    <li><strong>3. Containment, Eradication & Recovery:</strong> Isolating systems (containment), removing threats/backdoors (eradication), and restoring services (recovery).</li>
+                    <li><strong>4. Post-Incident Activity:</strong> Conducting lessons-learned meetings to update playbooks and close security gaps.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Business Continuity Plan (BCP)</h2>
-                <p>The <strong>BCP</strong> ensures that essential business functions can continue during and after a disaster. It is a broad plan that encompasses more than just IT:</p>
+                <h2>Business Continuity Planning (BCP)</h2>
+                <p>A **BCP** coordinates the broad operational strategy of the business during a disruptive event (e.g., active ransomware breakout, database wipe):</p>
                 <ul>
-                    <li><strong>Critical Functions:</strong> Identifying what processes are vital for survival.</li>
-                    <li><strong>Redundancy:</strong> Establishing secondary locations or personnel.</li>
-                    <li><strong>Communication:</strong> Ensuring key stakeholders are kept informed.</li>
+                    <li><strong>Business Impact Analysis (BIA):</strong> Evaluating which business functions are critical (such as transactional gateways) vs. optional, establishing recovery timelines.</li>
+                    <li><strong>Redundancy & Coordination:</strong> Setting up backup office locations, emergency contacts, and secondary systems to maintain essential services.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Disaster Recovery Plan (DRP)</h2>
-                <p>A <strong>DRP</strong> is a subset of the BCP focused on restoring the IT infrastructure and systems after a disaster:</p>
+                <h2>Disaster Recovery Plans (DRP)</h2>
+                <p>A **DRP** is a subset of the BCP focusing specifically on the recovery of critical IT infrastructure and data databases following a major incident:</p>
                 <ul>
-                    <li><strong>RTO (Recovery Time Objective):</strong> The maximum acceptable time for a system to be down.</li>
-                    <li><strong>RPO (Recovery Point Objective):</strong> The maximum acceptable amount of data loss (measured in time).</li>
-                    <li><strong>Backups:</strong> Regular, tested copies of critical data.</li>
+                    <li><strong>RTO (Recovery Time Objective):</strong> The maximum duration systems can remain offline before causing severe business damage.</li>
+                    <li><strong>RPO (Recovery Point Objective):</strong> The maximum age of files that must be recovered from backup storage (defining data loss tolerance).</li>
+                    <li><strong>3-2-1 Backup Rule:</strong> Keeping 3 copies of data, across 2 different media types, with 1 copy stored offsite (utilizing immutable backups).</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>The Analyst's Role</h2>
-                <p>CTI analysts play a vital role in supporting policy development and incident response:</p>
+                <h2>Compliance & Governance Frameworks</h2>
+                <p>Organizations deploy compliance policies to enforce security controls, audit trails, and data protection rules:</p>
                 <ul>
-                    <li><strong>Threat Intelligence:</strong> Informing the IRP with knowledge of current actor TTPs.</li>
-                    <li><strong>Risk Assessment:</strong> Helping prioritize resources for the BCP based on the threat landscape.</li>
-                    <li><strong>Post-Incident Analysis:</strong> Providing context for the "Lessons Learned" phase of the IRP.</li>
+                    <li><strong>NIST CSF (Cybersecurity Framework):</strong> Structure mapping controls across 5 core functions: Identify, Protect, Detect, Respond, Recover.</li>
+                    <li><strong>Standards & Regulations:</strong> Aligning security policies with ISO 27001, SOC 2 audits, or legal mandates like GDPR, HIPAA, and CCPA.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>The CTI Analyst's Role in Governance</h2>
+                <p>Threat intelligence provides the empirical basis that keeps security policies and plans aligned with reality:</p>
+                <ul>
+                    <li><strong>Playbook Hardening:</strong> Providing threat actor TTP inputs to incident response teams to build realistic containment playbooks.</li>
+                    <li><strong>Risk-Informed BIA:</strong> Helping GRC officers assess which business critical systems are most likely to be targeted based on industry victimology.</li>
                 </ul>
             </div>
 
@@ -81,7 +86,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2026 Essential Security Policy - FIACcopy; 2026 Policy - FIAC</p>
+            <p>&copy; 2026 Policy - FIAC</p>
         </footer>
     </div>
 
