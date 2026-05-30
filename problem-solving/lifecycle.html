@@ -21,26 +21,58 @@
         <main class="slide-container">
             <div class="slide active">
                 <h2>The Intelligence Process</h2>
-                <p>Intelligence is not a one-time event; it's a <strong>cyclic process</strong>. It begins with a need and ends with a finished product that informs the next round of questions.</p>
-                <p>Commonly referred to as the <strong>Intelligence Lifecycle</strong>, it ensures intelligence is relevant, timely, and actionable.</p>
+                <p>Intelligence is not a static repository of facts; it is a <strong>continuous, cyclic process</strong>. It starts with an analytical need and culminates in a finished product that directly drives the next phase of questioning.</p>
+                <p>Commonly referred to as the <strong>Intelligence Lifecycle</strong>, this methodology ensures that intelligence remains relevant, timely, objective, and action-oriented for stakeholders.</p>
             </div>
 
             <div class="slide hidden">
                 <h2>1. Planning and Direction</h2>
-                <p>Define <strong>Priority Intelligence Requirements (PIRs)</strong>. What do decision-makers need to know?</p>
-                <p>Setting clear goals prevents "intelligence for intelligence's sake" and focuses resources on the most critical threats.</p>
+                <p>This foundational phase defines the scope of the intelligence effort by identifying core information requirements driven by stakeholders.</p>
+                <ul>
+                    <li><strong>Priority Intelligence Requirements (PIRs):</strong> High-level threat-related questions defined by decision-makers to steer resources.</li>
+                    <li><strong>Scoping & Constraints:</strong> Defining the timeline, boundaries, and classification restrictions of the target requirement.</li>
+                    <li><strong>Focus:</strong> Prevents "intelligence for the sake of intelligence" by keeping resources strictly aligned with operational risks.</li>
+                </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>2. Collection and Processing</h2>
-                <p><strong>Collection:</strong> Gathering raw data from multiple sources (OSINT, SIGINT, HUMINT, etc.).</p>
-                <p><strong>Processing:</strong> Converting raw data into a usable format—translating documents, decrypting files, or normalizing logs.</p>
+                <h2>2. Collection</h2>
+                <p>Collection involves gathering raw data from a diverse, hybrid set of sources, including external intelligence feeds and internal security systems.</p>
+                <ul>
+                    <li><strong>Internal Telemetry:</strong> EDR logs, firewall events, SIEM alerts, and security incidents.</li>
+                    <li><strong>OSINT (Open Source Intelligence):</strong> Security blogs, social media (e.g., threat researcher accounts), GitHub repositories, and CVE databases.</li>
+                    <li><strong>Commercial & Closed Feeds:</strong> Premium threat feeds, dark web monitoring, and industry-sharing groups (ISACs).</li>
+                </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>3. Analysis and Dissemination</h2>
-                <p><strong>Analysis:</strong> Turning processed data into <em>intelligence</em> by adding context, identifying patterns, and drawing conclusions.</p>
-                <p><strong>Dissemination:</strong> Delivering the right information to the right person at the right time in the right format (e.g., a report or a dashboard).</p>
+                <h2>3. Processing & Exploitation</h2>
+                <p>Raw data collected in the previous step is rarely immediately ready for analysis. This phase transforms it into a structured, usable format.</p>
+                <ul>
+                    <li><strong>Normalization & Parsing:</strong> Converting disparate log formats (JSON, XML, Syslog) into a standard schema.</li>
+                    <li><strong>Decryption & Decoding:</strong> Reversing adversary obfuscation (e.g., Base64 decoding, decrypting malicious payloads).</li>
+                    <li><strong>Translation & Structuring:</strong> Translating foreign language actor reports and indexing indicators into databases (like MISP).</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>4. Analysis & Production</h2>
+                <p>This is the core cognitive phase where structured analysis turns processed data into actual <em>intelligence</em> by applying logical reasoning.</p>
+                <ul>
+                    <li><strong>Structured Analytic Techniques (SATs):</strong> Using formal methods (e.g., Analysis of Competing Hypotheses) to minimize cognitive bias.</li>
+                    <li><strong>Contextualization:</strong> Linking raw IOCs to known adversary TTPs (Tactics, Techniques, and Procedures).</li>
+                    <li><strong>Assessment & Estimation:</strong> Drawing conclusions regarding actor intent, capability, and likely future actions using estimative language.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>5. Dissemination & Feedback</h2>
+                <p>The final phase delivers the finished intelligence products to the stakeholders and collects feedback to refine the next lifecycle iteration.</p>
+                <ul>
+                    <li><strong>Strategic Deliverables:</strong> Executive summaries and threat briefs focusing on business impact for leadership.</li>
+                    <li><strong>Operational/Technical Deliverables:</strong> Detailed indicators, detection rules (YARA/Sigma), and EDR queries for security operations.</li>
+                    <li><strong>The Feedback Loop:</strong> Reviewing the utility of the product with stakeholders to adjust future requirements and update active PIRs.</li>
+                </ul>
             </div>
 
             <div class="slide hidden" id="quiz-slide">

@@ -20,42 +20,61 @@
 
         <main class="slide-container">
             <div class="slide active">
-                <h2>Defining Indicators (IoCs)</h2>
-                <p>An <strong>Indicator of Compromise (IoC)</strong> is an artifact observed on a network or in an operating system that, with high confidence, indicates a computer intrusion.</p>
-                <p>Not all indicators are created equal. We categorize them by their stability, complexity, and how easily an adversary can change them.</p>
+                <h2>Introduction to Threat Indicators</h2>
+                <p>An <strong>Indicator of Compromise (IoC)</strong> is an artifact observed on a network or host that, with a high degree of confidence, points to an active or past system intrusion.</p>
+                <p>Indicators are the operational building blocks of threat detection. However, they have a limited shelf life (decay rate) and vary greatly in their utility and the effort required for an adversary to modify them.</p>
             </div>
 
             <div class="slide hidden">
-                <h2>1. Atomic Indicators</h2>
-                <p><strong>Atomic indicators</strong> are those which cannot be broken down into smaller parts and retain their meaning in the context of an intrusion.</p>
+                <h2>The Pyramid of Pain</h2>
+                <p>Designed by security researcher David Bianco, the <strong>Pyramid of Pain</strong> rates indicators based on the level of friction (or "pain") an organization inflicts on an adversary by detecting and blocking them.</p>
                 <ul>
-                    <li><strong>IP Addresses:</strong> e.g., <code>185.25.12.34</code></li>
-                    <li><strong>Domain Names:</strong> e.g., <code>evil-malware-c2.com</code></li>
-                    <li><strong>Email Addresses:</strong> e.g., <code>phish-king@gmail.com</code></li>
+                    <li><strong>Hash Values (Bottom):</strong> Trivial for actors to change. Inflicts zero pain.</li>
+                    <li><strong>IP Addresses & Domains:</strong> Easy/Simple to change via proxy or registration.</li>
+                    <li><strong>Network & Host Artifacts:</strong> Annoying to change (e.g., custom protocols, file names).</li>
+                    <li><strong>Tools:</strong> Challenging. Requires the actor to find or compile new utilities.</li>
+                    <li><strong>TTPs (Top):</strong> Extremely painful. Requires changes to training, playbooks, and habits.</li>
                 </ul>
-                <p><em>Adversary effort:</em> Low. These are very easy for an attacker to change.</p>
             </div>
 
             <div class="slide hidden">
-                <h2>2. Computed Indicators</h2>
-                <p><strong>Computed indicators</strong> are those which are derived from data, often involving a mathematical function.</p>
+                <h2>Low-Level Indicators (Trivial & Easy)</h2>
+                <p>These indicators are easy to collect and deploy, but represent the lowest utility because adversaries can automate their evasion.</p>
                 <ul>
-                    <li><strong>File Hashes:</strong> SHA-256, MD5, or SHA-1 hashes of malicious files.</li>
-                    <li><strong>JA3/JA4 Fingerprints:</strong> Unique identifiers for SSL/TLS handshakes.</li>
-                    <li><strong>Fuzzy Hashes:</strong> e.g., SSDEEP, which can identify similar (but not identical) files.</li>
+                    <li><strong>File Hashes:</strong> MD5, SHA-256 values of files. Changing a single byte in a payload changes its hash completely.</li>
+                    <li><strong>IP Addresses:</strong> Temporary C2 addresses. Threat actors route traffic through VPNs, Tor, or compromised consumer routers.</li>
+                    <li><strong>Domain Names:</strong> Domain generation algorithms (DGAs) allow actors to dynamically register hundreds of domains daily.</li>
                 </ul>
-                <p><em>Adversary effort:</em> Medium. Changing a single bit in a file changes the hash, but changing the TLS implementation takes more work.</p>
             </div>
 
             <div class="slide hidden">
-                <h2>3. Behavioral Indicators</h2>
-                <p><strong>Behavioral indicators</strong> represent the <em>how</em> of an attack. They describe the patterns of activity that an adversary performs.</p>
+                <h2>Mid-Level Indicators (Host & Network Artifacts)</h2>
+                <p>Detecting mid-level indicators targets the footprint left behind by the adversary's malware configurations and administrative utilities.</p>
                 <ul>
-                    <li><strong>Execution Patterns:</strong> <code>cmd.exe</code> launching <code>powershell.exe</code> with an encoded command.</li>
-                    <li><strong>Network Patterns:</strong> A server making unusual DNS requests for random subdomains (DNS Tunneling).</li>
-                    <li><strong>Registry Keys:</strong> Specific keys created for persistence after a reboot.</li>
+                    <li><strong>Network Artifacts:</strong> Hardcoded User-Agent strings, custom HTTP headers, SSL/TLS JA3/JA4 fingerprints, or unusual SMB port communication.</li>
+                    <li><strong>Host Artifacts:</strong> Specific registry paths created for persistence, temporary file paths (e.g., <code>C:\Windows\Temp\</code>), or unique mutex names.</li>
+                    <li><strong>Utility:</strong> Restricts the actor's use of specific configurations, forcing them to recompile payloads or alter infrastructure scripts.</li>
                 </ul>
-                <p><em>Adversary effort:</em> High. This is David Bianco's <strong>"Tough"</strong> or <strong>"Painful"</strong> level on the Pyramid of Pain.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>High-Level Indicators (TTPs & Behaviors)</h2>
+                <p>Behavioral indicators focus on <strong>how the attack is conducted</strong> (Tactics, Techniques, and Procedures) rather than the technical values used.</p>
+                <ul>
+                    <li><strong>Behavioral Detection:</strong> Identifying execution patterns, such as Microsoft Word launching <code>cmd.exe</code> which subsequently invokes <code>powershell.exe</code>.</li>
+                    <li><strong>EDR/Sigma Rules:</strong> Writing logic rules (e.g., Sigma, YARA) that flag broad adversarial behaviors (like LSASS memory dumping).</li>
+                    <li><strong>Resilience:</strong> Because behavioral profiles reflect core operational habits, they are highly resilient and difficult for actors to bypass without redesigning their attack path.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Managing Indicators at Scale</h2>
+                <p>To prevent performance degradation of security tools, CTI operations must manage indicators systematically throughout their lifecycle:</p>
+                <ul>
+                    <li><strong>Deduplication & Enrichment:</strong> Merging redundant indicator records and adding context (e.g., linking an IP to a known actor profile).</li>
+                    <li><strong>False Positive Mitigation:</strong> Whitelisting legitimate cloud domains, corporate IP ranges, and common OS system files.</li>
+                    <li><strong>Indicator Aging & Decay:</strong> Automatically expiring or lowering the confidence scores of indicators over time (e.g., active C2 IPs decay faster than malware hashes).</li>
+                </ul>
             </div>
 
             <div class="slide hidden" id="quiz-slide">

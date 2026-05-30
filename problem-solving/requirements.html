@@ -20,21 +20,50 @@
 
         <main class="slide-container">
             <div class="slide active">
-                <h2>What is a Requirement?</h2>
-                <p>Intelligence begins with a question. A requirement is a statement of information needed by a decision-maker to reduce uncertainty.</p>
-                <p>Without clear requirements, an intelligence team can quickly become overwhelmed by data and lose focus on what matters most.</p>
+                <h2>Demystifying Intelligence Requirements</h2>
+                <p>Intelligence does not begin with data collection; it begins with a question. An <strong>Intelligence Requirement (IR)</strong> is a formal statement of an information need that a decision-maker must resolve to reduce uncertainty.</p>
+                <p>Without clear, structured requirements, threat intelligence teams suffer from "indicator fatigue," collecting data aimlessly without delivering actionable business value.</p>
             </div>
 
             <div class="slide hidden">
                 <h2>Priority Intelligence Requirements (PIRs)</h2>
-                <p><strong>PIRs</strong> are the most critical questions facing an organization. They are often high-level and drive the entire collection process.</p>
-                <p>Example: "What threat actors are currently targeting the financial sector in our region?"</p>
+                <p><strong>PIRs</strong> represent the most critical, high-level threat-related questions facing an organization. They are directly aligned with business risks and strategic decisions.</p>
+                <ul>
+                    <li><strong>Stakeholder-Driven:</strong> Created in collaboration with executives, risk officers, and security leadership.</li>
+                    <li><strong>Strategic Focus:</strong> Focus on adversary campaigns, capabilities, and motivations targeting the organization's sector or region.</li>
+                    <li><strong>Example:</strong> "What threat actors are active in our geographic region with the capability and intent to disrupt our cloud infrastructure?"</li>
+                </ul>
             </div>
 
             <div class="slide hidden">
                 <h2>Specific Intelligence Requirements (SIRs)</h2>
-                <p><strong>SIRs</strong> break down PIRs into smaller, more manageable questions that can be answered through collection and analysis.</p>
-                <p>Example: "What malware families are associated with the APT groups identified in our PIR?"</p>
+                <p><strong>SIRs</strong> translate high-level, strategic PIRs into actionable, operational questions that the security operations and threat intelligence teams can address.</p>
+                <ul>
+                    <li><strong>Tactical Breakdown:</strong> Sub-questions derived from the parent PIR that target specific technical mechanisms.</li>
+                    <li><strong>Collector Alignment:</strong> Grouped by target systems, technologies, or specific threat groups.</li>
+                    <li><strong>Example:</strong> "What command-and-control (C2) protocols are utilized by the APT groups targeting our cloud environment, and how do they establish persistence?"</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Indicators of Information (IoIs)</h2>
+                <p>At the bottom of the requirement hierarchy are <strong>Indicators of Information (IoIs)</strong> (sometimes called Specific Information Requirements). These are the specific, atomic data points sought to answer SIRs.</p>
+                <ul>
+                    <li><strong>Technical Queries:</strong> File hashes, domain names, configuration artifacts, EDR registry keys, and vulnerability CVE IDs.</li>
+                    <li><strong>Validation:</strong> The tangible evidence that is gathered during the collection phase.</li>
+                    <li><strong>Example:</strong> "Look for DNS requests to dynamic DNS domains using non-standard ports or specific user agent strings linked to APT29."</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Designing Effective PIRs</h2>
+                <p>Not all questions make good PIRs. When designing intelligence requirements, analysts follow strict structural guidelines:</p>
+                <ul>
+                    <li><strong>Singular Focus:</strong> Each PIR should address only one key threat or question.</li>
+                    <li><strong>Neutrality:</strong> Avoid leading questions or embedded assumptions (e.g., ask "How likely..." rather than "When will...").</li>
+                    <li><strong>Clear and Answerable:</strong> Must specify who, what, where, and when, and be answerable with available or obtainable data.</li>
+                    <li><strong>Decision-Aligned:</strong> Must be linked to a concrete action the organization can take once the question is answered.</li>
+                </ul>
             </div>
 
             <div class="slide hidden" id="quiz-slide">

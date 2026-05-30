@@ -21,25 +21,56 @@
         <main class="slide-container">
             <div class="slide active">
                 <h2>Structuring Intelligence</h2>
-                <p>Frameworks provide a structured way to analyze and communicate complex cyber threats. They help analysts organize data and speak a common language.</p>
-                <p>Commonly used frameworks include the <strong>Cyber Kill Chain</strong>, the <strong>Diamond Model</strong>, and <strong>MITRE ATT&CK</strong>.</p>
+                <p>Analyzing modern cyber threat campaigns requires structure. Threat intelligence frameworks provide a standardized taxonomy and model to dissect, catalog, and compare threat actor behavior.</p>
+                <p>Using frameworks allows analysts to avoid unstructured assumptions, organize massive volumes of indicators, and communicate threats clearly to both technical responders and executive leadership.</p>
+            </div>
+
+            <div class="slide hidden">
+                <h2>The Lockheed Martin Cyber Kill Chain</h2>
+                <p>The <strong>Cyber Kill Chain</strong> is a linear model that represents the sequential phases of a cyberattack, helping defenders identify opportunities to disrupt the adversary.</p>
+                <ul>
+                    <li><strong>1. Reconnaissance:</strong> Gathering target intelligence (e.g., email addresses, open ports).</li>
+                    <li><strong>2. Weaponization:</strong> Coupling malicious payloads with exploits (e.g., creating a malicious document).</li>
+                    <li><strong>3. Delivery:</strong> Transmitting the payload (e.g., via spear-phishing email or USB).</li>
+                    <li><strong>4. Exploitation:</strong> Triggering the malicious code to exploit a vulnerability.</li>
+                    <li><strong>5. Installation:</strong> Establishing a backdoor or persistent presence on the asset.</li>
+                    <li><strong>6. Command & Control (C2):</strong> Setting up a channel for remote administration.</li>
+                    <li><strong>7. Actions on Objectives:</strong> Executing target actions (e.g., exfiltrating data, deploying ransomware).</li>
+                </ul>
             </div>
 
             <div class="slide hidden">
                 <h2>The Diamond Model</h2>
-                <p>This model analyzes a single event by identifying four interconnected elements:</p>
+                <p>The <strong>Diamond Model</strong> analyzes a single intrusion event by mapping four interconnected vertices that establish the relationship between actor and victim.</p>
                 <ul>
-                    <li><strong>Adversary:</strong> Who is behind the attack?</li>
-                    <li><strong>Infrastructure:</strong> What systems are they using?</li>
-                    <li><strong>Capability:</strong> What tools and techniques are they employing?</li>
-                    <li><strong>Victim:</strong> Who are they targeting?</li>
+                    <li><strong>Adversary:</strong> The actor or campaign group responsible (e.g., APT29, threat group, insider).</li>
+                    <li><strong>Capability:</strong> The tools, malware, exploits, and specific skills used in the event.</li>
+                    <li><strong>Infrastructure:</strong> The IP addresses, domain names, C2 servers, or email accounts utilized.</li>
+                    <li><strong>Victim:</strong> The target organization, country, sector, or specific individual assets.</li>
+                    <li><strong>Axes & Features:</strong> Combines a Technical Axis (Capability &harr; Infrastructure) and Social-Political Axis (Adversary &harr; Victim) with metadata like timestamp, phase, and result.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
                 <h2>MITRE ATT&CK</h2>
-                <p><strong>ATT&CK</strong> stands for Adversarial Tactics, Techniques, and Common Knowledge.</p>
-                <p>It is a globally-accessible knowledge base of adversary behaviors based on real-world observations. It helps defenders understand <em>how</em> attacks happen.</p>
+                <p><strong>ATT&CK</strong> (Adversarial Tactics, Techniques, and Common Knowledge) is a comprehensive, globally-accessible matrix of threat actor behaviors observed in the wild.</p>
+                <ul>
+                    <li><strong>Tactics:</strong> The adversary's immediate goals (the "Why", e.g., Persistence, Privilege Escalation).</li>
+                    <li><strong>Techniques:</strong> The methods used to achieve a tactic (the "How", e.g., Registry Run Keys).</li>
+                    <li><strong>Sub-techniques:</strong> More granular descriptions of the technique (e.g., User Init Mpr Logon Script).</li>
+                    <li><strong>Procedures:</strong> The specific implementation of a technique by a group (e.g., APT28 using a custom PowerShell script).</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Synthesizing Frameworks</h2>
+                <p>Modern CTI analysts do not use frameworks in isolation. Instead, they combine them to achieve a holistic view of threat campaigns.</p>
+                <ul>
+                    <li><strong>The Kill Chain</strong> provides the timeline and progression of an intrusion over time.</li>
+                    <li><strong>The Diamond Model</strong> establishes attribution, infrastructure pivots, and strategic victimology.</li>
+                    <li><strong>MITRE ATT&CK</strong> provides the specific technical blueprints and detection engineering mappings.</li>
+                    <li><strong>Synthesis:</strong> Mapping Diamond Model events along Kill Chain phases, and defining each phase's capabilities using MITRE ATT&CK technique IDs.</li>
+                </ul>
             </div>
 
             <div class="slide hidden" id="quiz-slide">

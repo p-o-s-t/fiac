@@ -20,28 +20,50 @@
 
         <main class="slide-container">
             <div class="slide active">
-                <h2>What is an RFI?</h2>
-                <p>A <strong>Request for Information (RFI)</strong> is a formal process used to gather specific details that are currently missing from the intelligence picture.</p>
-                <p>RFIs bridge the gap between what we <em>know</em> and what we <em>need to know</em> to make a decision.</p>
+                <h2>The Request for Information (RFI) Workflow</h2>
+                <p>A <strong>Request for Information (RFI)</strong> is a formal process triggered when an analyst, defender, or decision-maker identifies a critical gap in their active threat intelligence picture.</p>
+                <p>Unlike persistent, strategic PIRs, RFIs are often ad-hoc, tactical, or operational requests that arise during incidents or specific security evaluations to support rapid decision-making.</p>
             </div>
 
             <div class="slide hidden">
-                <h2>Generating RFIs</h2>
-                <p>When an analyst identifies an intelligence gap, they generate an RFI. A good RFI should be:</p>
+                <h2>Anatomy of a Well-Structured RFI</h2>
+                <p>To receive a high-quality response, the requestor must formulate a well-structured query. A robust RFI includes the following components:</p>
                 <ul>
-                    <li><strong>Specific:</strong> Clearly define the information needed.</li>
-                    <li><strong>Actionable:</strong> Explain why the information is required.</li>
-                    <li><strong>Time-Bound:</strong> Include a realistic deadline for the response.</li>
+                    <li><strong>Context:</strong> Background explanation detailing *why* the information is being requested.</li>
+                    <li><strong>Specific Questions:</strong> Precise, unambiguous, and numbered queries that avoid open-ended phrasing.</li>
+                    <li><strong>Operational Constraints:</strong> The format required (e.g., raw CSV, brief email, PDF report) and target audience.</li>
+                    <li><strong>Timelines & TLP:</strong> A clear, justified deadline and the Traffic Light Protocol (TLP) sharing classification.</li>
                 </ul>
             </div>
 
             <div class="slide hidden">
-                <h2>Answering RFIs</h2>
-                <p>Receiving and answering RFIs is a core duty of an intelligence analyst. Key principles include:</p>
+                <h2>Formulating a Search & Collection Strategy</h2>
+                <p>When an RFI is assigned, the analyst first builds a collection strategy to gather relevant evidence from structured and unstructured repositories:</p>
                 <ul>
-                    <li><strong>Timeliness:</strong> Provide the answer when it's needed, not after the decision is made.</li>
-                    <li><strong>Clarity:</strong> Use BLUF (Bottom Line Up Front) to give the answer immediately.</li>
-                    <li><strong>Sourcing:</strong> Always cite the sources used to build the answer.</li>
+                    <li><strong>Internal Databases:</strong> Querying the organization's SIEM logs, EDR telemetry, incident tickets, and threat intelligence platform (TIP).</li>
+                    <li><strong>External Repositories:</strong> Searching OSINT feeds, malware sharing hubs (e.g., VirusTotal), and vulnerability databases.</li>
+                    <li><strong>Industry Contacts:</strong> Engaging trust groups (ISACs) or vetted intelligence sharing partners to gather peer telemetry.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>Drafting the RFI Response</h2>
+                <p>Formatting the final answer is as important as the analysis itself. An effective RFI response adheres to these presentation rules:</p>
+                <ul>
+                    <li><strong>BLUF (Bottom Line Up Front):</strong> Place the direct answers to the RFI's core questions at the very top of the response.</li>
+                    <li><strong>Analytical Objectivity:</strong> Distinguish clearly between raw facts, analytical assessments, and assumptions.</li>
+                    <li><strong>Uncertainty & Estimative Language:</strong> Express analytical confidence levels (e.g., "highly likely," "possible") based on source quality.</li>
+                    <li><strong>Rigorous Sourcing:</strong> Provide complete citations and references for every claim to establish trust and auditing capability.</li>
+                </ul>
+            </div>
+
+            <div class="slide hidden">
+                <h2>The RFI Lifecycle & Metric Tracking</h2>
+                <p>The RFI process is not complete when the answer is delivered. Effective threat intelligence teams manage the closure and metrics phases:</p>
+                <ul>
+                    <li><strong>Database Archiving:</strong> Logging the RFI and answer in a central system so future analysts can search and reuse the findings.</li>
+                    <li><strong>Metric Tracking:</strong> Measuring performance statistics like response time (SLA compliance), accuracy, and stakeholder satisfaction.</li>
+                    <li><strong>Detection Enrichment:</strong> Translating the newly acquired intelligence into EDR detections, firewall blocks, or SIEM watchlists.</li>
                 </ul>
             </div>
 
