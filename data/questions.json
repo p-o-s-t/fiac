@@ -31,7 +31,7 @@
     },
     {
         "topic": "Lifecycle",
-        "question": "What is the final phase of the Intelligence Lifecycle?",
+        "question": "What phase is continuous throughout the Intelligence Lifecycle?",
         "options": ["Analysis", "Dissemination", "Collection", "Feedback"],
         "answer": 3
     },
