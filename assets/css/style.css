@@ -178,6 +178,59 @@ main::-webkit-scrollbar-thumb {
 .card .badge.intermediate { background: #ffcc80; color: var(--black); } /* Muted Orange */
 .card .badge.advanced { background: #ef9a9a; color: var(--black); }     /* Muted Red */
 
+/* Access badges for the Resources library */
+.card .badge.free { background: #a5d6a7; color: var(--black); }         /* Green */
+.card .badge.oss { background: #90caf9; color: var(--black); }          /* Blue */
+.card .badge.commercial { background: #ce93d8; color: var(--black); }   /* Purple */
+.card .badge.account { background: #ffcc80; color: var(--black); }      /* Amber */
+
+/* Resource cards rendered as real links */
+a.card {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Auto-generated destination domain hint */
+.card-domain {
+    display: block;
+    margin-top: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--lavender-medium);
+    opacity: 0.75;
+    word-break: break-all;
+}
+
+/* Resources filter/search bar */
+.resource-filter-wrap {
+    margin-bottom: 30px;
+}
+.resource-filter {
+    width: 100%;
+    max-width: 480px;
+    padding: 12px 16px;
+    background: var(--dark-grey);
+    border: 1px solid var(--medium-grey);
+    color: var(--lavender);
+    border-radius: 25px;
+    font-family: var(--font-body, inherit);
+    font-size: 0.95rem;
+}
+.resource-filter:focus {
+    outline: none;
+    border-color: var(--lavender);
+}
+.resource-count {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--light-grey);
+}
+.no-results {
+    padding: 20px;
+    color: var(--light-grey);
+    font-style: italic;
+}
+
 footer {
     flex: 0 0 auto;
     text-align: center;

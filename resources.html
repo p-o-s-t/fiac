@@ -20,180 +20,369 @@
         </header>
 
         <main>
+            <div class="resource-filter-wrap">
+                <input type="text" id="resourceFilter" class="resource-filter" placeholder="Filter resources (e.g. sandbox, ATT&CK, EPSS, YARA)..." autocomplete="off">
+                <div class="resource-count" id="resourceCount"></div>
+            </div>
+
+            <p class="no-results hidden" id="noResults">No resources match your filter.</p>
+
             <div class="dashboard-sections">
                 <section class="section-problem-solving">
-                    <h2 class="section-title">Frameworks</h2>
+                    <h2 class="section-title">Frameworks &amp; Models</h2>
                     <div class="dashboard-grid">
-                        <div class="card" onclick="window.open('https://attack.mitre.org/')">
+                        <a class="card" href="https://attack.mitre.org/" target="_blank" rel="noopener">
                             <div><h3>MITRE ATT&CK</h3><p>Knowledge base of adversary tactics and techniques.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://www.unifiedkillchain.com/')">
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.threatintel.academy/wp-content/uploads/2020/07/diamond-model.pdf" target="_blank" rel="noopener">
+                            <div><h3>Diamond Model (Paper)</h3><p>The original paper on the Diamond Model of Intrusion Analysis.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html" target="_blank" rel="noopener">
+                            <div><h3>Cyber Kill Chain</h3><p>Lockheed Martin's seven-stage intrusion kill chain model.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.unifiedkillchain.com/" target="_blank" rel="noopener">
                             <div><h3>Unified Kill Chain</h3><p>End-to-end framework for analyzing attacks.</p></div>
-                            
-                        </div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.attackiq.com/glossary/pyramid-of-pain/" target="_blank" rel="noopener">
+                            <div><h3>Pyramid of Pain</h3><p>David Bianco's model ranking indicators by the pain they inflict on adversaries.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="section-professional">
+                    <h2 class="section-title">Analytic Tradecraft &amp; Standards</h2>
+                    <div class="dashboard-grid">
+                        <a class="card" href="https://www.cia.gov/static/955180a45afe3f5013772c313b16face/Tradecraft-Primer-apr09.pdf" target="_blank" rel="noopener">
+                            <div><h3>A Tradecraft Primer (SATs)</h3><p>CIA primer on Structured Analytic Techniques for intelligence analysis.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.dni.gov/files/documents/ICD/ICD-203.pdf" target="_blank" rel="noopener">
+                            <div><h3>ICD 203: Analytic Standards</h3><p>The IC standard for objectivity, sourcing, and estimative language.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.cia.gov/resources/csi/static/Words-of-Estimative-Probability.pdf" target="_blank" rel="noopener">
+                            <div><h3>Words of Estimative Probability</h3><p>Sherman Kent's classic essay on expressing confidence and likelihood.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.cia.gov/resources/csi/books-and-monographs/psychology-of-intelligence-analysis-2/" target="_blank" rel="noopener">
+                            <div><h3>Psychology of Intelligence Analysis</h3><p>Richards Heuer's foundational work on cognitive bias and reasoning.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="section-professional">
+                    <h2 class="section-title">Data Standards &amp; Marking</h2>
+                    <div class="dashboard-grid">
+                        <a class="card" href="https://www.first.org/tlp/" target="_blank" rel="noopener">
+                            <div><h3>FIRST TLP 2.0</h3><p>The official Traffic Light Protocol definitions for information sharing.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://oasis-open.github.io/cti-documentation/" target="_blank" rel="noopener">
+                            <div><h3>STIX / TAXII</h3><p>OASIS standards for structured threat intelligence and its exchange.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
                     </div>
                 </section>
 
                 <section class="section-technical">
-                    <h2 class="section-title">Policy & Workforce Frameworks</h2>
+                    <h2 class="section-title">Policy &amp; Workforce Frameworks</h2>
                     <div class="dashboard-grid">
-                        <div class="card" onclick="window.open('https://cti-cmm.org/')">
+                        <a class="card" href="https://cti-cmm.org/" target="_blank" rel="noopener">
                             <div><h3>CTI-CMM</h3><p>Intelligence Capability Maturity Model.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://www.rfc-editor.org/rfc/rfc9424.html')">
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.rfc-editor.org/rfc/rfc9424.html" target="_blank" rel="noopener">
                             <div><h3>RFC 9424</h3><p>Guide for Threat Actor Characterization.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://www.dni.gov/index.php/what-we-do/ic-related-menus/ic-related-links/intelligence-community-directives')">
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.dni.gov/index.php/what-we-do/ic-related-menus/ic-related-links/intelligence-community-directives" target="_blank" rel="noopener">
                             <div><h3>IC Directives</h3><p>U.S. Intelligence Community Directives.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center')">
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center" target="_blank" rel="noopener">
                             <div><h3>NIST NICE Framework</h3><p>NICE Framework v2.2.0 work roles, competencies, and TKS statements.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://dodcio.defense.gov/Cyber-Workforce/DCWF/')">
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://dodcio.defense.gov/Cyber-Workforce/DCWF/" target="_blank" rel="noopener">
                             <div><h3>DoD DCWF</h3><p>Defense Cyber Workforce Framework and work role details.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://dodcio.defense.gov/Cyber-Workforce/DoD8140/')">
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://dodcio.defense.gov/Cyber-Workforce/DoD8140/" target="_blank" rel="noopener">
                             <div><h3>DoD 8140 Manual</h3><p>DoD 8140 qualifications, credentials, and requirements matrix.</p></div>
-                            
-                        </div>
+                            <span class="badge free">Free</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="section-cyber-threat">
+                    <h2 class="section-title">OSINT &amp; Infrastructure Pivoting</h2>
+                    <div class="dashboard-grid">
+                        <a class="card" href="https://crt.sh/" target="_blank" rel="noopener">
+                            <div><h3>crt.sh</h3><p>Certificate transparency log search for pivoting on certificates and domains.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.shodan.io/" target="_blank" rel="noopener">
+                            <div><h3>Shodan</h3><p>Search engine for internet-connected hosts, services, and banners.</p></div>
+                            <span class="badge account">Account</span>
+                        </a>
+                        <a class="card" href="https://search.censys.io/" target="_blank" rel="noopener">
+                            <div><h3>Censys Search</h3><p>Internet-wide scan data for hosts and certificates.</p></div>
+                            <span class="badge account">Account</span>
+                        </a>
+                        <a class="card" href="https://urlscan.io/" target="_blank" rel="noopener">
+                            <div><h3>urlscan.io</h3><p>Sandboxed URL scanning that captures requests, DOM, and screenshots.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.greynoise.io/" target="_blank" rel="noopener">
+                            <div><h3>GreyNoise</h3><p>Context on internet-wide scanning noise to triage IP indicators.</p></div>
+                            <span class="badge account">Account</span>
+                        </a>
+                        <a class="card" href="https://urlhaus.abuse.ch/" target="_blank" rel="noopener">
+                            <div><h3>URLhaus</h3><p>abuse.ch database of malicious URLs used for malware distribution.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://threatfox.abuse.ch/" target="_blank" rel="noopener">
+                            <div><h3>ThreatFox</h3><p>abuse.ch community IOC database (hashes, IPs, domains, URLs).</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://sslbl.abuse.ch/" target="_blank" rel="noopener">
+                            <div><h3>SSL Blacklist (SSLBL)</h3><p>abuse.ch database of malicious SSL certificates and JA3/JA4 fingerprints.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="section-problem-solving">
+                    <h2 class="section-title">Vulnerability Research</h2>
+                    <div class="dashboard-grid">
+                        <a class="card" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">
+                            <div><h3>CISA KEV Catalog</h3><p>Authoritative list of vulnerabilities known to be exploited in the wild.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.first.org/epss/" target="_blank" rel="noopener">
+                            <div><h3>FIRST EPSS</h3><p>Exploit Prediction Scoring System estimating exploitation likelihood.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://nvd.nist.gov/" target="_blank" rel="noopener">
+                            <div><h3>NVD</h3><p>NIST National Vulnerability Database with CVSS scoring and metadata.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.cve.org/" target="_blank" rel="noopener">
+                            <div><h3>CVE Program</h3><p>The authoritative source for CVE records and identifiers.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.exploit-db.com/" target="_blank" rel="noopener">
+                            <div><h3>Exploit-DB</h3><p>Archive of public exploits and corresponding vulnerable software.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
                     </div>
                 </section>
 
                 <section class="section-cyber-threat">
                     <h2 class="section-title">Threat Emulation</h2>
                     <div class="dashboard-grid">
-                        <div class="card" onclick="window.open('https://github.com/center-for-threat-informed-defense/adversary_emulation_library')">
+                        <a class="card" href="https://github.com/center-for-threat-informed-defense/adversary_emulation_library" target="_blank" rel="noopener">
                             <div><h3>Adversary Emulation Library</h3><p>Community-curated library of adversary emulation plans.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://attack.mitre.org/resources/adversary-emulation-plans/')">
+                            <span class="badge oss">Open Source</span>
+                        </a>
+                        <a class="card" href="https://attack.mitre.org/resources/adversary-emulation-plans/" target="_blank" rel="noopener">
                             <div><h3>MITRE Emulation Plans</h3><p>Formal adversary emulation plans from MITRE.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://github.com/redcanaryco/atomic-red-team')">
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://github.com/redcanaryco/atomic-red-team" target="_blank" rel="noopener">
                             <div><h3>Atomic Red Team</h3><p>Library of tests mapped to MITRE ATT&CK.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://caldera.mitre.org/')">
+                            <span class="badge oss">Open Source</span>
+                        </a>
+                        <a class="card" href="https://caldera.apache.org/index.html" target="_blank" rel="noopener">
                             <div><h3>CALDERA</h3><p>Automated adversary emulation platform.</p></div>
-                            
-                        </div>
+                            <span class="badge oss">Open Source</span>
+                        </a>
                     </div>
                 </section>
 
                 <section class="section-cyber-threat">
                     <h2 class="section-title">Threat Actor Research</h2>
                     <div class="dashboard-grid">
-                        <div class="card" onclick="window.open('https://apt.threattracking.com')">
+                        <a class="card" href="https://apt.threattracking.com" target="_blank" rel="noopener">
                             <div><h3>APT Groups Tracker</h3><p>Comprehensive list of known APT groups.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://feodotracker.abuse.ch/')">
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://apt.etda.or.th/cgi-bin/aptgroups.cgi" target="_blank" rel="noopener">
+                            <div><h3>ETDA APT Encyclopedia</h3><p>ThaiCERT's searchable encyclopedia of threat groups and tools.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://feodotracker.abuse.ch/" target="_blank" rel="noopener">
                             <div><h3>Feodo Tracker</h3><p>Botnet C2 infrastructure tracker.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://www.ransomware.live/groups')">
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.ransomware.live/groups" target="_blank" rel="noopener">
                             <div><h3>Ransomware.live</h3><p>Monitoring ransomware group leak sites.</p></div>
-                            
-                        </div>
+                            <span class="badge free">Free</span>
+                        </a>
                     </div>
                 </section>
 
                 <section class="section-technical">
                     <h2 class="section-title">Threat Intelligence Platforms (TIP)</h2>
                     <div class="dashboard-grid">
-                        <div class="card" onclick="window.open('https://github.com/MISP/')">
+                        <a class="card" href="https://github.com/MISP/" target="_blank" rel="noopener">
                             <div><h3>MISP</h3><p>Open Source Threat Information Sharing Platform.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://github.com/OpenCTI-Platform/opencti')">
+                            <span class="badge oss">Open Source</span>
+                        </a>
+                        <a class="card" href="https://github.com/OpenCTI-Platform/opencti" target="_blank" rel="noopener">
                             <div><h3>OpenCTI</h3><p>Open Cyber Threat Intelligence Platform.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://yeti-platform.io/')">
+                            <span class="badge oss">Open Source</span>
+                        </a>
+                        <a class="card" href="https://yeti-platform.io/" target="_blank" rel="noopener">
                             <div><h3>Yeti</h3><p>Your Everyday Threat Intelligence platform.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://threatconnect.com/')">
+                            <span class="badge oss">Open Source</span>
+                        </a>
+                        <a class="card" href="https://threatconnect.com/" target="_blank" rel="noopener">
                             <div><h3>ThreatConnect</h3><p>Commercial CTI Platform.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://cyble.com/products/cyble-tip/')">
+                            <span class="badge commercial">Commercial</span>
+                        </a>
+                        <a class="card" href="https://cyble.com/products/cyble-tip/" target="_blank" rel="noopener">
                             <div><h3>Cyble TIP</h3><p>Enterprise threat intelligence solutions.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://otx.alienvault.com/')">
+                            <span class="badge commercial">Commercial</span>
+                        </a>
+                        <a class="card" href="https://otx.alienvault.com/" target="_blank" rel="noopener">
                             <div><h3>AlienVault OTX</h3><p>Open Threat Exchange.</p></div>
-                            
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section-professional">
-                    <h2 class="section-title">Training</h2>
-                    <div class="dashboard-grid">
-                        <div class="card" onclick="window.open('https://malware-traffic-analysis.net/')">
-                            <div><h3>Malware Traffic Analysis</h3><p>Pcap files and malware samples for practice.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://medium.com/katies-five-cents/a-cyber-threat-intelligence-self-study-plan-part-1-968b5a8daf9a')">
-                            <div><h3>Self-Study Plan (Part 1)</h3><p>A comprehensive CTI study guide by Katie Nickels.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://medium.com/katies-five-cents/a-cyber-threat-intelligence-self-study-plan-part-2-d04b7a529d36')">
-                            <div><h3>Self-Study Plan (Part 2)</h3><p>Advanced CTI study topics and methodologies.</p></div>
-                            
-                        </div>
+                            <span class="badge free">Free</span>
+                        </a>
                     </div>
                 </section>
 
                 <section class="section-problem-solving">
                     <h2 class="section-title">Malware Analysis</h2>
                     <div class="dashboard-grid">
-                        <div class="card" onclick="window.open('https://www.virustotal.com/')">
+                        <a class="card" href="https://www.virustotal.com/" target="_blank" rel="noopener">
                             <div><h3>VirusTotal</h3><p>Crowdsourced malware analysis platform.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://malpedia.caad.fkie.fraunhofer.de/')">
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://malpedia.caad.fkie.fraunhofer.de/" target="_blank" rel="noopener">
                             <div><h3>Malpedia</h3><p>Inventory of malware families and artifacts.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://vx-underground.org/')">
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://vx-underground.org/" target="_blank" rel="noopener">
                             <div><h3>VX-Underground</h3><p>Largest collection of malware source code and samples.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://bazaar.abuse.ch/')">
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://bazaar.abuse.ch/" target="_blank" rel="noopener">
                             <div><h3>MalwareBazaar</h3><p>Community-driven malware sample database.</p></div>
-                            
-                        </div>
+                            <span class="badge free">Free</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="section-problem-solving">
+                    <h2 class="section-title">Malware Sandboxes</h2>
+                    <div class="dashboard-grid">
+                        <a class="card" href="https://any.run/" target="_blank" rel="noopener">
+                            <div><h3>ANY.RUN</h3><p>Interactive online sandbox for dynamic malware analysis.</p></div>
+                            <span class="badge account">Account</span>
+                        </a>
+                        <a class="card" href="https://www.hybrid-analysis.com/" target="_blank" rel="noopener">
+                            <div><h3>Hybrid Analysis</h3><p>Free automated malware analysis service powered by Falcon Sandbox.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://tria.ge/" target="_blank" rel="noopener">
+                            <div><h3>Triage (tria.ge)</h3><p>Hatching's high-throughput sandbox with configuration extraction.</p></div>
+                            <span class="badge account">Account</span>
+                        </a>
+                        <a class="card" href="https://www.joesandbox.com/" target="_blank" rel="noopener">
+                            <div><h3>Joe Sandbox</h3><p>Deep automated malware analysis across Windows, Linux, macOS, and mobile.</p></div>
+                            <span class="badge commercial">Commercial</span>
+                        </a>
                     </div>
                 </section>
 
                 <section class="section-technical">
-                    <h2 class="section-title">Signatures</h2>
+                    <h2 class="section-title">Signatures &amp; Detection</h2>
                     <div class="dashboard-grid">
-                        <div class="card" onclick="window.open('https://yara.readthedocs.io/')">
+                        <a class="card" href="https://yara.readthedocs.io/" target="_blank" rel="noopener">
                             <div><h3>YARA</h3><p>The pattern matching swiss knife for malware.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://docs.suricata.io/en/latest/')">
+                            <span class="badge oss">Open Source</span>
+                        </a>
+                        <a class="card" href="https://docs.suricata.io/en/latest/" target="_blank" rel="noopener">
                             <div><h3>Suricata</h3><p>Network threat detection engine.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://sigmahq.io/')">
+                            <span class="badge oss">Open Source</span>
+                        </a>
+                        <a class="card" href="https://sigmahq.io/" target="_blank" rel="noopener">
                             <div><h3>Sigma</h3><p>Generic signature format for SIEM systems.</p></div>
-                            
-                        </div>
-                        <div class="card" onclick="window.open('https://www.snort.org/')">
+                            <span class="badge oss">Open Source</span>
+                        </a>
+                        <a class="card" href="https://www.snort.org/" target="_blank" rel="noopener">
                             <div><h3>Snort</h3><p>Network intrusion prevention system (NIPS).</p></div>
-                            
-                        </div>
+                            <span class="badge oss">Open Source</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="section-cyber-threat">
+                    <h2 class="section-title">Threat News &amp; Landscape</h2>
+                    <div class="dashboard-grid">
+                        <a class="card" href="https://thedfirreport.com/" target="_blank" rel="noopener">
+                            <div><h3>The DFIR Report</h3><p>Detailed real-world intrusion write-ups with TTPs and IOCs.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://isc.sans.edu/" target="_blank" rel="noopener">
+                            <div><h3>SANS Internet Storm Center</h3><p>Daily handler diaries tracking emerging threats and activity.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.cisa.gov/news-events/cybersecurity-advisories" target="_blank" rel="noopener">
+                            <div><h3>CISA Advisories</h3><p>Official U.S. advisories, alerts, and analysis reports.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://unit42.paloaltonetworks.com/" target="_blank" rel="noopener">
+                            <div><h3>Unit 42</h3><p>Palo Alto Networks threat research and incident analysis.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://blog.talosintelligence.com/" target="_blank" rel="noopener">
+                            <div><h3>Cisco Talos</h3><p>Threat intelligence research, reports, and vulnerability disclosures.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://cloud.google.com/blog/topics/threat-intelligence" target="_blank" rel="noopener">
+                            <div><h3>Google Threat Intelligence</h3><p>Mandiant and Google TAG research on advanced threats.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="section-professional">
+                    <h2 class="section-title">Sharing Communities &amp; ISACs</h2>
+                    <div class="dashboard-grid">
+                        <a class="card" href="https://www.first.org/" target="_blank" rel="noopener">
+                            <div><h3>FIRST</h3><p>Global Forum of Incident Response and Security Teams.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://www.nationalisacs.org/" target="_blank" rel="noopener">
+                            <div><h3>National Council of ISACs</h3><p>Directory of sector-based Information Sharing and Analysis Centers.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="section-professional">
+                    <h2 class="section-title">Training</h2>
+                    <div class="dashboard-grid">
+                        <a class="card" href="https://malware-traffic-analysis.net/" target="_blank" rel="noopener">
+                            <div><h3>Malware Traffic Analysis</h3><p>Pcap files and malware samples for practice.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://medium.com/katies-five-cents/a-cyber-threat-intelligence-self-study-plan-part-1-968b5a8daf9a" target="_blank" rel="noopener">
+                            <div><h3>Self-Study Plan (Part 1)</h3><p>A comprehensive CTI study guide by Katie Nickels.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
+                        <a class="card" href="https://medium.com/katies-five-cents/a-cyber-threat-intelligence-self-study-plan-part-2-d04b7a529d36" target="_blank" rel="noopener">
+                            <div><h3>Self-Study Plan (Part 2)</h3><p>Advanced CTI study topics and methodologies.</p></div>
+                            <span class="badge free">Free</span>
+                        </a>
                     </div>
                 </section>
             </div>
@@ -203,5 +392,54 @@
             <p>&copy; 2026 FIAC - Future Intelligence Analyst Course | <a href="index.html" style="color: var(--lavender-medium); text-decoration: none;">&larr; Back to Dashboard</a></p>
         </footer>
     </div>
+
+    <script>
+        (function () {
+            const cards = Array.from(document.querySelectorAll('a.card'));
+
+            // Auto-generate a destination domain hint on each card.
+            cards.forEach(card => {
+                try {
+                    const host = new URL(card.href).hostname.replace(/^www\./, '');
+                    const span = document.createElement('span');
+                    span.className = 'card-domain';
+                    span.textContent = host;
+                    card.querySelector('div').appendChild(span);
+                    card.dataset.search = (card.textContent + ' ' + host).toLowerCase(); // cache lowercased searchable text for filtering.
+                } catch (e) {
+                    card.dataset.search = card.textContent.toLowerCase();
+                }
+            });
+
+            const filter = document.getElementById('resourceFilter');
+            const countEl = document.getElementById('resourceCount');
+            const noResults = document.getElementById('noResults');
+            const sections = Array.from(document.querySelectorAll('.dashboard-sections > section'));
+
+            function apply() {
+                const q = filter.value.trim().toLowerCase();
+                let visible = 0;
+
+                cards.forEach(card => {
+                    const match = !q || card.dataset.search.includes(q);
+                    card.classList.toggle('hidden', !match);
+                    if (match) visible++;
+                });
+
+                sections.forEach(section => { // Hide any section whose cards are all filtered out.
+                    const anyVisible = section.querySelector('a.card:not(.hidden)');
+                    section.classList.toggle('hidden', !anyVisible);
+                });
+
+                noResults.classList.toggle('hidden', visible !== 0);
+                countEl.textContent = q
+                    ? `${visible} of ${cards.length} resources`
+                    : `${cards.length} resources`;
+            }
+
+            filter.addEventListener('input', apply);
+            apply();
+        })();
+    </script>
 </body>
 </html>
