@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intrusion Investigation - FIAC Capstone</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .challenge-box {
+            background: var(--dark-grey);
+            padding: 25px;
+            border: 1px solid var(--lavender-medium);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 900px;
+            text-align: left;
+        }
+        .step-container {
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--black);
+            border-radius: 4px;
+            border-left: 4px solid var(--lavender-medium);
+        }
+        .step-header {
+            font-size: 0.9rem;
+            color: var(--lavender-medium);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .artifact-viewer {
+            width: 100%;
+            max-height: 260px;
+            overflow-y: auto;
+            background: rgba(230, 230, 250, 0.05);
+            border: 1px solid var(--medium-grey);
+            border-radius: 4px;
+            padding: 12px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+            word-break: break-all;
+            margin: 15px 0;
+            color: var(--lavender);
+        }
+        .input-group { margin: 15px 0; }
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background: var(--dark-grey);
+            border: 1px solid var(--medium-grey);
+            color: var(--lavender);
+            border-radius: 4px;
+            font-family: var(--font-mono);
+        }
+        .select-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin: 15px 0;
+        }
+        .select-group label { color: var(--lavender); font-weight: bold; }
+        .select-group select {
+            padding: 10px;
+            background: var(--dark-grey);
+            color: var(--lavender);
+            border: 1px solid var(--medium-grey);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .feedback {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 4px;
+            display: none;
+            font-size: 0.95rem;
+        }
+        .feedback.correct { background: rgba(76, 175, 80, 0.2); border: 1px solid #4caf50; color: #a5d6a7; }
+        .feedback.incorrect { background: rgba(244, 67, 54, 0.2); border: 1px solid #f44336; color: #ef9a9a; }
+        .briefing {
+            background: rgba(230, 230, 250, 0.05);
+            border: 1px dashed var(--medium-grey);
+            border-radius: 8px;
+            padding: 18px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .briefing h3 { color: var(--lavender-medium); margin-bottom: 8px; font-size: 1rem; }
+        .phase-tracker {
+            display: flex;
+            gap: 6px;
+            margin: 18px 0 5px 0;
+            flex-wrap: wrap;
+        }
+        .phase-pill {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--medium-grey);
+            color: var(--light-grey);
+        }
+        .phase-pill.done { border-color: #4caf50; color: #a5d6a7; }
+        .phase-pill.current { border-color: var(--lavender-medium); color: var(--lavender); }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>FIAC Capstone: Intrusion Investigation</h1>
+                <nav>
+                    <a href="../index.html" class="nav-link">&larr; Back to Dashboard</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="slide-container">
+            <div class="challenge-box">
+                <h2>Operation SILVERTHORN</h2>
+                <span class="ksa-tag">DCWF Alignment: KSA 3129, 3253, 3582 | NICE Alignment: T0845, T1053, T1054, S0512, S0869, S0876</span>
+
+                <div class="briefing">
+                    <h3>Analyst Briefing</h3>
+                    <p>You are the on-call CTI analyst for <strong>Meridian Health Group</strong>, a regional healthcare provider. This morning the SOC escalated a suspected intrusion: an Accounts Payable employee reported a suspicious invoice email, and EDR later flagged an unknown executable on their workstation.</p>
+                    <p style="margin-top: 8px;">Your standing <strong>PIR-2</strong> reads: <em>"Which threat actors are targeting patient billing data in the healthcare sector, and what TTPs do they use to gain access and exfiltrate it?"</em></p>
+                    <p style="margin-top: 8px;">Work the incident end-to-end: triage the phish, analyze the payload, pivot on infrastructure, map the tradecraft, model the intrusion, and make the right reporting calls.</p>
+                </div>
+
+                <div class="phase-tracker" id="phaseTracker">
+                    <span class="phase-pill current">1. Phishing Triage</span>
+                    <span class="phase-pill">2. Payload Analysis</span>
+                    <span class="phase-pill">3. Infrastructure Pivot</span>
+                    <span class="phase-pill">4. ATT&CK Mapping</span>
+                    <span class="phase-pill">5. Diamond Model</span>
+                    <span class="phase-pill">6. Reporting</span>
+                </div>
+
+                <!-- Phase 1: Phishing Triage -->
+                <div id="phase1" class="step-container">
+                    <div class="step-header">Phase 1: Phishing Triage</div>
+                    <p>The mail gateway captured the original email. Review the raw message and extract your first indicators.</p>
+                    <div id="emailArtifact" class="artifact-viewer">Loading artifact...</div>
+                    <div class="input-group">
+                        <label>What <strong>domain</strong> did the attacker use to send the email? (domain only)</label>
+                        <input type="text" id="p1domain" placeholder="e.g. example.com">
+                    </div>
+                    <div class="input-group">
+                        <label>What is the <strong>SHA256 hash</strong> of the attached document?</label>
+                        <input type="text" id="p1hash" placeholder="64-character hash">
+                    </div>
+                    <button class="btn" onclick="checkPhase1()">Verify Phase 1</button>
+                    <div id="feedback1" class="feedback"></div>
+                </div>
+
+                <!-- Phase 2: Payload Analysis -->
+                <div id="phase2" class="step-container hidden">
+                    <div class="step-header">Phase 2: Payload Strings Analysis</div>
+                    <p>EDR recovered the second-stage executable dropped by the macro. Below is its <code>strings</code> output. Identify the C2 and persistence indicators.</p>
+                    <div id="stringsArtifact" class="artifact-viewer">Loading artifact...</div>
+                    <div class="input-group">
+                        <label>What <strong>domain</strong> does the malware beacon to for command and control? (domain only)</label>
+                        <input type="text" id="p2c2" placeholder="e.g. example.net">
+                    </div>
+                    <div class="input-group">
+                        <label>What <strong>value name</strong> does the malware create under the Registry Run key for persistence?</label>
+                        <input type="text" id="p2reg" placeholder="e.g. UpdaterService">
+                    </div>
+                    <button class="btn" onclick="checkPhase2()">Verify Phase 2</button>
+                    <div id="feedback2" class="feedback"></div>
+                </div>
+
+                <!-- Phase 3: Infrastructure Pivot -->
+                <div id="phase3" class="step-container hidden">
+                    <div class="step-header">Phase 3: Infrastructure Pivot</div>
+                    <p>You queried certificate transparency data for the C2 domain. The actor reused a <strong>self-signed certificate</strong> across their infrastructure — pivot on the fingerprint to find more.</p>
+                    <div id="certArtifact" class="artifact-viewer">Loading artifact...</div>
+                    <div class="input-group">
+                        <label>Which <strong>other domain</strong> presents the exact same certificate fingerprint as the C2 domain?</label>
+                        <input type="text" id="p3domain" placeholder="e.g. example.org">
+                    </div>
+                    <button class="btn" onclick="checkPhase3()">Verify Phase 3</button>
+                    <div id="feedback3" class="feedback"></div>
+                </div>
+
+                <!-- Phase 4: ATT&CK Mapping -->
+                <div id="phase4" class="step-container hidden">
+                    <div class="step-header">Phase 4: MITRE ATT&CK Mapping</div>
+                    <p>Translate your findings into ATT&CK. Map each observation to the correct technique.</p>
+                    <div class="select-group">
+                        <label>A macro-enabled invoice document was emailed to Accounts Payable:</label>
+                        <select id="p4initial">
+                            <option value="">-- Select Technique --</option>
+                            <option value="T1566.001">T1566.001: Phishing: Spearphishing Attachment</option>
+                            <option value="T1566.002">T1566.002: Phishing: Spearphishing Link</option>
+                            <option value="T1078">T1078: Valid Accounts</option>
+                            <option value="T1190">T1190: Exploit Public-Facing Application</option>
+                        </select>
+                    </div>
+                    <div class="select-group">
+                        <label>The payload wrote "WinSyncUpdate" under SOFTWARE\Microsoft\Windows\CurrentVersion\Run:</label>
+                        <select id="p4persist">
+                            <option value="">-- Select Technique --</option>
+                            <option value="T1053.005">T1053.005: Scheduled Task</option>
+                            <option value="T1547.001">T1547.001: Registry Run Keys / Startup Folder</option>
+                            <option value="T1543.003">T1543.003: Windows Service</option>
+                            <option value="T1574.002">T1574.002: DLL Side-Loading</option>
+                        </select>
+                    </div>
+                    <div class="select-group">
+                        <label>Archived billing records were POSTed to /api/v2/upload on the beacon domain:</label>
+                        <select id="p4exfil">
+                            <option value="">-- Select Technique --</option>
+                            <option value="T1048">T1048: Exfiltration Over Alternative Protocol</option>
+                            <option value="T1567.002">T1567.002: Exfiltration to Cloud Storage</option>
+                            <option value="T1041">T1041: Exfiltration Over C2 Channel</option>
+                            <option value="T1020">T1020: Automated Exfiltration</option>
+                        </select>
+                    </div>
+                    <button class="btn" onclick="checkPhase4()">Verify Phase 4</button>
+                    <div id="feedback4" class="feedback"></div>
+                </div>
+
+                <!-- Phase 5: Diamond Model -->
+                <div id="phase5" class="step-container hidden">
+                    <div class="step-header">Phase 5: Diamond Model Reconstruction</div>
+                    <p>You have clustered this activity under the internal tracking name <strong>SILVERTHORN</strong>. Place each element on the correct Diamond Model vertex.</p>
+                    <div class="select-group">
+                        <label>Adversary:</label>
+                        <select id="p5adv">
+                            <option value="">-- Select --</option>
+                            <option value="silverthorn">SILVERTHORN (tracked activity cluster)</option>
+                            <option value="meridian">Meridian Health Group</option>
+                            <option value="infra">cdn-sync-status.net / telemetry-push.org</option>
+                            <option value="wupdate">wupdate.exe backdoor + macro document</option>
+                        </select>
+                    </div>
+                    <div class="select-group">
+                        <label>Capability:</label>
+                        <select id="p5cap">
+                            <option value="">-- Select --</option>
+                            <option value="silverthorn">SILVERTHORN (tracked activity cluster)</option>
+                            <option value="meridian">Meridian Health Group</option>
+                            <option value="infra">cdn-sync-status.net / telemetry-push.org</option>
+                            <option value="wupdate">wupdate.exe backdoor + macro document</option>
+                        </select>
+                    </div>
+                    <div class="select-group">
+                        <label>Infrastructure:</label>
+                        <select id="p5infra">
+                            <option value="">-- Select --</option>
+                            <option value="silverthorn">SILVERTHORN (tracked activity cluster)</option>
+                            <option value="meridian">Meridian Health Group</option>
+                            <option value="infra">cdn-sync-status.net / telemetry-push.org</option>
+                            <option value="wupdate">wupdate.exe backdoor + macro document</option>
+                        </select>
+                    </div>
+                    <div class="select-group">
+                        <label>Victim:</label>
+                        <select id="p5vic">
+                            <option value="">-- Select --</option>
+                            <option value="silverthorn">SILVERTHORN (tracked activity cluster)</option>
+                            <option value="meridian">Meridian Health Group</option>
+                            <option value="infra">cdn-sync-status.net / telemetry-push.org</option>
+                            <option value="wupdate">wupdate.exe backdoor + macro document</option>
+                        </select>
+                    </div>
+                    <button class="btn" onclick="checkPhase5()">Verify Phase 5</button>
+                    <div id="feedback5" class="feedback"></div>
+                </div>
+
+                <!-- Phase 6: Reporting Decisions -->
+                <div id="phase6" class="step-container hidden">
+                    <div class="step-header">Phase 6: Reporting &amp; Dissemination</div>
+                    <p>Your report is drafted. Before dissemination, make the final analytic and handling calls.</p>
+                    <div class="select-group">
+                        <label>You want to share the IOCs with the Health-ISAC so other providers can defend themselves, but the report identifies your organization as a victim. Best TLP marking for the ISAC release?</label>
+                        <select id="p6tlp">
+                            <option value="">-- Select --</option>
+                            <option value="clear">TLP:CLEAR — publish openly on the company blog</option>
+                            <option value="green">TLP:GREEN — share freely within the wider community</option>
+                            <option value="amber">TLP:AMBER — share with ISAC members on a need-to-know basis</option>
+                            <option value="red">TLP:RED — restrict to those in the original exchange only</option>
+                        </select>
+                    </div>
+                    <div class="select-group">
+                        <label>You linked the intrusion to the SILVERTHORN cluster based on certificate reuse and consistent TTPs, but you have no insight into the operators themselves. Appropriate confidence statement for attribution?</label>
+                        <select id="p6conf">
+                            <option value="">-- Select --</option>
+                            <option value="high">High confidence this is a named state-sponsored APT group</option>
+                            <option value="moderate">Moderate confidence the activity is attributable to the SILVERTHORN cluster</option>
+                            <option value="none">Attribution should be stated as fact since the evidence is technical</option>
+                            <option value="low">No assessment should ever be made without a confession from the actor</option>
+                        </select>
+                    </div>
+                    <div class="select-group">
+                        <label>Which standing intelligence requirement does your report answer?</label>
+                        <select id="p6pir">
+                            <option value="">-- Select --</option>
+                            <option value="pir2">PIR-2: Actors and TTPs targeting patient billing data in healthcare</option>
+                            <option value="pir-none">None — incident response is unrelated to intelligence requirements</option>
+                            <option value="pir-new">A new PIR must always be written after every incident</option>
+                        </select>
+                    </div>
+                    <button class="btn" onclick="checkPhase6()">Submit Report</button>
+                    <div id="feedback6" class="feedback"></div>
+                </div>
+
+                <!-- Success State -->
+                <div id="successBox" class="step-container hidden" style="border-color: #4caf50; text-align: center;">
+                    <h3 style="color: #4caf50; margin-bottom: 10px;">✔ Capstone Complete!</h3>
+                    <p>You worked a full intrusion from a single phishing email to a finished, correctly-marked intelligence product: triage &rarr; malware analysis &rarr; infrastructure pivoting &rarr; ATT&CK mapping &rarr; Diamond Model &rarr; dissemination.</p>
+                    <p style="margin-top: 10px;">Want to go further? Write the full product using the <a href="../templates/threat-actor-report.md" style="color: var(--accent);">Threat Actor Report template</a>.</p>
+                    <button class="btn" style="margin-top: 15px;" onclick="location.href='../index.html'">Return to Dashboard</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Intrusion Investigation - FIAC Capstone | <a href="../index.html" style="color: var(--lavender-medium); text-decoration: none;">&larr; Back to Dashboard</a></p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/progress.js"></script>
+    <script>
+        const ANSWERS = {
+            p1domain: "meridian-health-support.com",
+            p1hash: "e3b1c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852c1a7",
+            p2c2: "cdn-sync-status.net",
+            p2reg: "winsyncupdate",
+            p3domain: "telemetry-push.org",
+            p4: { initial: "T1566.001", persist: "T1547.001", exfil: "T1041" },
+            p5: { adv: "silverthorn", cap: "wupdate", infra: "infra", vic: "meridian" },
+            p6: { tlp: "amber", conf: "moderate", pir: "pir2" }
+        };
+
+        // Load artifacts into viewers
+        async function loadArtifact(path, elementId, isJson = false) {
+            const el = document.getElementById(elementId);
+            try {
+                const response = await fetch(path);
+                if (!response.ok) throw new Error('fetch failed');
+                const text = await response.text();
+                el.textContent = isJson ? JSON.stringify(JSON.parse(text), null, 2) : text;
+            } catch (e) {
+                el.textContent = 'Error loading artifact. Please run the project through a web server (e.g., python3 -m http.server).';
+            }
+        }
+        loadArtifact('../data/capstone_email.txt', 'emailArtifact');
+        loadArtifact('../data/capstone_strings.txt', 'stringsArtifact');
+        loadArtifact('../data/capstone_certs.json', 'certArtifact', true);
+
+        function showFeedback(id, correct, message) {
+            const fb = document.getElementById(id);
+            fb.className = correct ? "feedback correct" : "feedback incorrect";
+            fb.innerHTML = message;
+            fb.style.display = "block";
+        }
+
+        function advancePhase(currentIndex) {
+            const pills = document.querySelectorAll('.phase-pill');
+            pills[currentIndex].classList.remove('current');
+            pills[currentIndex].classList.add('done');
+            if (pills[currentIndex + 1]) pills[currentIndex + 1].classList.add('current');
+        }
+
+        function normalize(value) {
+            return value.trim().toLowerCase().replace(/^https?:\/\//, '').replace(/\/$/, '');
+        }
+
+        function checkPhase1() {
+            const domain = normalize(document.getElementById('p1domain').value);
+            const hash = document.getElementById('p1hash').value.trim().toLowerCase();
+            if (domain === ANSWERS.p1domain && hash === ANSWERS.p1hash) {
+                showFeedback('feedback1', true, "<strong>Correct!</strong> Note the lookalike domain (a typosquat of the real company) and the failed SPF/DMARC checks — classic spearphishing infrastructure.");
+                document.getElementById('phase2').classList.remove('hidden');
+                advancePhase(0);
+            } else {
+                showFeedback('feedback1', false, "<strong>Not quite.</strong> Check the <code>Return-Path</code>/<code>From</code> headers for the sending domain, and the attachment metadata block for the SHA256.");
+            }
+        }
+
+        function checkPhase2() {
+            const c2 = normalize(document.getElementById('p2c2').value);
+            const reg = document.getElementById('p2reg').value.trim().toLowerCase();
+            if (c2 === ANSWERS.p2c2 && reg === ANSWERS.p2reg) {
+                showFeedback('feedback2', true, "<strong>Correct!</strong> The beacon URLs reveal the C2 domain, and the value written under the Run key ('WinSyncUpdate') gives you a host-based persistence indicator. Note the SQL string — the actor is after patient billing data.");
+                document.getElementById('phase3').classList.remove('hidden');
+                advancePhase(1);
+            } else {
+                showFeedback('feedback2', false, "<strong>Not quite.</strong> Look for hardcoded URLs for the C2 domain, and find the string near <code>CurrentVersion\\Run</code> for the persistence value name.");
+            }
+        }
+
+        function checkPhase3() {
+            const domain = normalize(document.getElementById('p3domain').value);
+            if (domain === ANSWERS.p3domain) {
+                showFeedback('feedback3', true, "<strong>Correct!</strong> Identical SHA1 fingerprint and serial number on two domains means the actor reused one self-signed certificate — you just expanded the known infrastructure and can now block/hunt both domains.");
+                document.getElementById('phase4').classList.remove('hidden');
+                advancePhase(2);
+            } else {
+                showFeedback('feedback3', false, "<strong>Not quite.</strong> Compare the <code>fingerprint_sha1</code> values. One other domain matches the C2 certificate exactly; the third result is an unrelated legitimate cert.");
+            }
+        }
+
+        function checkPhase4() {
+            const initial = document.getElementById('p4initial').value;
+            const persist = document.getElementById('p4persist').value;
+            const exfil = document.getElementById('p4exfil').value;
+            if (!initial || !persist || !exfil) return;
+            if (initial === ANSWERS.p4.initial && persist === ANSWERS.p4.persist && exfil === ANSWERS.p4.exfil) {
+                showFeedback('feedback4', true, "<strong>Correct!</strong> Spearphishing Attachment (T1566.001) &rarr; Registry Run Key persistence (T1547.001) &rarr; Exfiltration Over C2 Channel (T1041). This TTP chain is now part of the SILVERTHORN profile.");
+                document.getElementById('phase5').classList.remove('hidden');
+                advancePhase(3);
+            } else {
+                showFeedback('feedback4', false, "<strong>Not quite.</strong> Match each observation to the most specific technique: how did they get in, how did they survive a reboot, and over what channel did the data leave?");
+            }
+        }
+
+        function checkPhase5() {
+            const adv = document.getElementById('p5adv').value;
+            const cap = document.getElementById('p5cap').value;
+            const infra = document.getElementById('p5infra').value;
+            const vic = document.getElementById('p5vic').value;
+            if (!adv || !cap || !infra || !vic) return;
+            if (adv === ANSWERS.p5.adv && cap === ANSWERS.p5.cap && infra === ANSWERS.p5.infra && vic === ANSWERS.p5.vic) {
+                showFeedback('feedback5', true, "<strong>Correct!</strong> Adversary is <em>who</em> (the tracked cluster), Capability is <em>how</em> (the backdoor and lure), Infrastructure is <em>where from</em> (the C2 domains), and Victim is the target.");
+                document.getElementById('phase6').classList.remove('hidden');
+                advancePhase(4);
+            } else {
+                showFeedback('feedback5', false, "<strong>Not quite.</strong> One or more vertices are misplaced. Adversary = who, Capability = tools/malware, Infrastructure = attacker-controlled hosting, Victim = the target.");
+            }
+        }
+
+        function checkPhase6() {
+            const tlp = document.getElementById('p6tlp').value;
+            const conf = document.getElementById('p6conf').value;
+            const pir = document.getElementById('p6pir').value;
+            if (!tlp || !conf || !pir) return;
+            if (tlp === ANSWERS.p6.tlp && conf === ANSWERS.p6.conf && pir === ANSWERS.p6.pir) {
+                showFeedback('feedback6', true, "<strong>Correct!</strong> TLP:AMBER limits disclosure to members with a need to know, protecting the victim's identity. Attribution to an activity cluster with moderate confidence honestly reflects the evidence. And the report directly satisfies PIR-2.");
+                advancePhase(5);
+                document.getElementById('successBox').classList.remove('hidden');
+                if (typeof markCompleted === 'function') {
+                    markCompleted('capstone');
+                }
+            } else {
+                showFeedback('feedback6', false, "<strong>Not quite.</strong> Consider: who needs this and who must NOT see the victim's identity? What does the technical evidence actually support? And why did you collect this intelligence in the first place?");
+            }
+        }
+    </script>
+</body>
+</html>

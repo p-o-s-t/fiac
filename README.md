@@ -62,6 +62,8 @@ fiac/
 │       ├── progress.js            # Handles state savings to localStorage
 │       ├── quiz.js                # Quizzes / knowledge check controller
 │       └── slides.js              # Core slide-deck navigation logic
+├── capstone/                      # End-to-end intrusion investigation scenario
+│   └── investigation.html         # Operation SILVERTHORN capstone (6 phases)
 ├── challenges/                    # Interactive multi-step hands-on challenges
 │   ├── diamond.html               # Diamond Model Reconstruction
 │   ├── mitre.html                 # MITRE ATT&CK Mapping
@@ -71,6 +73,9 @@ fiac/
 │   └── tlp.html                   # Traffic Light Protocol (TLP) Classification
 ├── cyber-threat-proficiency/      # Lesson files under the Cyber Threat Proficiency pillar
 ├── data/                          # Static databases, malware examples, and quiz questions
+│   ├── capstone_certs.json        # Certificate transparency data for the Capstone pivot phase
+│   ├── capstone_email.txt         # Raw phishing email artifact for the Capstone triage phase
+│   ├── capstone_strings.txt       # Payload strings output for the Capstone analysis phase
 │   ├── questions.json             # Lesson Knowledge Check questions bank
 │   ├── sample_malware.txt         # Plaintext payload for Strings Analysis challenge
 │   └── ssl_db.json                # Pivot data for SSL/TLS infrastructure challenge
@@ -163,6 +168,21 @@ The 6 interactive challenges test hands-on skills required for threat analysis, 
 * **PIR Development** (`challenges/pir.html`)
   * Generate and validate Priority Intelligence Requirements (PIRs) for a business threat environment.
   * *NICE Mapping*: **T1647** (Develop PIRs), **S0779** (Determine information requirements), **S0506** (Identify customer information needs).
+
+---
+
+## Capstone: Intrusion Investigation
+
+The **Capstone** (`capstone/investigation.html`) chains the individual challenge skills into a single, realistic end-to-end scenario — *Operation SILVERTHORN* — where the analyst investigates one consistent intrusion against a fictional healthcare provider (Meridian Health Group). All artifacts (phishing email, payload strings, certificate data) reference the same incident, so indicators discovered in one phase are pivoted on in the next:
+
+1. **Phishing Triage** — extract the sender domain and attachment hash from raw email headers.
+2. **Payload Strings Analysis** — recover the C2 domain and registry persistence indicator from the dropped executable.
+3. **Infrastructure Pivot** — expand known infrastructure via self-signed certificate fingerprint reuse.
+4. **MITRE ATT&CK Mapping** — translate the observed behaviors into tactics and techniques.
+5. **Diamond Model Reconstruction** — model the intrusion across all four vertices.
+6. **Reporting & Dissemination** — choose the correct TLP marking, attribution confidence language, and PIR alignment.
+
+*NICE Mapping*: **T0845** (Identify threat tactics/methodologies), **T1053** (Identify and characterize intrusion activities), **T1054** (Scope reports reflecting classification restrictions), **S0512** (Extracting metadata), **S0869** (Metadata analysis), **S0876** (Perform nodal analysis).
 
 ---
 

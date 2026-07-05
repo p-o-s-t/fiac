@@ -112,6 +112,7 @@ main {
 .section-technical .section-title { background-color: #7986cb; }       /* Indigo 300 */
 .section-cyber-threat .section-title { background-color: #ba68c8; }    /* Muted Purple (Deep Purple 300 equivalent) */
 .section-challenges .section-title { background-color: #9575cd; }      /* Muted Indigo (Deep Purple 300) */
+.section-capstone .section-title { background-color: #f06292; }        /* Pink 300 - distinct finale accent */
 
 /* Adjust card borders slightly to match section theme if desired, 
    but for now we'll stick to the title background as requested. */

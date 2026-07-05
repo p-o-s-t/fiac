@@ -1,0 +1,38 @@
+Return-Path: <billing@meridian-health-support.com>
+Received: from mail-relay-04.meridian-health-support.com (185.203.119.44)
+        by mx1.meridianhealthgroup.com with ESMTP id x8Kq2r0041
+        for <a.reyes@meridianhealthgroup.com>; Mon, 15 Jun 2026 08:42:17 -0400
+Authentication-Results: mx1.meridianhealthgroup.com;
+        spf=fail (sender IP is 185.203.119.44) smtp.mailfrom=meridian-health-support.com;
+        dkim=none; dmarc=fail action=none header.from=meridian-health-support.com
+From: "Meridian Billing Dept" <billing@meridian-health-support.com>
+To: a.reyes@meridianhealthgroup.com
+Subject: ACTION REQUIRED: Outstanding Invoice Q2-2026
+Date: Mon, 15 Jun 2026 08:42:11 -0400
+Message-ID: <20260615124211.7C41B9E2@meridian-health-support.com>
+X-Mailer: PHPMailer 6.8.0
+Content-Type: multipart/mixed; boundary="----=_Part_88412"
+
+------=_Part_88412
+Content-Type: text/plain; charset=UTF-8
+
+Dear Accounts Payable Team,
+
+Our records show invoice Q2-2026-0331 remains unpaid. Please review the
+attached statement and remit payment within 5 business days to avoid
+service interruption to your patient billing portal.
+
+Regards,
+Meridian Billing Department
+
+------=_Part_88412
+Content-Type: application/vnd.ms-word.document.macroEnabled.12;
+        name="Invoice_Q2-2026-0331.docm"
+Content-Disposition: attachment; filename="Invoice_Q2-2026-0331.docm"
+
+[ATTACHMENT METADATA — extracted by mail gateway]
+Filename: Invoice_Q2-2026-0331.docm
+Size: 84,512 bytes
+SHA256: e3b1c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852c1a7
+Macro detected: AutoOpen (VBA)
+------=_Part_88412--

@@ -1,0 +1,32 @@
+{
+    "note": "Certificate transparency search results for query: cdn-sync-status.net (and related fingerprint pivots)",
+    "certificates": [
+        {
+            "common_name": "cdn-sync-status.net",
+            "fingerprint_sha1": "a94d2f81c33707be51cd409ac6e1b30a887f210d",
+            "serial": "0b:44:9c:12:7e:aa:31:05:9d:e0:44:81:2c:19:fa:66",
+            "issuer": "CN=cdn-sync-status.net (self-signed)",
+            "not_before": "2026-05-28",
+            "not_after": "2027-05-28",
+            "first_seen_ip": "185.203.119.44"
+        },
+        {
+            "common_name": "telemetry-push.org",
+            "fingerprint_sha1": "a94d2f81c33707be51cd409ac6e1b30a887f210d",
+            "serial": "0b:44:9c:12:7e:aa:31:05:9d:e0:44:81:2c:19:fa:66",
+            "issuer": "CN=cdn-sync-status.net (self-signed)",
+            "not_before": "2026-05-28",
+            "not_after": "2027-05-28",
+            "first_seen_ip": "91.219.238.107"
+        },
+        {
+            "common_name": "status.cloudsyncpro.com",
+            "fingerprint_sha1": "5be7301fa2d0c841b9f4a6ce02d1187e443a9c55",
+            "serial": "03:aa:41:8f:22:d1:90:7b:35:c8:12:44:ef:09:61:2a",
+            "issuer": "R3",
+            "not_before": "2026-04-11",
+            "not_after": "2026-07-10",
+            "first_seen_ip": "104.26.14.92"
+        }
+    ]
+}

